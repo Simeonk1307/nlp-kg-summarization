@@ -23,7 +23,7 @@ class KGExtractor:
     # REBEL is ~1.6GB
     model_name = "Babelscape/rebel-large"
 
-    def __init__(self, device: str | None = None):
+    def __init__(self, device: str | None = "cpu"):
         """
         Args:
             device: "cuda", "cpu", or None (auto-detect)
@@ -59,7 +59,7 @@ class KGExtractor:
                 'dict' - output is list[dict]
                  None - output is list[Triple]
             deduplicate:
-                whether to dedeuplicate the triples or not 
+                whether to dedeuplicate the triples or not
                 It is expsensive hence the default is False
         """
 
@@ -72,9 +72,9 @@ class KGExtractor:
             triples = self._parse_rebel_output(raw_output, option)
             all_triples.extend(triples)
 
-        if not deduplicate: 
+        if not deduplicate:
             return all_triples[:max_triples]
-        
+
         def normalize_triplet(t):
             if isinstance(t, tuple):
                 return t
@@ -259,7 +259,7 @@ if __name__ == "__main__":
     Bluebaum opted for 1.d4 instead. Javokhir Sindarov replied with a very rare line 
     the Harrwitz Attack in the Queen's Gambit Decline
     """
-    
+
     triples = extractor.extract(article2, 30)
     print("\nExtracted triples:")
     print(triples)
