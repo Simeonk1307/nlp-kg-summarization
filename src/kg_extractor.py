@@ -23,7 +23,7 @@ class KGExtractor:
     # REBEL is ~1.6GB
     model_name = "Babelscape/rebel-large"
 
-    def __init__(self, device: str | None = "cpu"):
+    def __init__(self, device: str = "cpu"):
         """
         Args:
             device: "cuda", "cpu", or None (auto-detect)
