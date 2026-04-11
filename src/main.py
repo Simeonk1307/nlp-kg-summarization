@@ -199,7 +199,7 @@ def main():
     )
 
     print(
-        f"Val loss:{test_results['val_loss']:.4f}  "
+        f"Test loss:{test_results['val_loss']:.4f}  "
         f"ROUGE-1: {test_results['rouge1']:.4f}  "
         f"ROUGE-2: {test_results['rouge2']:.4f}  "
         f"ROUGE-L: {test_results['rougeL']:.4f}"
