@@ -170,7 +170,9 @@ def main():
             f"Val loss: {val_results['val_loss']:.4f}  "
             f"ROUGE-1: {val_results['rouge1']:.4f}  "
             f"ROUGE-2: {val_results['rouge2']:.4f}  "
-            f"ROUGE-L: {val_results['rougeL']:.4f}"
+            f"ROUGE-L: {val_results['rougeL']:.4f}  "
+            f"Bert Score: {val_results['bert']:.4f}  "
+            f"SummaC Score: {val_results['summaC']:.4f}  "
         )
 
         # Save best model
@@ -202,7 +204,9 @@ def main():
         f"Test loss:{test_results['val_loss']:.4f}  "
         f"ROUGE-1: {test_results['rouge1']:.4f}  "
         f"ROUGE-2: {test_results['rouge2']:.4f}  "
-        f"ROUGE-L: {test_results['rougeL']:.4f}"
+        f"ROUGE-L: {test_results['rougeL']:.4f}  " 
+        f"Bert Score: {test_results['bert']:.4f}  "
+        f"SummaC Score: {test_results['summaC']:.4f}"
     )
 
 

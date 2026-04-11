@@ -3,7 +3,9 @@ from typing import List, Tuple, Dict
 from torch.utils.data import Dataset, DataLoader
 from kg_extractor import KGExtractor, Triple
 from base_model import KATSum
-from rouge_score import rouge_scorer
+from rouge_score.rouge_scorer import RougeScorer
+from summac.model_summac import SummaCZS
+import bert_score
 import numpy as np
 
 
@@ -244,8 +246,8 @@ def evaluate(
         Dict with keys: "val_loss", "rouge1", "rouge2", "rougeL"
     """
 
-    scorer = rouge_scorer.RougeScorer(["rouge1", "rouge2", "rougeL"], use_stemmer=True)
-
+    rogue_scorer = RougeScorer(["rouge1", "rouge2", "rougeL"], use_stemmer=True)
+    summac_scorer = SummaCZS(granularity="sentence", model_name="vitc", device="cpu")
     model.eval()
     total_loss = 0.0
     num_batches = 0
@@ -253,6 +255,8 @@ def evaluate(
     rouge1_scores = []
     rouge2_scores = []
     rougeL_scores = []
+    bert_scores = []
+    summac_scores = []
     rouge_count = 0
 
     for batch in dataloader:
@@ -287,6 +291,9 @@ def evaluate(
                     num_beams=4,
                 )
 
+                source_text = tokenizer.decode(input_ids[i], skip_special_tokens=True)
+                source_text = source_text.removeprefix("summarize: ")
+
                 # Decode to strings
                 generated_text = tokenizer.decode(
                     generated_ids[0], skip_special_tokens=True
@@ -298,17 +305,30 @@ def evaluate(
                 reference_text = tokenizer.decode(ref_ids, skip_special_tokens=True)
 
                 # Score
-                scores = scorer.score(reference_text, generated_text)
-                rouge1_scores.append(scores["rouge1"].fmeasure)
-                rouge2_scores.append(scores["rouge2"].fmeasure)
-                rougeL_scores.append(scores["rougeL"].fmeasure)
+                rg_scores = rogue_scorer.score(reference_text, generated_text)
+                _, _, f1_bert = bert_score.score(
+                    [generated_text], [reference_text], lang="en"
+                )
+                summac_score = summac_scorer.score(source_text, generated_text)
+                rouge1_scores.append(rg_scores["rouge1"].fmeasure)
+                rouge2_scores.append(rg_scores["rouge2"].fmeasure)
+                rougeL_scores.append(rg_scores["rougeL"].fmeasure)
+                bert_scores.append(f1_bert.mean().item())
+                summac_scores.append(summac_score['scores'][0])
                 rouge_count += 1
+                
+                print(f"Source: {source_text[:200]}")
+                print(f"Generated: {generated_text[:200]}")
+                print(f"Reference: {reference_text[:200]}")
 
     results = {
         "val_loss": total_loss / max(num_batches, 1),
         "rouge1": np.mean(rouge1_scores) if rouge1_scores else 0.0,
         "rouge2": np.mean(rouge2_scores) if rouge2_scores else 0.0,
         "rougeL": np.mean(rougeL_scores) if rougeL_scores else 0.0,
+        "rougeL": np.mean(rougeL_scores) if rougeL_scores else 0.0,
+        "bert": np.mean(bert_scores) if bert_scores else 0.0,
+        "summaC": np.mean(summac_scores) if summac_scores else 0.0,
     }
 
     return results
