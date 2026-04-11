@@ -91,7 +91,7 @@ class KATSum(nn.Module):
     """
     def __init__(
         self,
-        kg_embedder : KGEncoder,
+        kg_embedder: KGEncoder,
         base_model_name: str = "google/long-t5-tglobal-base",
         num_sidecar_layers: int = 3,
         freeze_base: bool = True,
@@ -124,14 +124,14 @@ class KATSum(nn.Module):
         hidden_dim = config.d_model  # 768 for long-t5-tglobal-base
         num_heads = config.num_heads  # 12 for long-t5-tglobal-base
 
-        num_decoder_layers : int = config.num_decoder_layers # type: ignore
+        num_decoder_layers: int = config.num_decoder_layers  # type: ignore
 
         # Decide which layers get a sidecar
         if num_sidecar_layers == -1:
             # All layers
             sidecar_indices = list(range(num_decoder_layers))
         else:
-            # Last N layers 
+            # Last N layers
             sidecar_indices = list(
                 range(num_decoder_layers - num_sidecar_layers, num_decoder_layers)
             )
@@ -151,6 +151,9 @@ class KATSum(nn.Module):
         )
 
         self.kg_sidecar_layers.to(self.device)
+        
+        print(f"Sidecar indices: {self.sidecar_indices}")
+        print(f"Number of sidecar layers: {len(self.kg_sidecar_layers)}")
 
     # Forward pass
     def forward(
@@ -164,20 +167,20 @@ class KATSum(nn.Module):
         Args:
             input_ids: Source article token IDs.
             attention_mask:  1 for real tokens, 0 for padding.
-            labels: Target summary token IDs. 
-            triples_batch:   List of Triples per batch 
-            
+            labels: Target summary token IDs.
+            triples_batch:   List of Triples per batch
+
         Returns:
             loss: Scalar cross-entropy over the summary tokens.
             logits: (batch, tgt_len, vocab_size) i.e. token distribution at each step.
 
-        Hooks are used here to intercept decoder hidden states mid-way through 
+        Hooks are used here to intercept decoder hidden states mid-way through
         the forward pass without rewriting the entire LongT5 decoder.
         """
-        
+
         # Compute KG embeddings for every item in the batch
         kg_embeddings_batch, kg_mask_batch = self._embed_triples_batch(triples_batch)
-        
+
         # Register forward hooks on decoder blocks
         hooks = []        
         def make_hook(layer_idx_in_model, sidecar_layer):
@@ -217,7 +220,7 @@ class KATSum(nn.Module):
             return_dict=True,
         )
 
-        # Remove hooks 
+        # Remove hooks
         for hook in hooks:
             hook.remove()
 
@@ -247,22 +250,24 @@ class KATSum(nn.Module):
             output_ids: (1, summary_len) tensor which is to be decoded with tokenizer.decode()
         """
         kg_embeddings, kg_mask = self._embed_triples_batch([triples])
+        kg_embeddings = kg_embeddings.repeat_interleave(num_beams, dim=0)
+        kg_mask = kg_mask.repeat_interleave(num_beams, dim=0)
 
         # Register hooks (same as in forward())
         def make_gen_hook(sidecar_layer):
             def hook(module, input, output):
                 hidden_state = output[0]
-                
+
                 updated = sidecar_layer(
                     decoder_hidden=hidden_state,
                     kg_embeddings=kg_embeddings,
                     kg_padding_mask=kg_mask,
                 )
-                
+
                 return (updated,) + output[1:]
-            
+
             return hook
-        
+
         hooks = []
         decoder_blocks = self.base_model.decoder.block
         for sidecar_position, block_idx in enumerate(self.sidecar_indices):
@@ -293,20 +298,20 @@ class KATSum(nn.Module):
         """
         Converts a batch of triple lists into a padded tensor.
 
-        This is needed as different documents have different numbers of triples. 
+        This is needed as different documents have different numbers of triples.
         To batch them, pad shorter documents with zero vectors to match the maximum.
 
         Returns:
             embeddings: (batch, max_triples, hidden_dim)
-            
+
             mask: (batch, max_triples), True where padded so that it is ignored by attention
         """
-        
+
         batch_embeddings = []
         for triples in triples_batch:
             # kg embber embed returns (1, num_triples, hidden_dim)
             # squeeze the batch dim to (num_triples, hidden_dim)
-            emb = self.kg_embedder(triples).squeeze(0)  
+            emb = self.kg_embedder(triples).squeeze(0)
             batch_embeddings.append(emb)
 
         # Find maximum number of triples in this batch
@@ -318,12 +323,12 @@ class KATSum(nn.Module):
         for emb in batch_embeddings:
             n = emb.shape[0]
             pad_size = max_triples - n
-            
+
             if pad_size > 0:
                 # Pad with zeros
                 padding = torch.zeros(pad_size, hidden_dim, device=self.device)
                 emb_padded = torch.cat([emb, padding], dim=0)
-                
+
                 # Mask: False for real triples, True for padding
                 m = torch.cat(
                     [
@@ -331,7 +336,7 @@ class KATSum(nn.Module):
                         torch.ones(pad_size, dtype=torch.bool, device=self.device),
                     ]
                 )
-                
+
             else:
                 emb_padded = emb
                 m = torch.zeros(n, dtype=torch.bool, device=self.device)
@@ -354,9 +359,16 @@ class KATSum(nn.Module):
         total = sum(p.numel() for p in self.parameters())
         trainable = sum(p.numel() for p in self.parameters() if p.requires_grad)
         frozen = total - trainable
+
+        kg_embedder_params = sum(p.numel() for p in self.kg_embedder.parameters())
+        sidecar_params = sum(p.numel() for p in self.kg_sidecar_layers.parameters())
+
         print(f"Total parameters: {total:,}")
         print(f"Trainable parameters: {trainable:,} ({100*trainable/total:.1f}%)")
         print(f"Frozen parameters: {frozen:,} ({100*frozen/total:.1f}%)")
-
+        print(f"KG Embedder params: {kg_embedder_params:,}")
+        print(f"Sidecar layer params: {sidecar_params:,}")
+        print(f"Num sidecar layers: {len(self.kg_sidecar_layers)}")
+        
 if __name__ == "__main__":
     pass
