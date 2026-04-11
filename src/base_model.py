@@ -117,7 +117,10 @@ class KATSum(nn.Module):
 
         # Store the KG embedder
         self.kg_embedder = kg_embedder
-
+        
+        for param in self.kg_embedder.encoder.parameters():
+            param.requires_grad = False 
+            
         # Build sidecar layers
         # Get model config to read hidden_dim and num_heads
         config = self.base_model.config
@@ -360,8 +363,13 @@ class KATSum(nn.Module):
         trainable = sum(p.numel() for p in self.parameters() if p.requires_grad)
         frozen = total - trainable
 
-        kg_embedder_params = sum(p.numel() for p in self.kg_embedder.parameters())
         sidecar_params = sum(p.numel() for p in self.kg_sidecar_layers.parameters())
+        
+        kg_embedder_params = sum(p.numel() for p in self.kg_embedder.parameters())
+        t5_encoder_params = sum(p.numel() for p in self.kg_embedder.encoder.parameters())
+
+        # since kg embedder has the t5 encoder params as well
+        kg_embedder_params -= t5_encoder_params
 
         print(f"Total parameters: {total:,}")
         print(f"Trainable parameters: {trainable:,} ({100*trainable/total:.1f}%)")
