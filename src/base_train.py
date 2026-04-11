@@ -2,6 +2,7 @@ import torch
 from typing import List, Tuple, Dict
 from torch.utils.data import Dataset, DataLoader
 from kg_extractor import KGExtractor, Triple
+from base_model import KATSum
 import numpy as np
 
 
@@ -147,3 +148,78 @@ def collate_fn(batch: List[Dict], pad_token_id: int) -> Dict:
         "labels": torch.tensor(labels_batch, dtype=torch.long),
         "triples_batch": triples_batch,  # stays as a list, KG Embedder will handle it
     }
+
+
+def train_one_epoch(
+    model: KATSum,
+    dataloader: DataLoader,
+    optimizer: torch.optim.Optimizer,
+    scheduler,
+    device: str = "cpu",
+    grad_accumulation_steps: int = 4,
+) -> float:
+    """
+    Train for one full pass over the dataset.
+
+    Args:
+        model: KATSum instance.
+        dataloader: PyTorch's DataLoader wrapping the training dataset.
+        optimizer: AdamW optimizer over trainable parameters only.
+        scheduler: Learning rate scheduler.
+        device: "cuda" or "cpu".
+        grad_accumulation_steps: How many batches to accumulate gradients over before calling optimizer.step().
+
+    Returns:
+        Average loss over the epoch.
+    """
+
+    model.train()
+    total_loss = 0.0
+    num_batches = 0
+
+    # Reset gradients from previous epoch
+    optimizer.zero_grad()
+
+    for step, batch in enumerate(dataloader):
+        # Move tensors to the right device
+        input_ids = batch["input_ids"].to(device)
+        attention_mask = batch["attention_mask"].to(device)
+        labels = batch["labels"].to(device)
+        triples_batch = batch["triples_batch"]  # stays on CPU since it's a list
+
+        # Forward pass — returns (loss, logits)
+        loss, logits = model(
+            input_ids=input_ids,
+            attention_mask=attention_mask,
+            labels=labels,
+            triples_batch=triples_batch,
+        )
+
+        # Normalise loss by accumulation steps
+        loss = loss / grad_accumulation_steps
+
+        # Backward pass, computes gradients for all requires_grad parameters
+        loss.backward()
+
+        # Only update weights every grad_accumulation_steps batches
+        if (step + 1) % grad_accumulation_steps == 0:
+            # Clip gradients to prevent exploding gradient problem
+            torch.nn.utils.clip_grad_norm_(model.trainable_parameters(), max_norm=1.0)
+
+            optimizer.step()
+            scheduler.step()
+            optimizer.zero_grad()
+
+        total_loss += (
+            loss.item() * grad_accumulation_steps
+        )  # undo normalisation for logging
+
+        num_batches += 1
+
+        if step % 50 == 0:
+            print(
+                f"  Step {step}/{len(dataloader)}  loss={loss.item()*grad_accumulation_steps:.4f}  "
+                f"lr={scheduler.get_last_lr()[0]:.2e}"
+            )
+
+    return total_loss / num_batches
