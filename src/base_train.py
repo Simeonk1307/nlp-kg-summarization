@@ -3,6 +3,7 @@ from typing import List, Tuple, Dict
 from torch.utils.data import Dataset, DataLoader
 from kg_extractor import KGExtractor, Triple
 from base_model import KATSum
+from rouge_score import rouge_scorer
 import numpy as np
 
 
@@ -223,3 +224,91 @@ def train_one_epoch(
             )
 
     return total_loss / num_batches
+
+
+@torch.no_grad()
+def evaluate(
+    model: KATSum,
+    dataloader: DataLoader,
+    tokenizer,
+    device: str,
+    num_rouge_examples: int = 100,
+) -> Dict:
+    """
+    Evaluate on validation set i.e. compute loss and ROUGE scores.
+
+    Args:
+        num_rouge_examples: Generating summaries is slow. We compute ROUGE
+                            on a subset of validation examples.
+    Returns:
+        Dict with keys: "val_loss", "rouge1", "rouge2", "rougeL"
+    """
+
+    scorer = rouge_scorer.RougeScorer(["rouge1", "rouge2", "rougeL"], use_stemmer=True)
+
+    model.eval()
+    total_loss = 0.0
+    num_batches = 0
+
+    rouge1_scores = []
+    rouge2_scores = []
+    rougeL_scores = []
+    rouge_count = 0
+
+    for batch in dataloader:
+        input_ids = batch["input_ids"].to(device)
+        attention_mask = batch["attention_mask"].to(device)
+        labels = batch["labels"].to(device)
+        triples_batch = batch["triples_batch"]
+
+        # Compute loss
+        loss, logits = model(
+            input_ids=input_ids,
+            attention_mask=attention_mask,
+            labels=labels,
+            triples_batch=triples_batch,
+        )
+
+        total_loss += loss.item()
+        num_batches += 1
+
+        # Generate and score a few examples for ROUGE
+        if rouge_count < num_rouge_examples:
+            for i in range(input_ids.shape[0]):
+                if rouge_count >= num_rouge_examples:
+                    break
+
+                # Generate summary for example i
+                generated_ids = model.generate_summary(
+                    input_ids=input_ids[i : i + 1],
+                    attention_mask=attention_mask[i : i + 1],
+                    triples=triples_batch[i],
+                    max_new_tokens=512,
+                    num_beams=4,
+                )
+
+                # Decode to strings
+                generated_text = tokenizer.decode(
+                    generated_ids[0], skip_special_tokens=True
+                )
+
+                # Decode reference (replace -100 with pad_token_id before decoding)
+                ref_ids = labels[i].clone()
+                ref_ids[ref_ids == -100] = tokenizer.pad_token_id
+                reference_text = tokenizer.decode(ref_ids, skip_special_tokens=True)
+
+                # Score
+                scores = scorer.score(reference_text, generated_text)
+                rouge1_scores.append(scores["rouge1"].fmeasure)
+                rouge2_scores.append(scores["rouge2"].fmeasure)
+                rougeL_scores.append(scores["rougeL"].fmeasure)
+                rouge_count += 1
+
+    results = {
+        "val_loss": total_loss / max(num_batches, 1),
+        "rouge1": np.mean(rouge1_scores) if rouge1_scores else 0.0,
+        "rouge2": np.mean(rouge2_scores) if rouge2_scores else 0.0,
+        "rougeL": np.mean(rougeL_scores) if rougeL_scores else 0.0,
+    }
+
+    return results
