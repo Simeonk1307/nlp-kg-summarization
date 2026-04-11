@@ -108,7 +108,18 @@ class KGExtractor:
                 deduped.append(t)
 
         return deduped[:max_triples]
-
+    
+    
+    def extract_batch(self, texts: List[str], max_triples: int = 100) -> List[List[Triple]]:
+        """
+        Extract triples from a list of text (one list of triples per text).
+        
+        Args:
+            texts: list of documents
+            max_triples: maximum triples, default = 100
+        """
+        return [self.extract(t, max_triples) for t in texts]
+    
     def _run_model(self, text: str) -> str:
         """
         Run REBEL on a single chunk, return raw output string
