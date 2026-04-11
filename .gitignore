@@ -208,3 +208,6 @@ __marimo__/
 
 # Scratch folder contains scratch or temporary code for checks and tests
 scratch/
+
+# Checkpoints of model
+checkpoints/
