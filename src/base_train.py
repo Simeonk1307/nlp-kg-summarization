@@ -4,6 +4,7 @@ from torch.utils.data import Dataset, DataLoader
 from kg_extractor import KGExtractor, Triple
 import numpy as np
 
+
 class SummarizationDataset(Dataset):
     """
     Holds tokenized articles, summaries and their extracted KG triples.
@@ -18,6 +19,7 @@ class SummarizationDataset(Dataset):
         cache_triples: If True, extract and cache triples once.
                        Extraction is slow when using REBEL model, so caching saves time.
     """
+
     def __init__(
         self,
         articles: List[str],
@@ -93,8 +95,55 @@ class SummarizationDataset(Dataset):
             triples = self.extractor.extract(text)
 
         return {
-            "input_ids": self.input_ids[idx],  
-            "attention_mask": self.attention_masks[idx],  
-            "labels": self.labels[idx], 
-            "triples": triples,  
+            "input_ids": self.input_ids[idx],
+            "attention_mask": self.attention_masks[idx],
+            "labels": self.labels[idx],
+            "triples": triples,
         }
+
+
+def collate_fn(batch: List[Dict], pad_token_id: int) -> Dict:
+    """
+    Takes a list of individual examples and stacks them into batch tensors.
+
+    For labels, T5 uses -100 so the loss function ignores positions where the label is -100.
+    So labels are padded with -100, not with the pad token.
+
+    Args:
+        batch: List of dicts from SummarizationDataset.__getitem__()
+        pad_token_id: The tokenizer's padding token ID (for input padding)
+
+    Returns:
+        Dict with keys: input_ids, attention_mask, labels, triples_batch
+    """
+
+    # Find the maximum lengths in this batch
+    max_src_len = max(len(item["input_ids"]) for item in batch)
+    max_tgt_len = max(len(item["labels"]) for item in batch)
+
+    input_ids_batch = []
+    attention_mask_batch = []
+    labels_batch = []
+    triples_batch = []
+
+    for item in batch:
+        src_len = len(item["input_ids"])
+        tgt_len = len(item["labels"])
+
+        # Pad input_ids and attention_mask on the right
+        src_pad = max_src_len - src_len
+        input_ids_batch.append(item["input_ids"] + [pad_token_id] * src_pad)
+        attention_mask_batch.append(item["attention_mask"] + [0] * src_pad)
+
+        # Pad labels with -100
+        tgt_pad = max_tgt_len - tgt_len
+        labels_batch.append(item["labels"] + [-100] * tgt_pad)
+
+        triples_batch.append(item["triples"])
+
+    return {
+        "input_ids": torch.tensor(input_ids_batch, dtype=torch.long),
+        "attention_mask": torch.tensor(attention_mask_batch, dtype=torch.long),
+        "labels": torch.tensor(labels_batch, dtype=torch.long),
+        "triples_batch": triples_batch,  # stays as a list, KG Embedder will handle it
+    }
