@@ -37,18 +37,10 @@ class KGEncoder(nn.Module):
     def triples_to_text(self, triples: List[Triple]) -> List[str]:
         """
         Converting triples to natural language strings.
-
-        T5 was pretrained on text with explicit task prefixes for example "summarize:", 
-        Using labelled fields (head:, relation:, tail:) gives the encoder
-        context about the role of each part instead of thinking it's just three random words.
-        
-        Example:
-            ("Albert Einstein", "awarded", "Nobel Prize") will become
-            "head: Albert Einstein | relation: awarded | tail: Nobel Prize"
         """
         texts = []
         for head, relation, tail in triples:
-            text = f"head: {head} | relation: {relation} | tail: {tail}"
+            text = f"{head} {relation} {tail}"
             texts.append(text)
         return texts
 
