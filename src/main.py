@@ -24,7 +24,7 @@ def main():
     LR = 3e-4
     SRC_MAX_LEN = 4096
     TGT_MAX_LEN = 256
-    NUM_SIDECAR_LAYERS = 1
+    NUM_SIDECAR_LAYERS = 3
     FREEZE_BASE = True
     DEVICE = "cpu"
 
@@ -38,14 +38,14 @@ def main():
     print(f"Loading dataset...")
     dataset = load_dataset("EdinburghNLP/xsum")
 
-    train_articles = [d["document"] for d in dataset["train"]][:1]
-    train_summaries = [d["summary"] for d in dataset["train"]][:1]
+    train_articles = [d["document"] for d in dataset["train"]][:5]
+    train_summaries = [d["summary"] for d in dataset["train"]][:5]
 
-    val_articles = [d["document"] for d in dataset["validation"]][:1]
-    val_summaries = [d["summary"] for d in dataset["validation"]][:1]
+    val_articles = [d["document"] for d in dataset["validation"]][:2]
+    val_summaries = [d["summary"] for d in dataset["validation"]][:2]
 
-    test_articles = [d["document"] for d in dataset["test"]][:1]
-    test_summaries = [d["summary"] for d in dataset["test"]][:1]
+    test_articles = [d["document"] for d in dataset["test"]][:2]
+    test_summaries = [d["summary"] for d in dataset["test"]][:2]
 
     # Build KG extractor
     extractor = KGExtractor(device=DEVICE)
@@ -191,7 +191,11 @@ def main():
             save_path = Path(SAVE_DIR) / f"best_checkpoint.pt"
             torch.save(checkpoint, save_path)
             print(f"Saved best model to {save_path}")
-
+            
+    print(f"\n{'='*60}")
+    print(f"Testing ON TEST Set...")
+    print(f"{'='*60}")
+    
     # Test on dataset
     test_results = evaluate(
         model=model,
