@@ -34,13 +34,14 @@ class KGSidecarLayer(nn.Module):
             batch_first=True,
         )
 
-        # Dropout on the KG context before fusion
-        self.dropout = nn.Dropout(dropout)
-
         # Fusion gate: maps from decoder hidden state to a scalar in [0, 1]
         self.fusion_gate = nn.Linear(hidden_dim, 1)
+        
+        # Init bias to -3.0 so sigmoid output starts at ~0.05
+        # To preserve pretrained T5 representations early in training
+        nn.init.constant_(self.fusion_gate.bias, -3.0)
 
-        # LayerNorm after fusion for training stability
+        # LayerNorm before fusion for training stability
         self.layer_norm = nn.LayerNorm(hidden_dim)
 
     def forward(
@@ -58,18 +59,15 @@ class KGSidecarLayer(nn.Module):
             value=kg_embeddings,
             key_padding_mask=kg_padding_mask,
         )
+        
         # kg_context shape: (batch, tgt_len, hidden_dim)
-
-        kg_context = self.dropout(kg_context)
-
+        kg_context = self.layer_norm(kg_context)
+        
         gate = torch.sigmoid(self.fusion_gate(decoder_hidden))
         # gate output shape: (batch, tgt_len, 1)
 
-        blended = (1 - gate) * decoder_hidden + gate * kg_context
-        # blended shape: (batch, tgt_len, hidden_dim)
-
-        # residual + layernorm
-        output = self.layer_norm(blended + decoder_hidden)
+        # output = self.gate * blended + decoder_hidden
+        output = decoder_hidden + gate * kg_context
 
         # output shape: (batch, tgt_len, hidden_dim)
         return output
@@ -89,6 +87,7 @@ class KATSum(nn.Module):
         freeze_base: If True, freeze all original LongT5 weights.
                      Only the new KG layers train. Default = True.
     """
+
     def __init__(
         self,
         kg_embedder: KGEncoder,
@@ -105,9 +104,11 @@ class KATSum(nn.Module):
             self.device = device
 
         # Load the base LongT5 model
-        self.base_model = LongT5ForConditionalGeneration.from_pretrained(
+        self.base_model: (
+            LongT5ForConditionalGeneration
+        ) = LongT5ForConditionalGeneration.from_pretrained(
             base_model_name
-        )
+        )  # type: ignore
         self.base_model.to(self.device)
 
         # Freeze base weights
@@ -117,10 +118,10 @@ class KATSum(nn.Module):
 
         # Store the KG embedder
         self.kg_embedder = kg_embedder
-        
+
         for param in self.kg_embedder.encoder.parameters():
-            param.requires_grad = False 
-            
+            param.requires_grad = False
+
         # Build sidecar layers
         # Get model config to read hidden_dim and num_heads
         config = self.base_model.config
@@ -128,6 +129,8 @@ class KATSum(nn.Module):
         num_heads = config.num_heads  # 12 for long-t5-tglobal-base
 
         num_decoder_layers: int = config.num_decoder_layers  # type: ignore
+
+        print(f"Number of decoder layers for KATSUM model: {num_decoder_layers}")
 
         # Decide which layers get a sidecar
         if num_sidecar_layers == -1:
@@ -154,7 +157,7 @@ class KATSum(nn.Module):
         )
 
         self.kg_sidecar_layers.to(self.device)
-        
+
         print(f"Sidecar indices: {self.sidecar_indices}")
         print(f"Number of sidecar layers: {len(self.kg_sidecar_layers)}")
 
@@ -185,11 +188,13 @@ class KATSum(nn.Module):
         kg_embeddings_batch, kg_mask_batch = self._embed_triples_batch(triples_batch)
 
         # Register forward hooks on decoder blocks
-        hooks = []        
+        hooks = []
+
         def make_hook(layer_idx_in_model, sidecar_layer):
             """
             Returns a hook function for a specific decoder block.
             """
+
             def hook(module, input, output):
                 # hidden_state shape: (batch, tgt_len, hidden_dim)
                 hidden_state = output[0]
@@ -209,8 +214,12 @@ class KATSum(nn.Module):
         # Register hooks on the decoder blocks that should have sidecars
         decoder_blocks = self.base_model.decoder.block
         for sidecar_position, block_idx in enumerate(self.sidecar_indices):
-            hook = decoder_blocks[block_idx].register_forward_hook(
-                make_hook(block_idx, self.kg_sidecar_layers[sidecar_position])
+            hook = (
+                decoder_blocks[block_idx]
+                .layer[1]
+                .register_forward_hook(
+                    make_hook(block_idx, self.kg_sidecar_layers[sidecar_position])
+                )
             )
             hooks.append(hook)
 
@@ -292,7 +301,10 @@ class KATSum(nn.Module):
         for hook in hooks:
             hook.remove()
 
-        return output_ids
+        if isinstance(output_ids, torch.Tensor):
+            return output_ids
+
+        return output_ids.sequences
 
     # Helper Methods
     def _embed_triples_batch(
@@ -364,9 +376,11 @@ class KATSum(nn.Module):
         frozen = total - trainable
 
         sidecar_params = sum(p.numel() for p in self.kg_sidecar_layers.parameters())
-        
+
         kg_embedder_params = sum(p.numel() for p in self.kg_embedder.parameters())
-        t5_encoder_params = sum(p.numel() for p in self.kg_embedder.encoder.parameters())
+        t5_encoder_params = sum(
+            p.numel() for p in self.kg_embedder.encoder.parameters()
+        )
 
         # since kg embedder has the t5 encoder params as well
         kg_embedder_params -= t5_encoder_params
@@ -377,6 +391,7 @@ class KATSum(nn.Module):
         print(f"KG Embedder params: {kg_embedder_params:,}")
         print(f"Sidecar layer params: {sidecar_params:,}")
         print(f"Num sidecar layers: {len(self.kg_sidecar_layers)}")
-        
+
+
 if __name__ == "__main__":
     pass
