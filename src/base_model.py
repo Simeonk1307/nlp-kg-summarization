@@ -66,7 +66,7 @@ class KGSidecarLayer(nn.Module):
         gate = torch.sigmoid(self.fusion_gate(decoder_hidden))
         # gate output shape: (batch, tgt_len, 1)
 
-        # output = self.gate * blended + decoder_hidden
+        # output is a mix of decoder hidden states and kg_context
         output = decoder_hidden + gate * kg_context
 
         # output shape: (batch, tgt_len, hidden_dim)
