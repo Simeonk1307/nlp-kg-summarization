@@ -317,9 +317,10 @@ def evaluate(
                 summac_scores.append(summac_score['scores'][0])
                 rouge_count += 1
                 
-                print(f"Source: {source_text[:200]}")
-                print(f"Generated: {generated_text[:200]}")
-                print(f"Reference: {reference_text[:200]}")
+                print(f"Source: {source_text}")
+                print(f"Generated: {generated_text}")
+                print(f"Triples : {triples_batch[i]}")
+                print(f"Reference: {reference_text}")
 
     results = {
         "val_loss": total_loss / max(num_batches, 1),
