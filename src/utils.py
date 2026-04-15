@@ -28,11 +28,10 @@ class SummarizationDataset(Dataset):
         self,
         articles: List[str],
         summaries: List[str],
+        triples: List[List[Triple]],
         tokenizer,
-        extractor: KGExtractor,
-        src_max_len: int = 4096,
-        tgt_max_len: int = 256,
-        cache_triples: bool = True,
+        src_max_len: int = 4096,  # maximum tokens for article
+        tgt_max_len: int = 512,  # maximum tokens for summary
     ):
         assert len(articles) == len(
             summaries
@@ -67,20 +66,7 @@ class SummarizationDataset(Dataset):
             return_tensors=None,
         )
         self.labels = tgt_encoding["input_ids"]
-
-        # Either Extract or cache triples
-        if cache_triples:
-            print(
-                f"Extracting KG triples from {len(articles)} articles (this may take a while)..."
-            )
-            self.triples_cache = extractor.extract_batch(articles)
-            print(
-                f"Extraction done. "
-                f"Average triples per article: {np.mean([len(t) for t in self.triples_cache]):.1f}"
-            )
-        else:
-            self.extractor = extractor
-            self.triples_cache = None
+        self.triples = triples
 
     def __len__(self) -> int:
         return len(self.input_ids)
@@ -91,18 +77,11 @@ class SummarizationDataset(Dataset):
         All values are Python lists and not tensors yet.
         collate_fn will convert them to tensors.
         """
-        if self.triples_cache is not None:
-            triples = self.triples_cache[idx]
-        else:
-            # Lazy extraction , decode token IDs back to text for extraction
-            text = self.tokenizer.decode(self.input_ids[idx], skip_special_tokens=True)
-            triples = self.extractor.extract(text)
-
         return {
             "input_ids": self.input_ids[idx],
             "attention_mask": self.attention_masks[idx],
             "labels": self.labels[idx],
-            "triples": triples,
+            "triples": self.triples[idx],
         }
 
 
@@ -158,6 +137,7 @@ def train_one_epoch(
     dataloader: DataLoader,
     optimizer: torch.optim.Optimizer,
     scheduler,
+    logger,
     device: str = "cpu",
     grad_accumulation_steps: int = 4,
 ) -> float:
@@ -203,6 +183,13 @@ def train_one_epoch(
 
         # Backward pass, computes gradients for all requires_grad parameters
         loss.backward()
+        
+        if num_batches % 100 == 0: # Check every 100 batches to avoid cluttering logs
+            grad_val = model.kg_sidecar_layers[0].weight.grad
+            if grad_val is not None:
+                logger.info(f"Sidecar Grad Mean: {grad_val.mean().item():.8f}")
+            else:
+                logger.error("Sidecar has no gradients, check connectivity.")
 
         # Only update weights every grad_accumulation_steps batches
         if (step + 1) % grad_accumulation_steps == 0:
@@ -219,9 +206,9 @@ def train_one_epoch(
 
         num_batches += 1
 
-        if step % 50 == 0:
-            print(
-                f"  Step {step}/{len(dataloader)}  loss={loss.item()*grad_accumulation_steps:.4f}  "
+        if step % 10 == 0:
+            logger.info(
+                f"Step {step}/{len(dataloader)}  loss={loss.item()*grad_accumulation_steps:.4f}  "
                 f"lr={scheduler.get_last_lr()[0]:.2e}"
             )
 
@@ -234,14 +221,15 @@ def evaluate(
     dataloader: DataLoader,
     tokenizer,
     device: str,
-    num_rouge_examples: int = 100,
+    num_examples: int = 1500,
+    max_new_tokens: int = 512,
 ) -> Dict:
     """
     Evaluate on validation set i.e. compute loss and ROUGE scores.
 
     Args:
-        num_rouge_examples: Generating summaries is slow. We compute ROUGE
-                            on a subset of validation examples.
+        num_rouge_examples: Number of validation examples to evaluate
+        max_new_tokens: Number of tokens of summary to generate
     Returns:
         Dict with keys: "val_loss", "rouge1", "rouge2", "rougeL"
     """
@@ -257,7 +245,7 @@ def evaluate(
     rougeL_scores = []
     bert_scores = []
     summac_scores = []
-    rouge_count = 0
+    num_count = 0
 
     for batch in dataloader:
         input_ids = batch["input_ids"].to(device)
@@ -277,9 +265,9 @@ def evaluate(
         num_batches += 1
 
         # Generate and score a few examples for ROUGE
-        if rouge_count < num_rouge_examples:
+        if num_count < num_examples:
             for i in range(input_ids.shape[0]):
-                if rouge_count >= num_rouge_examples:
+                if num_count >= num_examples:
                     break
 
                 # Generate summary for example i
@@ -287,12 +275,11 @@ def evaluate(
                     input_ids=input_ids[i : i + 1],
                     attention_mask=attention_mask[i : i + 1],
                     triples=triples_batch[i],
-                    max_new_tokens=512,
-                    num_beams=4,
+                    max_new_tokens=max_new_tokens,
+                    num_beams=2,
                 )
 
                 source_text = tokenizer.decode(input_ids[i], skip_special_tokens=True)
-                source_text = source_text.removeprefix("summarize: ")
 
                 # Decode to strings
                 generated_text = tokenizer.decode(
@@ -307,20 +294,18 @@ def evaluate(
                 # Score
                 rg_scores = rogue_scorer.score(reference_text, generated_text)
                 _, _, f1_bert = bert_score.score(
-                    [generated_text], [reference_text], lang="en"
+                    [generated_text],
+                    [reference_text],
+                    lang="en",
+                    model_type="roberta-large",
                 )
                 summac_score = summac_scorer.score(source_text, generated_text)
                 rouge1_scores.append(rg_scores["rouge1"].fmeasure)
                 rouge2_scores.append(rg_scores["rouge2"].fmeasure)
                 rougeL_scores.append(rg_scores["rougeL"].fmeasure)
                 bert_scores.append(f1_bert.mean().item())
-                summac_scores.append(summac_score['scores'][0])
-                rouge_count += 1
-                
-                print(f"Source: {source_text}")
-                print(f"Generated: {generated_text}")
-                print(f"Triples : {triples_batch[i]}")
-                print(f"Reference: {reference_text}")
+                summac_scores.append(summac_score["scores"][0])
+                num_count += 1
 
     results = {
         "val_loss": total_loss / max(num_batches, 1),
