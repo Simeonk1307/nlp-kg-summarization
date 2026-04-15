@@ -211,3 +211,6 @@ scratch/
 
 # Checkpoints of model
 checkpoints/
+
+# Dataset
+dataset/
