@@ -21,9 +21,9 @@ Triple = Tuple[str, str, str]
 class KGExtractor:
 
     # REBEL is ~1.6GB
-    model_name = "./models/rebel-large"
+    model_name = "Babelscape/rebel-large"
 
-    def __init__(self, device: str = "cpu"):
+    def __init__(self, device: str | None = "cpu"):
         """
         Args:
             device: "cuda", "cpu", or None (auto-detect)
@@ -36,10 +36,10 @@ class KGExtractor:
 
         print(f"Loading REBEL extractor on {self.device}...")
         self.tokenizer = AutoTokenizer.from_pretrained(
-            self.model_name, local_files_only=True
+            self.model_name
         )
         self.model = AutoModelForSeq2SeqLM.from_pretrained(
-            self.model_name, local_files_only=True
+            self.model_name
         )
         self.model.eval()
         self.model.to(self.device)
@@ -76,7 +76,8 @@ class KGExtractor:
         return all_triples
 
     def extract_batch(
-        self, texts: List[str],
+        self,
+        texts: List[str],
     ) -> List[List[Triple]]:
         """
         Extract triples from a list of text (one list of triples per text).
@@ -144,7 +145,7 @@ class KGExtractor:
             chunk = chunk.strip()
             if not chunk:
                 continue
-            
+
             parts = re.split(r"<subj>|<obj>", chunk)
 
             if len(parts) < 3:
@@ -152,7 +153,6 @@ class KGExtractor:
 
             head, tail, rel = parts[0].strip(), parts[1].strip(), parts[2].strip()
 
-            print(f'{head} {rel} {tail}')
             head = re.sub(r"</s>|<s>|<pad>", "", head).strip()
             rel = re.sub(r"</s>|<s>|<pad>", "", rel).strip()
             tail = re.sub(r"</s>|<s>|<pad>", "", tail).strip()
@@ -164,6 +164,7 @@ class KGExtractor:
                     triplets.append((head, rel, tail))
 
         return triplets
+
 
 # Example use case
 if __name__ == "__main__":
