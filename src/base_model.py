@@ -91,7 +91,7 @@ class KATSum(nn.Module):
     def __init__(
         self,
         kg_embedder: KGEncoder,
-        base_model_name: str = "google/long-t5-tglobal-base",
+        base_model,
         num_sidecar_layers: int = 3,
         freeze_base: bool = True,
         device: str | None = "cpu",
@@ -104,11 +104,7 @@ class KATSum(nn.Module):
             self.device = device
 
         # Load the base LongT5 model
-        self.base_model: (
-            LongT5ForConditionalGeneration
-        ) = LongT5ForConditionalGeneration.from_pretrained(
-            base_model_name
-        )  # type: ignore
+        self.base_model = base_model 
         self.base_model.to(self.device)
 
         # Freeze base weights
