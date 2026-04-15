@@ -94,7 +94,7 @@ class KATSum(nn.Module):
         base_model,
         num_sidecar_layers: int = 3,
         freeze_base: bool = True,
-        device: str | None = "cpu",
+        device: str | None = None,
     ):
         super().__init__()
 
@@ -114,9 +114,6 @@ class KATSum(nn.Module):
 
         # Store the KG embedder
         self.kg_embedder = kg_embedder
-
-        for param in self.kg_embedder.encoder.parameters():
-            param.requires_grad = False
 
         # Build sidecar layers
         # Get model config to read hidden_dim and num_heads
