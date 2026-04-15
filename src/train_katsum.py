@@ -13,6 +13,7 @@ from torch.utils.data import Dataset, DataLoader
 from pathlib import Path
 from base_model import KATSum
 from datasets import load_from_disk
+from rouge_score.rouge_scorer import RougeScorer
 import logging
 import argparse
 
@@ -41,8 +42,6 @@ def save_checkpoint(
         "val_rouge1": val_results["rouge1"],
         "val_rouge2": val_results["rouge2"],
         "val_rougeL": val_results["rougeL"],
-        "bert_score": val_results["bert"],
-        "summaC": val_results["summaC"],
     }
     torch.save(checkpoint, path)
     log.info(f"{'[BEST] ' if is_best else ''}Checkpoint saved to {path}")
@@ -156,6 +155,8 @@ def main(args):
         optimizer, start_factor=0.1, end_factor=1.0, total_iters=warmup_steps
     )
 
+    rouge_scorer = RougeScorer(["rouge1", "rouge2", "rougeL"], use_stemmer=True)
+
     # Resume logic
     start_epoch = 0
     best_val_loss = float("inf")
@@ -196,6 +197,7 @@ def main(args):
             dataloader=val_loader,
             tokenizer=tokenizer,
             device=DEVICE,
+            rouge_scorer=rouge_scorer,
             max_new_tokens=512,
         )
 
@@ -204,8 +206,6 @@ def main(args):
             f"ROUGE-1: {val_results['rouge1']:.4f}  "
             f"ROUGE-2: {val_results['rouge2']:.4f}  "
             f"ROUGE-L: {val_results['rougeL']:.4f}  "
-            f"BERTScore: {val_results['bert']:.4f}  "
-            f"SummaC: {val_results['summaC']:.4f}"
         )
 
         is_best = val_results["val_loss"] < best_val_loss

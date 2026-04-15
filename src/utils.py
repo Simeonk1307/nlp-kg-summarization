@@ -4,8 +4,6 @@ from torch.utils.data import Dataset, DataLoader
 from kg_extractor import KGExtractor, Triple
 from base_model import KATSum
 from rouge_score.rouge_scorer import RougeScorer
-from summac.model_summac import SummaCZS
-import bert_score
 import numpy as np
 
 
@@ -183,13 +181,32 @@ def train_one_epoch(
 
         # Backward pass, computes gradients for all requires_grad parameters
         loss.backward()
-        
-        if num_batches % 100 == 0: # Check every 100 batches to avoid cluttering logs
-            grad_val = model.kg_sidecar_layers[0].weight.grad
-            if grad_val is not None:
-                logger.info(f"Sidecar Grad Mean: {grad_val.mean().item():.8f}")
-            else:
-                logger.error("Sidecar has no gradients, check connectivity.")
+
+        if num_batches % 100 == 0:  # Check every 100 batches to avoid cluttering logs
+
+            def log_grad(name, param):
+                if param is None:
+                    logger.warning(f"{name}: parameter is None")
+                    return
+                if param.grad is None:
+                    logger.warning(f"{name}: grad is None")
+                    return
+
+                grad = param.grad
+                logger.info(
+                    f"{name}: mean={grad.mean().item():.8f}, "
+                    f"std={grad.std().item():.8f}, "
+                    f"norm={grad.norm().item():.8f}"
+                )
+
+            embedder = model.kg_embedder
+            log_grad("Embedder.projection.weight", embedder.projection.weight)
+            log_grad("Embedder.layer_norm.weight", embedder.layer_norm.weight)
+
+            for i in range(model.num_sidecar_layers):
+                sidecar = model.kg_sidecar_layers[i]
+                log_grad(f"Sidecar[{i}].fusion_gate.weight", sidecar.fusion_gate.weight)
+                log_grad(f"Sidecar[{i}].layer_norm.weight", sidecar.layer_norm.weight)
 
         # Only update weights every grad_accumulation_steps batches
         if (step + 1) % grad_accumulation_steps == 0:
@@ -221,6 +238,7 @@ def evaluate(
     dataloader: DataLoader,
     tokenizer,
     device: str,
+    rouge_scorer: RougeScorer,
     num_examples: int = 1500,
     max_new_tokens: int = 512,
 ) -> Dict:
@@ -233,9 +251,6 @@ def evaluate(
     Returns:
         Dict with keys: "val_loss", "rouge1", "rouge2", "rougeL"
     """
-
-    rogue_scorer = RougeScorer(["rouge1", "rouge2", "rougeL"], use_stemmer=True)
-    summac_scorer = SummaCZS(granularity="sentence", model_name="vitc", device="cpu")
     model.eval()
     total_loss = 0.0
     num_batches = 0
@@ -243,8 +258,6 @@ def evaluate(
     rouge1_scores = []
     rouge2_scores = []
     rougeL_scores = []
-    bert_scores = []
-    summac_scores = []
     num_count = 0
 
     for batch in dataloader:
@@ -279,8 +292,6 @@ def evaluate(
                     num_beams=2,
                 )
 
-                source_text = tokenizer.decode(input_ids[i], skip_special_tokens=True)
-
                 # Decode to strings
                 generated_text = tokenizer.decode(
                     generated_ids[0], skip_special_tokens=True
@@ -292,19 +303,10 @@ def evaluate(
                 reference_text = tokenizer.decode(ref_ids, skip_special_tokens=True)
 
                 # Score
-                rg_scores = rogue_scorer.score(reference_text, generated_text)
-                _, _, f1_bert = bert_score.score(
-                    [generated_text],
-                    [reference_text],
-                    lang="en",
-                    model_type="roberta-large",
-                )
-                summac_score = summac_scorer.score(source_text, generated_text)
+                rg_scores = rouge_scorer.score(reference_text, generated_text)
                 rouge1_scores.append(rg_scores["rouge1"].fmeasure)
                 rouge2_scores.append(rg_scores["rouge2"].fmeasure)
                 rougeL_scores.append(rg_scores["rougeL"].fmeasure)
-                bert_scores.append(f1_bert.mean().item())
-                summac_scores.append(summac_score["scores"][0])
                 num_count += 1
 
     results = {
@@ -312,9 +314,6 @@ def evaluate(
         "rouge1": np.mean(rouge1_scores) if rouge1_scores else 0.0,
         "rouge2": np.mean(rouge2_scores) if rouge2_scores else 0.0,
         "rougeL": np.mean(rougeL_scores) if rougeL_scores else 0.0,
-        "rougeL": np.mean(rougeL_scores) if rougeL_scores else 0.0,
-        "bert": np.mean(bert_scores) if bert_scores else 0.0,
-        "summaC": np.mean(summac_scores) if summac_scores else 0.0,
     }
 
     return results

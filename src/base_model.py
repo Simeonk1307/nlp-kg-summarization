@@ -36,7 +36,7 @@ class KGSidecarLayer(nn.Module):
 
         # Fusion gate: maps from decoder hidden state to a scalar in [0, 1]
         self.fusion_gate = nn.Linear(hidden_dim, 1)
-        
+
         # Init bias to -3.0 so sigmoid output starts at ~0.05
         # To preserve pretrained T5 representations early in training
         nn.init.constant_(self.fusion_gate.bias, -3.0)
@@ -60,9 +60,11 @@ class KGSidecarLayer(nn.Module):
             key_padding_mask=kg_padding_mask,
         )
         
+        self.last_attn_weights = attention_weights
+        
         # kg_context shape: (batch, tgt_len, hidden_dim)
         kg_context = self.layer_norm(kg_context)
-        
+
         gate = torch.sigmoid(self.fusion_gate(decoder_hidden))
         # gate output shape: (batch, tgt_len, 1)
 
@@ -104,7 +106,7 @@ class KATSum(nn.Module):
             self.device = device
 
         # Load the base LongT5 model
-        self.base_model = base_model 
+        self.base_model = base_model
         self.base_model.to(self.device)
 
         # Freeze base weights
@@ -150,7 +152,7 @@ class KATSum(nn.Module):
         )
 
         self.kg_sidecar_layers.to(self.device)
-
+        self.num_sidecar_layers = len(self.kg_sidecar_layers)
         print(f"Sidecar indices: {self.sidecar_indices}")
         print(f"Number of sidecar layers: {len(self.kg_sidecar_layers)}")
 
