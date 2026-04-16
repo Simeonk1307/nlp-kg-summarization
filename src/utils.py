@@ -243,13 +243,7 @@ def evaluate(
     max_new_tokens: int = 512,
 ) -> Dict:
     """
-    Evaluate on validation set i.e. compute loss and ROUGE scores.
-
-    Args:
-        num_rouge_examples: Number of validation examples to evaluate
-        max_new_tokens: Number of tokens of summary to generate
-    Returns:
-        Dict with keys: "val_loss", "rouge1", "rouge2", "rougeL"
+    Evaluate on validation set - compute loss and ROUGE scores using batched generation.
     """
     model.eval()
     total_loss = 0.0
@@ -277,43 +271,51 @@ def evaluate(
         total_loss += loss.item()
         num_batches += 1
 
-        # Generate and score a few examples for ROUGE
-        if num_count < num_examples:
-            for i in range(input_ids.shape[0]):
-                if num_count >= num_examples:
-                    break
+        # Batched generation for ROUGE
+        if num_count >= num_examples:
+            continue
 
-                # Generate summary for example i
-                generated_ids = model.generate_summary(
-                    input_ids=input_ids[i : i + 1],
-                    attention_mask=attention_mask[i : i + 1],
-                    triples=triples_batch[i],
-                    max_new_tokens=max_new_tokens,
-                    num_beams=2,
-                )
+        # Slice off only as many examples as we still need
+        remaining = num_examples - num_count
+        slice_end = min(remaining, input_ids.shape[0])
 
-                # Decode to strings
-                generated_text = tokenizer.decode(
-                    generated_ids[0], skip_special_tokens=True
-                )
+        input_ids_slice = input_ids[:slice_end]
+        attention_mask_slice = attention_mask[:slice_end]
+        labels_slice = labels[:slice_end]
+        triples_slice = triples_batch[:slice_end]
 
-                # Decode reference (replace -100 with pad_token_id before decoding)
-                ref_ids = labels[i].clone()
-                ref_ids[ref_ids == -100] = tokenizer.pad_token_id
-                reference_text = tokenizer.decode(ref_ids, skip_special_tokens=True)
+        # Single batched generate call instead of a per-example loop
+        generated_ids = model.generate_summary_batch(
+            input_ids=input_ids_slice,
+            attention_mask=attention_mask_slice,
+            triples_batch=triples_slice,
+            max_new_tokens=max_new_tokens,
+        )
 
-                # Score
-                rg_scores = rouge_scorer.score(reference_text, generated_text)
-                rouge1_scores.append(rg_scores["rouge1"].fmeasure)
-                rouge2_scores.append(rg_scores["rouge2"].fmeasure)
-                rougeL_scores.append(rg_scores["rougeL"].fmeasure)
-                num_count += 1
+        # Batch-decode generated summaries
+        generated_texts = tokenizer.batch_decode(
+            generated_ids, skip_special_tokens=True
+        )
 
-    results = {
+        # Batch-decode references (replace -100 before decoding)
+        ref_ids = labels_slice.clone()
+        ref_ids[ref_ids == -100] = tokenizer.pad_token_id
+        reference_texts = tokenizer.batch_decode(
+            ref_ids, skip_special_tokens=True
+        )
+
+        # Score all examples in the slice 
+        for gen_text, ref_text in zip(generated_texts, reference_texts):
+            rg_scores = rouge_scorer.score(ref_text, gen_text)
+            rouge1_scores.append(rg_scores["rouge1"].fmeasure)
+            rouge2_scores.append(rg_scores["rouge2"].fmeasure)
+            rougeL_scores.append(rg_scores["rougeL"].fmeasure)
+
+        num_count += slice_end
+
+    return {
         "val_loss": total_loss / max(num_batches, 1),
         "rouge1": np.mean(rouge1_scores) if rouge1_scores else 0.0,
         "rouge2": np.mean(rouge2_scores) if rouge2_scores else 0.0,
         "rougeL": np.mean(rougeL_scores) if rougeL_scores else 0.0,
     }
-
-    return results

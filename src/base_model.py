@@ -59,9 +59,9 @@ class KGSidecarLayer(nn.Module):
             value=kg_embeddings,
             key_padding_mask=kg_padding_mask,
         )
-        
+
         self.last_attn_weights = attention_weights
-        
+
         # kg_context shape: (batch, tgt_len, hidden_dim)
         kg_context = self.layer_norm(kg_context)
 
@@ -300,6 +300,65 @@ class KATSum(nn.Module):
             return output_ids
 
         return output_ids.sequences
+
+
+    @torch.no_grad()
+    def generate_summary_batch(
+        self,
+        input_ids: torch.Tensor,
+        attention_mask: torch.Tensor,
+        triples_batch: List[List[Triple]],
+        max_new_tokens: int = 128,
+    ) -> torch.Tensor:
+        """
+        Generate summaries for a batch of examples.
+
+        Args:
+            input_ids: (B, src_len)
+            attention_mask: (B, src_len)
+            triples_batch: List of B triple lists
+            max_new_tokens: Max summary length in tokens
+
+        Returns:
+            output_ids: (B, summary_len) to decoded with tokenizer.batch_decode()
+        """
+        kg_embeddings, kg_mask = self._embed_triples_batch(triples_batch)
+
+        def make_gen_hook(sidecar_layer):
+            def hook(module, input, output):
+                hidden_state = output[0]  
+                
+                updated = sidecar_layer(
+                    decoder_hidden=hidden_state,
+                    kg_embeddings=kg_embeddings,
+                    kg_padding_mask=kg_mask,
+                )
+                
+                return (updated,) + output[1:]
+
+            return hook
+
+        hooks = []
+        decoder_blocks = self.base_model.decoder.block
+        for sidecar_position, block_idx in enumerate(self.sidecar_indices):
+            hook = decoder_blocks[block_idx].register_forward_hook(
+                make_gen_hook(self.kg_sidecar_layers[sidecar_position])
+            )
+            hooks.append(hook)
+
+        try:
+            output = self.base_model.generate(
+                input_ids=input_ids,
+                attention_mask=attention_mask,
+                max_new_tokens=max_new_tokens,
+                no_repeat_ngram_size=3, # prevent the model from repeating 3-gram seqeunces that already appeared in the output
+            )
+        finally:
+            # Remove hooks even if generation raises
+            for hook in hooks:
+                hook.remove()
+
+        return output if isinstance(output, torch.Tensor) else output.sequences
 
     # Helper Methods
     def _embed_triples_batch(

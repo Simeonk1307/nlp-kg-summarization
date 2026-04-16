@@ -7,7 +7,7 @@ from transformers import LongT5ForConditionalGeneration
 from utils import *
 from kg_embedder import KGEncoder
 from torch.optim import AdamW
-from torch.optim.lr_scheduler import LinearLR
+from torch.optim.lr_scheduler import LinearLR,CosineAnnealingLR,SequentialLR
 from datasets import load_dataset
 from torch.utils.data import Dataset, DataLoader
 from pathlib import Path
@@ -67,9 +67,9 @@ def main(args):
     # CONFIG
     MODEL_NAME = "google/long-t5-tglobal-base"
     SAVE_DIR = "checkpoints/"
-    BATCH_SIZE = 2
-    GRAD_ACCUM = 8
-    EPOCHS = 5
+    BATCH_SIZE = 4
+    GRAD_ACCUM = 16
+    EPOCHS = args.epoch
     LR = 3e-4
     SRC_MAX_LEN = 4096
     TGT_MAX_LEN = 512
@@ -79,7 +79,6 @@ def main(args):
     DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
     BEST_CKPT_PATH = Path(SAVE_DIR) / "best_checkpoint.pt"
     LAST_CKPT_PATH = Path(SAVE_DIR) / "last_checkpoint.pt"
-    END_EPOCH = args.epoch
 
     log.info(f"Using device: {DEVICE}")
     Path(SAVE_DIR).mkdir(parents=True, exist_ok=True)
@@ -115,9 +114,9 @@ def main(args):
     def make_dataset(split):
         if args.trial:
             return SummarizationDataset(
-                articles=split["article"][:1],
-                summaries=split["abstract"][:1],
-                triples=split["rebel_triples"][:1],
+                articles=split["article"][:2],
+                summaries=split["abstract"][:2],
+                triples=split["rebel_triples"][:2],
                 tokenizer=tokenizer,
                 src_max_len=SRC_MAX_LEN,
                 tgt_max_len=TGT_MAX_LEN,
@@ -149,12 +148,22 @@ def main(args):
 
     # Optimizer and scheduler
     optimizer = AdamW(model.trainable_parameters(), lr=LR, weight_decay=0.01)
-    total_steps = len(train_loader) * EPOCHS // GRAD_ACCUM
+    steps_per_epoch = len(train_loader) // GRAD_ACCUM
+    total_steps = steps_per_epoch * EPOCHS
     warmup_steps = total_steps // 10
-    scheduler = LinearLR(
+
+    warmup_scheduler = LinearLR(
         optimizer, start_factor=0.1, end_factor=1.0, total_iters=warmup_steps
     )
-
+    decay_scheduler = CosineAnnealingLR(
+        optimizer, T_max=max(total_steps - warmup_steps, 1), eta_min=1e-6
+    )
+    scheduler = SequentialLR(
+        optimizer,
+        schedulers=[warmup_scheduler, decay_scheduler],
+        milestones=[warmup_steps],
+    )
+    
     rouge_scorer = RougeScorer(["rouge1", "rouge2", "rougeL"], use_stemmer=True)
 
     # Resume logic
@@ -173,10 +182,10 @@ def main(args):
         log.info("Starting fresh training run.")
 
     # Training loop
-    log.info(f"Training begin from {start_epoch} to {END_EPOCH}")
-    for epoch in range(start_epoch, END_EPOCH):
+    log.info(f"Training begin from {start_epoch} to {EPOCHS}")
+    for epoch in range(start_epoch, EPOCHS):
         log.info(f"\n{'='*60}")
-        log.info(f"Epoch {epoch+1}/{END_EPOCH}")
+        log.info(f"Epoch {epoch+1}/{EPOCHS}")
         log.info(f"\n{'='*60}")
 
         train_loss = train_one_epoch(
@@ -191,7 +200,7 @@ def main(args):
 
         log.info(f"Train loss: {train_loss:.4f}")
 
-        log.info("Validating...")
+        log.info(f"Validating {len(val_loader)} batches from validation set...")
         val_results = evaluate(
             model=model,
             dataloader=val_loader,
