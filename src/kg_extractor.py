@@ -13,6 +13,9 @@ import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 import re
 from typing import List, Tuple
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
 
 # Triple is an alias for 3 variable tuple (head enitity,relation,tail entity)
 Triple = Tuple[str, str, str]
@@ -20,8 +23,10 @@ Triple = Tuple[str, str, str]
 
 class KGExtractor:
 
-    # REBEL is ~1.6GB
+    # REBEL is ~1.6GB and has context window of 512 tokens
     model_name = "Babelscape/rebel-large"
+    MAX_INPUT_TOKENS = 480  # leave room for REBEL's special tokens
+    MAX_NEW_TOKENS = 256
 
     def __init__(self, device: str | None = "cpu"):
         """
@@ -35,12 +40,8 @@ class KGExtractor:
             self.device = device
 
         print(f"Loading REBEL extractor on {self.device}...")
-        self.tokenizer = AutoTokenizer.from_pretrained(
-            self.model_name
-        )
-        self.model = AutoModelForSeq2SeqLM.from_pretrained(
-            self.model_name
-        )
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+        self.model = AutoModelForSeq2SeqLM.from_pretrained(self.model_name)
         self.model.eval()
         self.model.to(self.device)
         print("REBEL loaded")
@@ -75,6 +76,41 @@ class KGExtractor:
 
         return all_triples
 
+    def extract_chunk_batch(self, text: str, batch_size: int = 8) -> List[Triple]:
+        chunks = self._chunk_by_sentences(text)
+        triples: dict[Triple, None] = {} # Use dict instead of set for preserving insertion order
+
+        for i in range(0, len(chunks), batch_size):
+            batch = chunks[i : i + batch_size]
+            for raw in self._run_model_batch(batch):
+                for t in self._parse_rebel_output(raw):
+                    triples[t] = None
+
+        return list(triples)
+
+    def _chunk_by_sentences(self, text, max_tokens=512):
+        doc = nlp(text)
+        sentences = [sent.text.strip() for sent in doc.sents]
+
+        chunks, current_chunk = [], []
+        current_len = 0
+
+        for sent in sentences:
+            sent_len = len(self.tokenizer(sent, add_special_tokens=False)["input_ids"])
+            if current_len + sent_len > max_tokens:
+                if current_chunk:
+                    chunks.append(" ".join(current_chunk))
+                current_chunk = [sent]
+                current_len = sent_len
+            else:
+                current_chunk.append(sent)
+                current_len += sent_len
+
+        if current_chunk:
+            chunks.append(" ".join(current_chunk))
+
+        return chunks
+
     def extract_batch(
         self,
         texts: List[str],
@@ -104,11 +140,33 @@ class KGExtractor:
             output_ids = self.model.generate(
                 **inputs,
                 max_new_tokens=256,
-                num_beams=3,
             )
 
         # Decode the first output token ID back to a string
         return self.tokenizer.decode(output_ids[0], skip_special_tokens=False)
+
+    def _run_model_batch(self, chunks: List[str]) -> List[str]:
+        """
+        Run REBEL on multiple chunks in a single forward pass.
+        """
+        inputs = self.tokenizer(
+            chunks,  # list instead of single string
+            return_tensors="pt",
+            max_length=self.MAX_INPUT_TOKENS,
+            truncation=True,
+            padding=True,  # pads shorter chunks to match the longest
+        ).to(self.device)
+
+        with torch.no_grad():
+            output_ids = self.model.generate(
+                **inputs,
+                max_new_tokens=self.MAX_NEW_TOKENS,
+            )
+
+        # output_ids shape: (num_chunks, seq_len) — decode each row
+        return [
+            self.tokenizer.decode(ids, skip_special_tokens=False) for ids in output_ids
+        ]
 
     def _chunk_text(
         self, text: str, chunk_size: int = 512, overlap: int = 50
