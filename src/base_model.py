@@ -16,10 +16,6 @@ class LongT5AttentionWrapper(nn.Module):
         super().__init__()
         # Store the entire LongT5LayerCrossAttention module which contains EncDecAttention, layer_norm and dropout
         self.layer = longt5_layer_cross_attention
-        
-    def set_hook_handle(self, hook_handle):
-        """Store reference to the hook that wraps this layer."""
-        self._hook_handle = hook_handle
 
     def forward(self, query, key, value, key_padding_mask=None, **kwargs):
         """
@@ -36,11 +32,7 @@ class LongT5AttentionWrapper(nn.Module):
         """
         # Note: key_padding_mask is not used in LongT5LayerCrossAttention
         # The masking happens at a different level in the architecture
-
-        # Temporarily remove the hook to prevent recursion
-        if self._hook_handle is not None:
-            self._hook_handle.remove()
-
+        
         # Call the layer (it handles attention + layernorm + dropout internally)
         outputs = self.layer(
             hidden_states=query,
@@ -280,7 +272,6 @@ class KATSum(nn.Module):
         for sidecar_position, block_idx in enumerate(self.sidecar_indices):
             hook = (
                 decoder_blocks[block_idx]
-                .layer[1]
                 .register_forward_hook(
                     make_hook(block_idx, self.kg_sidecar_layers[sidecar_position])
                 )
