@@ -2,7 +2,8 @@ import torch
 import torch.nn as nn
 from typing import List, Tuple
 
-Triple = Tuple[str,str,str]
+Triple = Tuple[str, str, str]
+
 
 class KGEncoder(nn.Module):
     """
@@ -15,10 +16,11 @@ class KGEncoder(nn.Module):
         hidden_dim: Output dimension (should match LongT5 hidden dim = 768)
         device:     "cuda" or "cpu"
     """
+
     def __init__(
         self,
-        encoder,           
-        tokenizer,         
+        encoder,
+        tokenizer,
         hidden_dim: int = 768,
         max_triple_len: int = 64,
         device: str = "cpu",
@@ -30,10 +32,6 @@ class KGEncoder(nn.Module):
         self.max_triple_len = max_triple_len
         self.device = device
 
-        self.projection = nn.Linear(hidden_dim, hidden_dim)
-        self.layer_norm = nn.LayerNorm(hidden_dim)
-        
-    
     def triples_to_text(self, triples: List[Triple]) -> List[str]:
         """
         Converting triples to natural language strings.
@@ -57,14 +55,14 @@ class KGEncoder(nn.Module):
 
         Steps for reference:
             1. Convert triples to text strings
-            2. Tokenize all strings together 
+            2. Tokenize all strings together
             3. Run through the encoder to get hidden states for each token
             4. Mean pool each triple's tokens to get one vector per triple
             5. Stack into (num_triples, hidden_dim)
             6. Project and normalise
             7. Add batch dimension i.e. unsqueeze to get (1, num_triples, hidden_dim)
         """
-        
+
         # Return a zero tensor if no triples sp that decoder will attend to nothing
         if not triples:
             return torch.zeros(1, 1, self.hidden_dim, device=self.device)
@@ -81,41 +79,36 @@ class KGEncoder(nn.Module):
             max_length=self.max_triple_len,
         ).to(self.device)
 
-        # Step 3: run through frozen encoder 
+        # Step 3: run through frozen encoder
         with torch.no_grad():
             encoder_outputs = self.encoder(
                 input_ids=encoding["input_ids"],
                 attention_mask=encoding["attention_mask"],
                 return_dict=True,
             )
-            
+
         # hidden_states shape: (num_triples, seq_len, 768)
         hidden_states = encoder_outputs.last_hidden_state
 
         # Step 4: mean-pool: average over the token dimension (dim=1)
         # We must ignore padding tokens when averaging, so multiply by mask first
-        
+
         # mask shape: (num_triples, seq_len, 1)
         mask = encoding["attention_mask"].unsqueeze(-1).float()
-        
+
         # summed shape: (num_triples, 768)
         summed = (hidden_states * mask).sum(dim=1)
-        
+
         # counts shape: (num_triples, 1), clamp prevents div by zero
         counts = mask.sum(dim=1).clamp(min=1)
-        
+
         # pooled shape: (num_triples, 768)
         pooled = summed / counts
 
-        # Step 5-6: project and normalise
-        # shape : (num_triples, 768)
-        projected = self.projection(pooled)
-        normalised = self.layer_norm(projected)
-
         # Step 7: add batch dimension
         # final shape: (1, num_triples, 768)
-        return normalised.unsqueeze(0)
-    
+        return pooled.unsqueeze(0)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     pass

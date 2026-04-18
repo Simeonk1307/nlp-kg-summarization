@@ -32,7 +32,7 @@ class LongT5AttentionWrapper(nn.Module):
         """
         # Note: key_padding_mask is not used in LongT5LayerCrossAttention
         # The masking happens at a different level in the architecture
-        
+
         # Call the layer (it handles attention + layernorm + dropout internally)
         outputs = self.layer(
             hidden_states=query,
@@ -74,6 +74,7 @@ class KGSidecarLayer(nn.Module):
         num_heads: int = 8,
         dropout: float = 0.1,
         shared_cross_attn: Optional[nn.Module] = None,
+        shared_ffn: Optional[nn.Module] = None,
     ):
         super().__init__()
 
@@ -101,6 +102,16 @@ class KGSidecarLayer(nn.Module):
         # To preserve pretrained T5 representations early in training
         nn.init.constant_(self.fusion_gate.bias, -1.0)
 
+        # Feed-forward network after fusion
+        if shared_ffn is not None:
+            # Share the FFN weights from the decoder block
+            self.ffn = shared_ffn
+            self._using_shared_ffn = True
+        else:
+            # Wont be used but here as fallback
+            self.ffn = None
+            self._using_shared_ffn = False
+
     def forward(
         self,
         decoder_hidden: torch.Tensor,  # shape = (batch, tgt_len, hidden_dim)
@@ -126,10 +137,23 @@ class KGSidecarLayer(nn.Module):
         # gate output shape: (batch, tgt_len, 1)
 
         # output is a mix of decoder hidden states and kg_context
-        output = (1 - gate) * decoder_hidden + gate * kg_context
+        fused_output = (1 - gate) * decoder_hidden + gate * kg_context
 
+        if self.ffn is not None:
+            # FFN expects: (hidden_states,) and returns (hidden_states,)
+            ffn_output = self.ffn(fused_output)
+
+            # LongT5LayerFF returns a tuple: (hidden_states,)
+            if isinstance(ffn_output, tuple):
+                final_output = ffn_output[0]
+            else:
+                final_output = ffn_output
+        else:
+            # No FFN
+            final_output = fused_output
+
+        return final_output
         # output shape: (batch, tgt_len, hidden_dim)
-        return output
 
 
 class KATSum(nn.Module):
@@ -203,11 +227,13 @@ class KATSum(nn.Module):
         for sidecar_position, block_idx in enumerate(sidecar_indices):
             # Extract the source cross-attention from this decoder block
             source_cross_attn = self.base_model.decoder.block[block_idx].layer[1]
+            source_ffn_layer = self.base_model.decoder.block[block_idx].layer[2]
 
             # Adjust path based on LongT5's actual structure
             sidecar = KGSidecarLayer(
                 hidden_dim=hidden_dim,
                 shared_cross_attn=source_cross_attn,
+                shared_ffn=source_ffn_layer,
             )
 
             self.kg_sidecar_layers.append(sidecar)
@@ -270,11 +296,8 @@ class KATSum(nn.Module):
         # Register hooks on the decoder blocks that should have sidecars
         decoder_blocks = self.base_model.decoder.block
         for sidecar_position, block_idx in enumerate(self.sidecar_indices):
-            hook = (
-                decoder_blocks[block_idx]
-                .register_forward_hook(
-                    make_hook(block_idx, self.kg_sidecar_layers[sidecar_position])
-                )
+            hook = decoder_blocks[block_idx].register_forward_hook(
+                make_hook(block_idx, self.kg_sidecar_layers[sidecar_position])
             )
             hooks.append(hook)
 
