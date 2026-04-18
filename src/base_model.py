@@ -7,6 +7,59 @@ from kg_embedder import KGEncoder
 Triple = Tuple[str, str, str]
 
 
+class LongT5AttentionWrapper(nn.Module):
+    """
+    Wraps LongT5LayerCrossAttention to provide nn.MultiheadAttention-like interface.
+    """
+
+    def __init__(self, longt5_layer_cross_attention):
+        super().__init__()
+        # Store the entire LongT5LayerCrossAttention module which contains EncDecAttention, layer_norm and dropout
+        self.layer = longt5_layer_cross_attention
+        
+    def set_hook_handle(self, hook_handle):
+        """Store reference to the hook that wraps this layer."""
+        self._hook_handle = hook_handle
+
+    def forward(self, query, key, value, key_padding_mask=None, **kwargs):
+        """
+        LongT5LayerCrossAttention.forward signature:
+            hidden_states,
+            key_value_states=None,
+            attention_mask=None,
+            position_bias=None,
+            layer_head_mask=None,
+            past_key_value=None,
+            use_cache=False,
+            query_length=None,
+            output_attentions=False,
+        """
+        # Note: key_padding_mask is not used in LongT5LayerCrossAttention
+        # The masking happens at a different level in the architecture
+
+        # Temporarily remove the hook to prevent recursion
+        if self._hook_handle is not None:
+            self._hook_handle.remove()
+
+        # Call the layer (it handles attention + layernorm + dropout internally)
+        outputs = self.layer(
+            hidden_states=query,
+            key_value_states=key,  # LongT5 uses same tensor for key/value
+            position_bias=None,
+            layer_head_mask=None,
+            past_key_value=None,
+            use_cache=False,
+            query_length=None,
+            output_attentions=True,  # We want attention weights
+        )
+
+        # outputs is a tuple: (hidden_states, present_key_value_state, attention_weights)
+        context = outputs[0]
+        attn_weights = outputs[2] if len(outputs) > 2 else None
+
+        return context, attn_weights
+
+
 class KGSidecarLayer(nn.Module):
     """
     A single KG cross-attention sublayer which is inserted after the text cross-attention in each decoder block.
@@ -23,26 +76,38 @@ class KGSidecarLayer(nn.Module):
         dropout: Dropout on attention weights during training.
     """
 
-    def __init__(self, hidden_dim: int = 768, num_heads: int = 8, dropout: float = 0.1):
+    def __init__(
+        self,
+        hidden_dim: int = 768,
+        num_heads: int = 8,
+        dropout: float = 0.1,
+        shared_cross_attn: Optional[nn.Module] = None,
+    ):
         super().__init__()
 
-        # cross attention betwen decoder output and KG embeddings to get KG context
-        self.kg_cross_attention = nn.MultiheadAttention(
-            embed_dim=hidden_dim,
-            num_heads=num_heads,
-            dropout=dropout,
-            batch_first=True,
-        )
+        if shared_cross_attn is not None:
+            # Share weights with source cross-attention and layer-norm
+            # Will be auto frozen since weights are shared
+            self.kg_cross_attention = LongT5AttentionWrapper(shared_cross_attn)
+            self.layer_norm = nn.Identity()
+            self._using_shared_weights = True
+        else:
+            # cross attention betwen decoder output and KG embeddings to get KG context
+            self.kg_cross_attention = nn.MultiheadAttention(
+                embed_dim=hidden_dim,
+                num_heads=num_heads,
+                dropout=dropout,
+                batch_first=True,
+            )
+            # LayerNorm before fusion for training stability
+            self.layer_norm = nn.LayerNorm(hidden_dim)
+            self._using_shared_weights = False
 
         # Fusion gate: maps from decoder hidden state to a scalar in [0, 1]
         self.fusion_gate = nn.Linear(hidden_dim, 1)
 
-        # Init bias to -3.0 so sigmoid output starts at ~0.05
         # To preserve pretrained T5 representations early in training
-        nn.init.constant_(self.fusion_gate.bias, -3.0)
-
-        # LayerNorm before fusion for training stability
-        self.layer_norm = nn.LayerNorm(hidden_dim)
+        nn.init.constant_(self.fusion_gate.bias, -1.0)
 
     def forward(
         self,
@@ -69,7 +134,7 @@ class KGSidecarLayer(nn.Module):
         # gate output shape: (batch, tgt_len, 1)
 
         # output is a mix of decoder hidden states and kg_context
-        output = decoder_hidden + gate * kg_context
+        output = (1 - gate) * decoder_hidden + gate * kg_context
 
         # output shape: (batch, tgt_len, hidden_dim)
         return output
@@ -140,16 +205,20 @@ class KATSum(nn.Module):
         self.sidecar_indices = sidecar_indices
 
         # nn.ModuleList registers the layers so PyTorch tracks their parameters
-        self.kg_sidecar_layers = nn.ModuleList(
-            [
-                KGSidecarLayer(
-                    hidden_dim=hidden_dim,
-                    num_heads=num_heads,
-                    dropout=0.1,
-                )
-                for _ in sidecar_indices
-            ]
-        )
+        self.kg_sidecar_layers = nn.ModuleList([])
+
+        # Inside the loop building sidecars:
+        for sidecar_position, block_idx in enumerate(sidecar_indices):
+            # Extract the source cross-attention from this decoder block
+            source_cross_attn = self.base_model.decoder.block[block_idx].layer[1]
+
+            # Adjust path based on LongT5's actual structure
+            sidecar = KGSidecarLayer(
+                hidden_dim=hidden_dim,
+                shared_cross_attn=source_cross_attn,
+            )
+
+            self.kg_sidecar_layers.append(sidecar)
 
         self.kg_sidecar_layers.to(self.device)
         self.num_sidecar_layers = len(self.kg_sidecar_layers)
@@ -301,7 +370,6 @@ class KATSum(nn.Module):
 
         return output_ids.sequences
 
-
     @torch.no_grad()
     def generate_summary_batch(
         self,
@@ -326,14 +394,14 @@ class KATSum(nn.Module):
 
         def make_gen_hook(sidecar_layer):
             def hook(module, input, output):
-                hidden_state = output[0]  
-                
+                hidden_state = output[0]
+
                 updated = sidecar_layer(
                     decoder_hidden=hidden_state,
                     kg_embeddings=kg_embeddings,
                     kg_padding_mask=kg_mask,
                 )
-                
+
                 return (updated,) + output[1:]
 
             return hook
@@ -351,7 +419,7 @@ class KATSum(nn.Module):
                 input_ids=input_ids,
                 attention_mask=attention_mask,
                 max_new_tokens=max_new_tokens,
-                no_repeat_ngram_size=3, # prevent the model from repeating 3-gram seqeunces that already appeared in the output
+                no_repeat_ngram_size=3,  # prevent the model from repeating 3-gram seqeunces that already appeared in the output
             )
         finally:
             # Remove hooks even if generation raises
