@@ -214,3 +214,6 @@ checkpoints/
 
 # Dataset
 dataset/
+datasets/
+error/
+output/
