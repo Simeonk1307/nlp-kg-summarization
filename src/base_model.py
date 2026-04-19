@@ -325,6 +325,11 @@ class KATSum(nn.Module):
         triples: List[Triple],
         max_new_tokens: int = 128,
         num_beams: int = 4,
+        min_length=40,  # Prevent "one-sentence" lazy summaries
+        length_penalty=2.0,  # Higher (>1.0) encourages longer, complete sentences
+        no_repeat_ngram_size=3,  # Prevents the "participants... participants" loop
+        early_stopping=True,  # Stop as soon as all beams hit the </s> token
+        repetition_penalty=2.5,  # Heavily discourages copying the same phrases
     ) -> torch.Tensor:
         """
         Generate a summary for a single example i.e. batch size = 1
@@ -371,9 +376,11 @@ class KATSum(nn.Module):
             attention_mask=attention_mask,
             max_new_tokens=max_new_tokens,
             num_beams=num_beams,
-            length_penalty=0.8,
-            no_repeat_ngram_size=3,
-            early_stopping=True,
+            min_length=min_length,
+            length_penalty=length_penalty,
+            no_repeat_ngram_size=no_repeat_ngram_size,
+            early_stopping=early_stopping,
+            repetition_penalty=repetition_penalty,
         )
 
         for hook in hooks:
@@ -391,6 +398,11 @@ class KATSum(nn.Module):
         attention_mask: torch.Tensor,
         triples_batch: List[List[Triple]],
         max_new_tokens: int = 128,
+        min_length=40,  # Prevent "one-sentence" lazy summaries
+        length_penalty=2.0,  # Higher (>1.0) encourages longer, complete sentences
+        no_repeat_ngram_size=3,  # Prevents the "participants... participants" loop
+        early_stopping=True,  # Stop as soon as all beams hit the </s> token
+        repetition_penalty=2.5,  # Heavily discourages copying the same phrases,
     ) -> torch.Tensor:
         """
         Generate summaries for a batch of examples.
@@ -433,8 +445,13 @@ class KATSum(nn.Module):
                 input_ids=input_ids,
                 attention_mask=attention_mask,
                 max_new_tokens=max_new_tokens,
-                no_repeat_ngram_size=3,  # prevent the model from repeating 3-gram seqeunces that already appeared in the output
+                min_length=min_length,
+                length_penalty=length_penalty,
+                no_repeat_ngram_size=no_repeat_ngram_size,
+                early_stopping=early_stopping,
+                repetition_penalty=repetition_penalty,
             )
+            
         finally:
             # Remove hooks even if generation raises
             for hook in hooks:
