@@ -18,26 +18,23 @@ class LongT5AttentionWrapper(nn.Module):
         self.layer = longt5_layer_cross_attention
 
     def forward(self, query, key, value, key_padding_mask=None, **kwargs):
-        """
-        LongT5LayerCrossAttention.forward signature:
-            hidden_states,
-            key_value_states=None,
-            attention_mask=None,
-            position_bias=None,
-            layer_head_mask=None,
-            past_key_value=None,
-            use_cache=False,
-            query_length=None,
-            output_attentions=False,
-        """
-        # Note: key_padding_mask is not used in LongT5LayerCrossAttention
-        # The masking happens at a different level in the architecture
 
+        attention_mask = None
+        if key_padding_mask is not None:
+            # Convert key_padding_mask to LongT5 format
+            # key_padding_mask: True = padding, False = valid
+            # LongT5 attention_mask: large negative = masked, 0 = valid
+            # Invert: True (padding) -> large negative value
+            attention_mask = key_padding_mask.float() * -1e9
+            # Reshape to [batch, 1, 1, key_len] for broadcasting
+            attention_mask = attention_mask.unsqueeze(1).unsqueeze(2)
+            
         # Call the layer (it handles attention + layernorm + dropout internally)
         outputs = self.layer(
             hidden_states=query,
             key_value_states=key,  # LongT5 uses same tensor for key/value
             position_bias=None,
+            attention_mask=attention_mask,
             layer_head_mask=None,
             past_key_value=None,
             use_cache=False,
