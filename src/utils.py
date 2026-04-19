@@ -182,32 +182,6 @@ def train_one_epoch(
         # Backward pass, computes gradients for all requires_grad parameters
         loss.backward()
 
-        if num_batches % 100 == 0:  # Check every 100 batches to avoid cluttering logs
-
-            def log_grad(name, param):
-                if param is None:
-                    logger.warning(f"{name}: parameter is None")
-                    return
-                if param.grad is None:
-                    logger.warning(f"{name}: grad is None")
-                    return
-
-                grad = param.grad
-                logger.info(
-                    f"{name}: mean={grad.mean().item():.8f}, "
-                    f"std={grad.std().item():.8f}, "
-                    f"norm={grad.norm().item():.8f}"
-                )
-
-            embedder = model.kg_embedder
-            log_grad("Embedder.projection.weight", embedder.projection.weight)
-            log_grad("Embedder.layer_norm.weight", embedder.layer_norm.weight)
-
-            for i in range(model.num_sidecar_layers):
-                sidecar = model.kg_sidecar_layers[i]
-                log_grad(f"Sidecar[{i}].fusion_gate.weight", sidecar.fusion_gate.weight)
-                log_grad(f"Sidecar[{i}].layer_norm.weight", sidecar.layer_norm.weight)
-
         # Only update weights every grad_accumulation_steps batches
         if (step + 1) % grad_accumulation_steps == 0:
             # Clip gradients to prevent exploding gradient problem
