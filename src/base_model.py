@@ -28,7 +28,7 @@ class LongT5AttentionWrapper(nn.Module):
             attention_mask = key_padding_mask.float() * -1e9
             # Reshape to [batch, 1, 1, key_len] for broadcasting
             attention_mask = attention_mask.unsqueeze(1).unsqueeze(2)
-            
+
         # Call the layer (it handles attention + layernorm + dropout internally)
         outputs = self.layer(
             hidden_states=query,
@@ -70,6 +70,7 @@ class KGSidecarLayer(nn.Module):
         hidden_dim: int = 768,
         num_heads: int = 8,
         dropout: float = 0.1,
+        fusion_gate_bias: float = -1.0,
         shared_cross_attn: Optional[nn.Module] = None,
         shared_ffn: Optional[nn.Module] = None,
     ):
@@ -97,7 +98,7 @@ class KGSidecarLayer(nn.Module):
         self.fusion_gate = nn.Linear(hidden_dim, 1)
 
         # To preserve pretrained T5 representations early in training
-        nn.init.constant_(self.fusion_gate.bias, -1.0)
+        nn.init.constant_(self.fusion_gate.bias, fusion_gate_bias)
 
         # Feed-forward network after fusion
         if shared_ffn is not None:
@@ -161,8 +162,8 @@ class KATSum(nn.Module):
         base_model_name: HuggingFace model ID. Default = "google/long-t5-tglobal-base".
         kg_embedder: An instance of KGEncoder (from kg_embedding.py).
         num_sidecar_layers: How many decoder layers get a sidecar.
-                            0 = only last layer (lightest)
-                            -1 = all layers (heaviest, most expressive)
+                            1 = only last layer (lightest)
+                            12 = all layers (heaviest, most expressive)
                             Default: last 3 layers.
         freeze_base: If True, freeze all original LongT5 weights.
                      Only the new KG layers train. Default = True.
@@ -173,6 +174,7 @@ class KATSum(nn.Module):
         kg_embedder: KGEncoder,
         base_model,
         num_sidecar_layers: int = 3,
+        fusion_gate_biases: list[int] | None = None,
         freeze_base: bool = True,
         device: str | None = None,
     ):
@@ -182,6 +184,12 @@ class KATSum(nn.Module):
             self.device = "cuda" if torch.cuda.is_available() else "cpu"
         else:
             self.device = device
+
+        if fusion_gate_biases is not None:
+            if len(fusion_gate_biases) != num_sidecar_layers:
+                raise ValueError(
+                    f"Fusion gate biases length {len(fusion_gate_biases)} whereas number of sidecar layers: {num_sidecar_layers}"
+                )
 
         # Load the base LongT5 model
         self.base_model = base_model
@@ -205,15 +213,9 @@ class KATSum(nn.Module):
 
         print(f"Number of decoder layers for KATSUM model: {num_decoder_layers}")
 
-        # Decide which layers get a sidecar
-        if num_sidecar_layers == -1:
-            # All layers
-            sidecar_indices = list(range(num_decoder_layers))
-        else:
-            # Last N layers
-            sidecar_indices = list(
-                range(num_decoder_layers - num_sidecar_layers, num_decoder_layers)
-            )
+        sidecar_indices = list(
+            range(num_decoder_layers - num_sidecar_layers, num_decoder_layers)
+        )
 
         self.sidecar_indices = sidecar_indices
 
@@ -227,11 +229,19 @@ class KATSum(nn.Module):
             source_ffn_layer = self.base_model.decoder.block[block_idx].layer[2]
 
             # Adjust path based on LongT5's actual structure
-            sidecar = KGSidecarLayer(
-                hidden_dim=hidden_dim,
-                shared_cross_attn=source_cross_attn,
-                shared_ffn=source_ffn_layer,
-            )
+            if fusion_gate_biases is not None:
+                sidecar = KGSidecarLayer(
+                    hidden_dim=hidden_dim,
+                    shared_cross_attn=source_cross_attn,
+                    shared_ffn=source_ffn_layer,
+                    fusion_gate_bias=fusion_gate_biases[sidecar_position],
+                )
+            else:
+                sidecar = KGSidecarLayer(
+                    hidden_dim=hidden_dim,
+                    shared_cross_attn=source_cross_attn,
+                    shared_ffn=source_ffn_layer,
+                )
 
             self.kg_sidecar_layers.append(sidecar)
 
@@ -448,7 +458,7 @@ class KATSum(nn.Module):
                 early_stopping=early_stopping,
                 repetition_penalty=repetition_penalty,
             )
-            
+
         finally:
             # Remove hooks even if generation raises
             for hook in hooks:
