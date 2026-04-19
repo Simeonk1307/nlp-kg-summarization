@@ -63,6 +63,14 @@ class KGSidecarLayer(nn.Module):
         hidden_dim: Model hidden size. Default = 768 for LongT5-base
         num_heads: Number of attention heads. Default = 8 for LongT5-base
         dropout: Dropout on attention weights during training.
+        fusion_gate_bias: 
+                    How biased should the model be towards kg_embeddings when fusing?
+        
+                    0 = 50% of kg_embeddings state + 50 % of decoder hidden state
+                    
+                    -1 = 27 % of kg_embedding state + 73 % of decoder hidden state
+                    
+                    -2 = 12 % of kg_embedding state + 88 % of decoder hidden state
     """
 
     def __init__(
@@ -167,6 +175,11 @@ class KATSum(nn.Module):
                             Default: last 3 layers.
         freeze_base: If True, freeze all original LongT5 weights.
                      Only the new KG layers train. Default = True.
+        fusion_gate_biases: List of fusion gate biases (See KGSideCarLayer)
+                    How biased should the model be towards kg_embeddings when fusing?
+                    0 = 50% of kg_embeddings state + 50 % of decoder hidden state
+                    -1 = 27 % of kg_embedding state + 73 % of decoder hidden state
+                    -2 = 12 % of kg_embedding state + 88 % of decoder hidden state 
     """
 
     def __init__(
