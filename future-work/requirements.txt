@@ -1,0 +1,4 @@
+ipykernel
+pandas
+neo4j
+langchain_ollama
