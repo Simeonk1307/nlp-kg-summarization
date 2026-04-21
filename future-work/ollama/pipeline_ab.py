@@ -21,14 +21,9 @@ def call_judge(prompt):
         return json.loads(match.group())
     raise ValueError(f"No JSON found: {text}")
 
-def format_triples(triples):
-    return "\n".join([f"({h}, {r}, {t})" for h, r, t in triples])
 
-def pairwise_judge(triples, reference, summary_a, summary_b, label_a, label_b):
+def pairwise_judge(reference, summary_a, summary_b, label_a, label_b):
     prompt = f"""You are a summarization evaluator.
-
-KG Triples:
-{format_triples(triples)}
 
 Reference Summary:
 {reference}
@@ -57,13 +52,13 @@ def run_pipeline2(samples, seed=42):
         flip = random.random() > 0.5
 
         if flip:
-            summary_a, label_a = s["output_with_kg"], "with_kg"
-            summary_b, label_b = s["output_no_kg"], "no_kg"
+            summary_a, label_a = s["summary_with_kg"], "with_kg"
+            summary_b, label_b = s["summary_without_kg"], "no_kg"
         else:
-            summary_a, label_a = s["output_no_kg"], "no_kg"
-            summary_b, label_b = s["output_with_kg"], "with_kg"
+            summary_a, label_a = s["summary_with_kg"], "no_kg"
+            summary_b, label_b = s["summary_without_kg"], "with_kg"
 
-        result = pairwise_judge(s["triples"], s["reference"], summary_a, summary_b, label_a, label_b)
+        result = pairwise_judge( s["reference_summary"], summary_a, summary_b, label_a, label_b)
         counts[result["winner"]] += 1
         all_results.append({"sample": i+1, "flipped": flip, **result})
 
@@ -78,14 +73,9 @@ def run_pipeline2(samples, seed=42):
 
 samples = [
     {
-        "triples": [
-            ("Obama", "born_in", "Hawaii"),
-            ("Obama", "was", "44th President"),
-            ("Obama", "party", "Democratic")
-        ],
-        "reference": "Barack Obama, a Democrat born in Hawaii, served as the 44th President of the United States.",
-        "output_no_kg": "Obama was the 44th president and a member of the Democratic party.",
-        "output_with_kg": "Barack Obama, born in Hawaii, served as the 44th US President representing the Democratic party."
+        "reference_summary": "Barack Obama, a Democrat born in Hawaii, served as the 44th President of the United States.",
+        "summary_without_kg": "Obama was the 44th president and a member of the Democratic party.",
+        "summary_with_kg": "Barack Obama, born in Hawaii, served as the 44th US President representing the Democratic party."
     }
 ]
 
