@@ -76,6 +76,7 @@ GEMINI_API_KEY=your_api_key_here
 ```
 
 #### For running summary generators, main.ipynb or train.py `src/dataset/pubmed_with_triples_v` must exist 
+NOTE: As running `rebel_triple_extraction.py` is lengthy process you may do this
 
 ```bash
 Take `pubmed_with_triples_v.zip` from the drive and put in project root
@@ -83,17 +84,18 @@ unzip pubmed_with_triples_v.zip -d ./src/dataset/
 ```
 
 #### For running custom summary generator `src/checkpoints/phase1_best.pt` or equivalent must be there. 
+NOTE: As runnning `train.py` is lengthy process you may do this
 
 ```bash
 Take `phase1_best.pt` from the drive and put in project root
-mv phase1_best.pt ./src/checkpoints/
+cp phase1_best.pt ./src/checkpoints/
 ```
 
 
 
 ---
 
-## Dataset Preparation
+## Dataset Preparation (To skip look at `Installation & Setup`)
 
 Pre-extract REBEL triples from the PubMed summarization dataset and save an enriched copy to disk:
 
@@ -109,7 +111,7 @@ Add `--trial` to run on a single example per split for a quick sanity check.
 
 ---
 
-## Training
+## Training (To skip look at `Installation & Setup`)
 
 ```bash
 cd src

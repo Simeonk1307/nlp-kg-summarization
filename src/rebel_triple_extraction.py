@@ -197,7 +197,7 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "--output_path",
-        default="./datasets/pubmed_with_triples",
+        default="./datasets/pubmed_with_triples_v",
         help="Where to write the enriched dataset.",
     )
 
