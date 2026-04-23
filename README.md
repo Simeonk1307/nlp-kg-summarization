@@ -1,3 +1,19 @@
+# TEAM DETAILS
+
+**Team No.**: 3  
+**Course Name**: Natural Language Processing  (under **Prof. Swapnil Hingmire**)
+
+| **S. No.** | **Member Name**          | **Roll Number** |
+| ---------- | ----------------- | --------------- |
+| 1          | Simeon K Sonar    | 112301031       |
+| 2          | Shreesh Amit      | 112301046       |
+| 3          | Devapriya Pradeep | 112301006       |
+| 4          | Babblu G          | 142504001       |
+
+
+
+
+
 # Custom KATSum — Knowledge-Augmented Text Summarization
 
 Custom KATSum is a knowledge-graph-augmented summarization model built on top of [LongT5](https://huggingface.co/google/long-t5-tglobal-base). It enriches the decoder with structured relational knowledge extracted from source articles via [REBEL](https://huggingface.co/Babelscape/rebel-large), improving factual grounding in generated summaries.
@@ -14,7 +30,7 @@ Custom KATSum is a knowledge-graph-augmented summarization model built on top of
 
 ---
 
-## Project Structure
+## File Manifest
 
 ```
 .
@@ -97,7 +113,7 @@ cp phase1_best.pt ./src/checkpoints/
 
 ## Dataset Preparation (To skip look at `Installation & Setup`)
 
-Pre-extract REBEL triples from the PubMed summarization dataset and save an enriched copy to disk:
+Pre-extract REBEL triples from the [PubMed summarization](https://huggingface.co/datasets/ccdv/pubmed-summarization)  when you use dataset and save an enriched copy to disk:
 
 ```bash
 cd src
@@ -108,6 +124,8 @@ python3 rebel_triple_extraction.py \
 ```
 
 Add `--trial` to run on a single example per split for a quick sanity check.
+
+NOTE: It is loaded using `datasets library` in this file (so if you want to use then do `load_dataset(...)`)  
 
 ---
 
@@ -213,7 +231,7 @@ Each sidecar layer is inserted after the cross-attention sublayer in a decoder b
 
 ### KGEncoder
 
-Converts triples `(head, relation, tail)` → `"head relation tail"` → tokenizes → runs through the frozen T5 encoder → mean-pools token embeddings → returns `(1, num_triples, hidden_dim)`.
+Converts triples `(subj, predicate, obj)` → `"subj predicate obj"` → tokenizes → runs through the frozen T5 encoder → mean-pools token embeddings → returns `(1, num_triples, hidden_dim)`.
 
 ### Hook-based injection
 
@@ -240,6 +258,22 @@ See `requirements.txt` for pinned versions.
 
 ---
 
-## License
+## Copyright and License
 
 See [LICENSE](LICENSE).
+
+---
+
+## Contact
+
+For inquiries, please email:
+[simeon13072005@gmail.com](mailto:simeon13072005@gmail.com) ·
+[shreesh2005@gmail.com](mailto:shreesh2005@gmail.com)
+
+---
+
+## Credits
+
+We gratefully acknowledge **Prof. Swapnil Hingmire** for his invaluable guidance, insightful instruction and continued support throughout the course. His mentorship was instrumental in helping us navigate challenges during this project.
+We also thank our **teammates** for their collaboration, dedication, and collective effort in bringing this work to completion.
+
