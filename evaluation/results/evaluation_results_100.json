@@ -1,0 +1,716 @@
+{
+  "metadata": {
+    "total_samples": 100,
+    "seed": 42,
+    "max_workers": 5,
+    "elapsed_seconds": 57.12560176849365
+  },
+  "counts": {
+    "no_kg": 46,
+    "tie": 31,
+    "with_kg": 22,
+    "error": 1
+  },
+  "results": [
+    {
+      "sample": 1,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it captures a more significant and relevant point from the source text: the need to disentangle the effects of anxiety and depression on cognitive impairments in Parkinson's Disease (PD). This is a key recommendation for future research highlighted in the source. Summary A, while mentioning DSM-V criteria and types of anxiety disorders, is essentially a fragmented sentence from the source and doesn't present a coherent, standalone point. The Reference Summary covers the main findings of the study (anxiety impacting working memory and attentional set-shifting), whereas Summary B focuses on a crucial future direction for research that was also discussed. Therefore, considering coverage of important research recommendations and the coherence of the presented information, Summary B is superior.",
+      "error": null
+    },
+    {
+      "sample": 2,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A, while flawed, is superior because it attempts to extract specific information about miRNAs and their targets mentioned in the source text. Although it contains factual inaccuracies (e.g., 'Mitochondria ( mur-128)' and 'p53 kinase 1 (pdcd1)'), it aligns more closely with the factual content of the source than Summary B. Summary B is almost entirely abstract and does not engage with the specific details of the source, making it a generic statement about potential applications and future research. The reference summary's purpose is to outline the scope of the original text, and while Summary A doesn't perfectly mirror it, it delves into the specific components the reference summary promises to cover. Summary B's inclusion of 'br>' and its extremely general nature makes it less coherent and less aligned with the reference's intent to preview specific content.",
+      "error": null
+    },
+    {
+      "sample": 3,
+      "flipped": false,
+      "winner": "tie",
+      "reasoning": "Both summaries fail to adequately represent the source text. Summary A is extremely disjointed and appears to be a random string of words and phrases from the source, making it incoherent and lacking coverage. It also includes an incorrect detail about ascitic fluid drainage immediately after oocyte retrieval. Summary B is slightly better in terms of coherence and attempting to cover more aspects like blood parameters, but it is still highly fragmented and lists items without clear connection or context. It also incorrectly states that blood pressure is affected by age, gender, etc. in the context of OHSS management, and the mention of 'peritoneal and/orifices of the abdomen, pelvis and thorax' is overly literal and awkward. Neither summary aligns well with the reference summary, nor are they concise or faithful representations of the source.",
+      "error": null
+    },
+    {
+      "sample": 4,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A provides a more comprehensive overview of the findings presented in the source text, particularly regarding the clinical presentations of both male and female patients. It accurately reflects the details about genital ambiguity, early onset adrenarche, late adolescent presentation with virilization, and features of polycystic ovarian disease in females, as well as the typical presentations in male infants. Summary B is significantly less comprehensive, omitting crucial details about the presentations and misinterpreting or inaccurately stating information (e.g., 'adrenal hyperthyroidism (asymptomather's disease)' and 'polycystic ovarian Diseases (pcos) which is a sub-type of cah'). Summary A's coverage is far superior and more faithful to the source text, making it the clear winner.",
+      "error": null
+    },
+    {
+      "sample": 5,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Both summaries are extremely poor and do not accurately reflect the source text or the reference summary. Summary A attempts to list materials used in the study and relates them to cytokine production, but it incorrectly lists 'mtnf' and misinterprets the role of the other substances. It also incorrectly states they are 'anti-inflammatory cytokine producing cells'. Summary B attempts to report on glucose levels and cytokine production, but it is riddled with errors. It mentions 'glucosinolates' which are not in the source, incorrectly states glucose was measured using a glucometer on 'non-fasted mice' (the source specifies non-fasted for STZ injection but fasting status for measurement isn't consistently clear, and the reference implies measurement post-treatment), and misinterprets figure references. Both are nonsensical and lack coherence and faithfulness. The reference summary is a good model of what a useful summary would look like, but neither A nor B comes close.",
+      "error": null
+    },
+    {
+      "sample": 6,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Summary A is an incomplete sentence and seems to be cut off. It also includes extraneous information that is not present in the source text or triples, making it unfaithful and incoherent. Summary B is also an incomplete sentence and appears to be a fragment from a larger text, making it unfaithful and incoherent. Both summaries fail to capture key facts from the source text and do not align with the reference summary. Therefore, they are both equally poor.",
+      "error": null
+    },
+    {
+      "sample": 7,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it captures the core findings and purpose of the study more effectively than Summary A. Summary A includes irrelevant and nonsensical information about language proficiency and doctor's viewpoints, which are not supported by the source text. While Summary B also has some minor issues with sentence structure and slightly misinterpreting the comparison points, it more accurately reflects the study's focus on family needs, satisfaction, and the impact of nursing interventions. The reference summary also aligns better with Summary B's focus on the study's purpose and findings. Both summaries are not particularly concise, but Summary B's faithfulness and coverage are superior.",
+      "error": null
+    },
+    {
+      "sample": 8,
+      "flipped": false,
+      "winner": "with_kg",
+      "reasoning": "Summary B is better because it is more faithful to the source text. It accurately captures the ethical considerations mentioned in the source text, whereas Summary A introduces information that is not directly supported by the source text, such as the inclusion criteria and specific details about Peplau's theory, which are presented out of context and without proper linkage to the ethical considerations. Summary B is also more concise and directly addresses a specific aspect of the source text, making it a more focused and faithful summary of that particular point. While Summary A attempts to cover more ground, its lack of focus and introduction of potentially misleading information makes Summary B superior in terms of faithfulness and conciseness.",
+      "error": null
+    },
+    {
+      "sample": 9,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it captures key information about amino acid changes and references the source text's table 2 and vaccine strains, aligning better with the source's technical details. Summary B, on the other hand, incorrectly states the titer comparison (1:1,020 vs. the source's 1:1,280) and only covers a small, specific detail about titer reduction in a subset of isolates, lacking broader coverage. Summary A also has better coverage of the source text's findings regarding amino acid changes in the HA protein.",
+      "error": null
+    },
+    {
+      "sample": 10,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it captures the main purpose of the study and the scope of the research, including the populations studied and the variables examined. It aligns well with the reference summary's focus on the study's objective and the comparison of obesity indicators across different countries. Summary B, on the other hand, focuses on a very specific finding related to a particular analysis (alternate summary score excluding inflammation in US men) and does not represent the overall study or align with the reference summary. Summary A is also more coherent and concise in presenting the study's aim.",
+      "error": null
+    },
+    {
+      "sample": 11,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it provides more comprehensive information while maintaining coherence and conciseness. Summary B is too brief and lacks crucial details. Summary A aligns better with the reference summary by including more relevant facts from the source text, such as the implications for physicians dealing with large mprls and the timing of secondary SM. Both summaries are faithful and coherent, but Summary A's coverage and alignment with the reference make it superior.",
+      "error": null
+    },
+    {
+      "sample": 12,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is slightly better because it includes the aim of the study, which is a key piece of information. Both summaries are very similar and do a good job of capturing the advantages of minimally invasive techniques and mentioning the Destandau Endospine System and Foley and Smith's Metrx System as alternatives. They both have good coverage and faithfulness. Summary B's inclusion of the study's aim makes it slightly more comprehensive.",
+      "error": null
+    },
+    {
+      "sample": 13,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it captures more of the key information from the source text, particularly the relationship between perceived travel benefits, perceived risks, and destination image, and the role of information sources. It also aligns better with the reference summary's focus on these relationships. Summary B is too brief and lacks detail. Both summaries could be more coherent and concise, but A provides a more comprehensive and faithful representation of the source material.",
+      "error": null
+    },
+    {
+      "sample": 14,
+      "flipped": false,
+      "winner": "with_kg",
+      "reasoning": "Summary B is better because it is more faithful to the source text and knowledge graph by accurately identifying the three RTK signaling pathways discussed (EGFR, IGF-1R, and MET) and their involvement in head and neck squamous cell carcinoma. Summary A, while attempting to synthesize information about combination therapies and their necessity due to pathway interplay, contains several factual errors and misinterpretations: it incorrectly uses 'emfr' and 'med' instead of EGFR and MET, and misrepresents HNSCC as a therapeutic target itself rather than the disease being treated. Furthermore, Summary A's claim about 'mediocre results' from monotherapy is a broad generalization not explicitly stated as a primary conclusion in the source text, whereas Summary B directly reflects the review's stated purpose of highlighting these three pathways. Summary B also aligns better with the reference summary's focus on identifying the key pathways under review.",
+      "error": null
+    },
+    {
+      "sample": 15,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary A is nonsensical and appears to be an artifact of the summarization process, containing fragments of text that do not form a coherent thought and including what appears to be a made-up product name ('analytetrachloroxantheraetoxin Inhibitority Testes'). It is not faithful, lacks coverage, has no coherence, and is not concise in a meaningful way. Summary B, while also having issues, at least attempts to summarize a portion of the methodology. It is more faithful and coherent than A, although it misses key details like the treatments applied and the results. It does not align well with the reference summary, but it is superior to Summary A.",
+      "error": null
+    },
+    {
+      "sample": 16,
+      "flipped": true,
+      "winner": "with_kg",
+      "reasoning": "Summary A is better because it is more concise and faithful to the source text. It accurately reports a case of non-union and the potential treatments for young patients. Summary B, while attempting to cover more information, becomes less coherent and includes extraneous details such as the incidence of non-union and surgeon-controlled factors, which are not central to the case presented in the source. Summary B also contains a factual error regarding the radiograph timing ('30 months' instead of '32 months'). Summary A aligns better with the reference summary by focusing on the specific case and its management.",
+      "error": null
+    },
+    {
+      "sample": 17,
+      "flipped": false,
+      "winner": "tie",
+      "reasoning": "Summary A is more faithful to the source and knowledge graph, mentioning topical tacrolimus and various treatment modalities. However, it lacks coverage of the case details presented in the source and is not well-aligned with the reference summary, which focuses on a specific case. Summary B, while highly faithful to a specific detail (cutaneous examination findings), lacks coverage of the broader topic, treatment, and case presentation, making it less useful overall. It also poorly aligns with the reference summary. Neither summary provides good coverage or alignment with the reference. Summary A is slightly better due to its broader (though still incomplete) coverage of treatment options mentioned in the source.",
+      "error": null
+    },
+    {
+      "sample": 18,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it provides more key details from the source text while remaining concise and coherent. It includes information about the patient's initial presentation (mobile, bleeding teeth) which Summary A omits. Both summaries are faithful to the source and align well with the reference summary in terms of the information they do include. However, Summary B's slightly broader coverage of the initial symptoms makes it a more comprehensive summary of the provided text snippet.",
+      "error": null
+    },
+    {
+      "sample": 19,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Both Summary A and Summary B are identical. They both accurately reflect the source text by highlighting the risk of intracardiac thrombosis due to blood stagnation in cardiac chambers acting as a 'natural reservoir' when using bivalirudin. They are faithful, coherent, and concise. However, they lack coverage as they only focus on a specific point from the source and do not capture the broader context of bivalirudin use in ECMO or the comparison with heparin. They also do not align well with the reference summary, which provides a more comprehensive overview.",
+      "error": null
+    },
+    {
+      "sample": 20,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A, while not a perfect summary of the entire source text, is factually accurate and aligns more closely with the reference summary's focus on clinical data and methods. It includes specific measurements and details about the echocardiography examination. Summary B is incoherent, contains nonsensical definitions and irrelevant numerical lists, and does not reflect any meaningful information from the source text or reference summary. Its content is factually incorrect and illogical.",
+      "error": null
+    },
+    {
+      "sample": 21,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Both summaries fail to provide a meaningful overview of the source text. Summary A is an incomplete list of bacterial strains, which is not a summary at all. Summary B is a jumbled collection of terms, including drug names and bacterial species, with no clear connection or narrative. Neither summary demonstrates faithfulness, coverage, coherence, or conciseness in relation to the source text. The reference summary, while not perfect, is significantly better than either Summary A or B because it captures key findings and follows a logical structure.",
+      "error": null
+    },
+    {
+      "sample": 22,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Both summaries fail to provide a good representation of the source text and are largely incoherent. Summary A includes nonsensical information about 'ana - cytoplasmic anti - toll - like receptors such as epinephondo, adenylarity' and makes claims about aortic aneurysms being reported to show positive results on analytic tests, which is contradicted by the source text stating that infected aortic aneurysms have NOT been reported to show positive findings on ANCA tests. Summary B also suffers from incoherence, listing abbreviations and treatments in a jumbled manner, and incorrectly equating Daptomycin with Penicillin G, and Tazobactam with Piperacillin. It also misinterprets the reference to figures as part of the main summary content. Neither summary captures key facts from the source text, nor do they align well with the reference summary. Both are also very poor in coherence and conciseness. Given the significant flaws in both, they are deemed a tie.",
+      "error": null
+    },
+    {
+      "sample": 23,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it accurately reflects a specific study mentioned in the source text regarding serum vitamin D levels in women with and without endometriosis. While it misinterprets 'endometriosis' as 'endogenous gynecological conditions' and 'endovarian cyst', it captures the core findings of the comparison. Summary B is nonsensical, containing gibberish and incorrect information ('vitamin A, b,c,d,e,and f,g,h,i,j,l,m,n,o,p,q,r,s,trial,w,we,adjusted'). Summary A is more faithful, coherent, and concise despite minor inaccuracies, whereas Summary B fails on all accounts.",
+      "error": null
+    },
+    {
+      "sample": 24,
+      "flipped": false,
+      "winner": "tie",
+      "reasoning": "Both summaries are extremely poor and do not capture the essence of the source text or the reference summary. They appear to be snippets of descriptive text related to figures or specific technical details rather than actual summaries. Summary A is slightly better as it attempts to describe a type of gap and its visual characteristics, drawing from the 'Materials and Methods' section. Summary B is even less coherent and seems to cut off mid-sentence, referencing a comparison not fully explained. Neither summary demonstrates faithfulness, coverage, coherence, or conciseness in a meaningful way. They are essentially non-summaries.",
+      "error": null
+    },
+    {
+      "sample": 25,
+      "flipped": true,
+      "winner": "with_kg",
+      "reasoning": "Summary A is better because it is faithful to the source text and accurately captures key information about the genetic causes of PNDM, specifically mentioning the KCNJ11 and ABCC8 genes and their role in the KATP channel. It is also coherent and concise. Summary B, on the other hand, is unfaithful as it contains numerous factual errors and misinterpretations of the laboratory results and insulinogenic index. The units and values are incorrect, and the descriptions of the indices are garbled, directly contradicting the source text.",
+      "error": null
+    },
+    {
+      "sample": 26,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is significantly better than Summary B. \n\n**Faithfulness:** Summary A has a factual error where it states \"postcontrant 6 and 48 h urinary levels of il- 18 increased significantly ( p=0.048 and p0.001, respectively ; table 3 ) [ table 2 ]\". The source text states \"postcontrast 6 and 24 h urinary levels of il-18 increased significantly ( p=0.048 and p=0.028, respectively ; table 3 )\". The p-value for 48h is incorrect and the reference to table 2 is also misplaced. However, Summary B is entirely unfaithful to the source. It contains a jumbled list of medical conditions and terms that do not accurately reflect the source text's discussion of patient characteristics or results. The claims about statistical significance are also misrepresented.\n\n**Coverage:** Summary A attempts to cover the key findings regarding the measurement of urine il-18 levels and their comparison to creatinine, mentioning the timing of increases and statistical significance. It also touches upon blood urea nitrogen and creatinine clearance, though inaccurately. Summary B fails to cover any key findings; its content is largely nonsensical in relation to the source.\n\n**Reference Alignment:** Summary A aligns better with the reference summary. Both highlight the comparison of creatinine and il-18 levels, the timing of measurements (6 and 24 hours for il-18), and the observation of significant increases in il-18. Summary A's inclusion of specific p-values, although partially incorrect, reflects the reference's detail. Summary B does not align with the reference summary at all.\n\n**Coherence:** Summary A is mostly coherent, although the inclusion of \"[ table 2 ]\" and the incorrect p-value for the 48h measurement slightly disrupt the flow. The mention of \"spot urine level of serum blood urea nitrogen (bun)\" is also awkwardly phrased. Summary B is completely incoherent. The sentence structure is broken, and the list of medical terms is nonsensical and disconnected from the study's context.\n\n**Conciseness:** Summary A is more concise than the source text while attempting to retain key information. Summary B is also short, but its lack of meaning makes conciseness irrelevant.",
+      "error": null
+    },
+    {
+      "sample": 27,
+      "flipped": false,
+      "winner": "with_kg",
+      "reasoning": "Summary A is a collection of disconnected sentences from different parts of the original text, leading to poor coherence and no clear coverage of key facts. It also includes specific numerical data that might not be the most crucial takeaway. Summary B, while brief, accurately captures the proposal of a new HA-based hydrogel for protecting implants, which is a significant point from the source text, and it aligns better with the reference summary's focus on HA's role in preventing bacterial colonization. Summary B is more concise and coherent.",
+      "error": null
+    },
+    {
+      "sample": 28,
+      "flipped": false,
+      "winner": "tie",
+      "reasoning": "Both Summary A and Summary B are extremely poor. Summary A is almost entirely nonsensical, piecing together fragments of sentences from the source text without any logical flow or coherent meaning. It mentions MRSA detection methods and then jumps to ICU/ward statistics in a jumbled manner. Summary B is also nonsensical and includes external links and references that are not present in the source text, which is a major faithfulness issue. It also hallucinates information about specific antibiotics and resistance patterns not accurately reflected. Neither summary captures key facts, aligns with the reference, or is coherent. They are both equally bad due to their incoherence and lack of faithfulness to the source. Therefore, they are tied.",
+      "error": null
+    },
+    {
+      "sample": 29,
+      "flipped": true,
+      "winner": "with_kg",
+      "reasoning": "Summary A is better because it is more faithful to the source text and more concise. Summary B includes information that is not present in the source text, such as the mention of an 'obstructive urethral mass' and a statement about the age of diagnosis, which makes it less faithful and less concise. Summary A accurately captures the key findings from the USG and the delayed static images, including the photopenia in the urinary bladder, which led to the diagnosis of ureterocele. While Summary A includes a minor inaccuracy by mentioning 'intractable ureterocele' instead of 'intracystic ureterocele', this is a less significant issue than the extraneous information in Summary B. Both summaries are coherent and aligned with the reference summary in their core content. However, Summary A's conciseness and faithfulness to the provided source material make it the superior choice.",
+      "error": null
+    },
+    {
+      "sample": 30,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Both summaries are poor and fail to accurately represent the source text. Summary A is extremely unfaithful, introducing nonsensical information about \"vertebraes on their chests\" and a statistically significant increase in \"bmi\" frequency, which is not supported by the source. It also misinterprets a comparison of previous studies. Summary B is also unfaithful and incoherent, presenting a jumbled list of question counts for the QALEFFO questionnaire and then abruptly ending with a partial sentence about physical function scores. Neither summary captures key facts from the source, aligns well with the reference summary, or is coherent. They are equally poor in their failure to summarize the provided text.",
+      "error": null
+    },
+    {
+      "sample": 31,
+      "flipped": true,
+      "winner": "with_kg",
+      "reasoning": "Summary A is better because it accurately reflects the methods used in the study, mentioning both conventional hysteroscopy (though it should be D&C) and outpatient procedures, and it maintains coherence and faithfulness to the source text. Summary B, on the other hand, introduces information about the Vabra aspirator and Novak biopsy curette which, while present in the source text, are not the primary focus of the study being summarized and detract from its core message. It also contains an incomplete sentence and a typo ('endomorphal pathology'). Summary A's main flaw is a minor factual error (hysteroscopy instead of D&C for the first method), but it is otherwise more focused and faithful to the study's methodology and scope than Summary B.",
+      "error": null
+    },
+    {
+      "sample": 32,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Both summaries are very poor. Summary A is nonsensical, attempting to merge coding schemes with citations and irrelevant details. Summary B is also nonsensical, combining descriptions of sedimentary layers with unrelated terms and units. Neither summary captures key facts from the source, aligns with the reference summary, or is coherent or concise. They appear to be random concatenations of words and phrases from the source text.",
+      "error": null
+    },
+    {
+      "sample": 33,
+      "flipped": true,
+      "winner": "with_kg",
+      "reasoning": "Summary A is better because it more closely aligns with the reference summary in terms of content, particularly by including the study's aims. Both summaries are faithful and coherent. Summary A's coverage is slightly better as it includes the aims of the study, which are crucial to understanding the context. Summary B includes some extra details about the study's methodology (retrospective, dates, hospital) that are not present in the reference summary. Therefore, Summary A aligns better with the reference and captures the essential aims of the study.",
+      "error": null
+    },
+    {
+      "sample": 34,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Summary A and Summary B both suffer from significant faithfulness and coverage issues, making it difficult to declare one definitively better. Both summaries introduce information not present in the source text or directly contradict it. Summary A claims a \"significant decrease from the previous year's data\" and a \"decrease by about one percent a week over the last five years,\" which are not supported by the source. Summary B includes extraneous details about parent consent and reporting statistics that, while present in the source, are not presented in a coherent or concise manner, and it incorrectly interprets the source's findings about knowledge promotion by linking it to a specific disease (brucellosis) as the primary reason for overall results. Neither summary effectively aligns with the reference summary. Both summaries have coherence issues due to the inclusion of unsupported or poorly integrated information. In terms of conciseness, both are problematic; Summary A is short but inaccurate, while Summary B is longer and still misses key points while including irrelevant details. Due to these overlapping and severe flaws, the summaries are tied.",
+      "error": null
+    },
+    {
+      "sample": 35,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it is more faithful to the source text and provides a more comprehensive overview of the key recommendations presented in the source. Summary B introduces irrelevant information about a retrospective study that is not central to the main points being conveyed in the latter part of the source text. Both summaries are coherent and concise. Summary A's coverage is superior as it focuses on the diagnostic recommendations for immunocompromised patients, which is a key theme in the source. Summary B's coverage is weaker due to the inclusion of extraneous information.",
+      "error": null
+    },
+    {
+      "sample": 36,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it is more faithful to the source text, covers more key facts, aligns better with the reference summary, is more coherent, and is more concise. Summary A is highly problematic; it contains significant factual inaccuracies, is incoherent, and appears to be a garbled concatenation of phrases from the source text, including an incorrect description of the procedure and a nonsensical phrase about 'cholesteronysis'. Summary B, while less comprehensive than the reference, accurately reflects the conclusion of the source text regarding the use of NBCA and the need for further study. It is a coherent and concise summary of the latter part of the source, which discusses the treatment and its implications.",
+      "error": null
+    },
+    {
+      "sample": 37,
+      "flipped": true,
+      "winner": "with_kg",
+      "reasoning": "Summary A is better because it is a concise and coherent statement that accurately reflects a key point from the source text regarding the suboptimal dosing of hydroxyurea in early clinical trials. Summary B, while containing the same accurate core statement, is marred by the inclusion of irrelevant and nonsensical text ('a ect ad resympathy' and additional information about esophageal strictures) that significantly harms its coherence and conciseness, and introduces factual elements not directly related to the core statement.",
+      "error": null
+    },
+    {
+      "sample": 38,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Both summaries fail to accurately reflect the source text and introduce nonsensical information. Summary A includes medically inaccurate and unscientific claims about bone morphology and metastasis, as well as misinterpreting terms like 'hematopoietic stem cells.' Summary B also misinterprets terms, replacing 'hematopoietic' with 'nitric oxide' and 'bone marrow' with 'bone hyaluronate.' Both summaries also include extraneous procedural details that are out of context and do not contribute to a coherent summary. Neither summary adequately captures the key facts from the source text, and both are highly incoherent and lack conciseness due to the inclusion of irrelevant and fabricated information. The reference summary provides a much better overview of the source text, highlighting its key points accurately and coherently. Therefore, both Summary A and Summary B are equally poor.",
+      "error": null
+    },
+    {
+      "sample": 39,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it provides more coverage of the source text, including details about the patient's potential exposure to tuberculosis at a younger age and the long latency period. Summary A is too brief and focuses on only a small part of the diagnostic challenge described in the source. Both summaries are faithful, coherent, and concise, but B's superior coverage makes it the better choice. Neither summary aligns well with the reference summary as they both focus on specific details rather than the broader points made in the reference.",
+      "error": null
+    },
+    {
+      "sample": 40,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it includes more relevant information from the source text, specifically mentioning the effect of the ketogenic diet on brain tumor growth, which is a significant point not covered by Summary A. Both summaries are faithful, coherent, and concise. Summary B has slightly better coverage due to the inclusion of the brain tumor information.",
+      "error": null
+    },
+    {
+      "sample": 41,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it is more faithful to the source text and more aligned with the reference summary. Summary A contains significant factual errors, such as misinterpreting 'extcc-ssn' and incorrectly defining anatomical landmarks. Summary B, while also containing some minor inaccuracies and abbreviations not fully explained, is closer to the source's meaning and structure, and it includes key elements like the abbreviations for anatomical landmarks and the reference to the figure.",
+      "error": null
+    },
+    {
+      "sample": 42,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it is more faithful to the source text and more comprehensive. Summary A accurately reflects the source text's discussion of IVF patients donating embryos and their moral considerations. Summary B is a jumbled collection of sentences that do not form a coherent summary and misrepresents the source text's findings about the 'added imperative to donate' and the reasons for refusal.\n\nFaithfulness: Summary A is faithful to the source text, accurately reflecting the discussion about IVF patients, cryopreserved embryos, stem cell research, and the moral status of embryos. Summary B is not faithful as it stitches together unrelated sentences and misrepresents the source's emphasis on press coverage as an 'added imperative' for donation. It also conflates reasons for donation with reasons for refusal.\n\nCoverage: Summary A covers key aspects like the type of patients, the embryos donated, the research type, and the underlying moral reasoning. Summary B's coverage is poor due to its fragmented nature.\n\nReference Alignment: Summary A aligns better with the reference summary's focus on donor rationales and ethical considerations, even though it is not a direct paraphrase. Summary B is too disjointed to align with the reference.\n\nCoherence: Summary A is coherent and reads like a logical statement. Summary B is incoherent, jumping between different ideas without any clear connection.\n\nConciseness: Both summaries are relatively concise, but Summary A is more effective in conveying information within its conciseness.",
+      "error": null
+    },
+    {
+      "sample": 43,
+      "flipped": false,
+      "winner": "with_kg",
+      "reasoning": "Summary B is better because it aligns more closely with the reference summary's focus on the genetic basis of pediatric MTC, specifically the role of the RET proto-oncogene. It also captures a more significant key fact from the source text regarding the cause of childhood MTC. Summary A focuses on a specific detail about MEN2A mutations which, while present in the source, is less central to the overall topic of pediatric MTC compared to Summary B's point about the cause of MTC in children. Both summaries are faithful, coherent, and concise. Summary B has better coverage of the main topic.",
+      "error": null
+    },
+    {
+      "sample": 44,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A, while having a minor error in referring to 'cancer region' instead of 'tumor region' and using 'ic' and 'IC' which seem to be typos for 'ik' and 'ik+1', is much closer to the source text and the reference summary in its topic and intent. It discusses comparing image similarity metrics (modified Hausdorff distance) related to deformation modeling. Summary B, conversely, focuses on a very specific technical detail about FEM vs XFEM regarding discontinuities and DOFs, which is a much smaller part of the overall text and not central to the main points highlighted in the reference summary. Summary A's attempt to discuss evaluation metrics makes it more aligned with the core message of the source and reference.",
+      "error": null
+    },
+    {
+      "sample": 45,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it attempts to cover more of the source text's information, mentioning specific diseases and types of cancer, and even incorporating the concept of the n-6/n-3 ratio. Although it contains some inaccuracies and formatting issues (like the YouTube link and broken references), it is more aligned with the overall scope of the source text than Summary B. Summary B is extremely concise, but it only captures a single, very specific detail about bacterial growth inhibition and DHA's link to gastric cancer, which is too narrow to be considered a good summary of the provided source text. Summary A, despite its flaws, is more comprehensive and closer to the reference summary's breadth.",
+      "error": null
+    },
+    {
+      "sample": 46,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A directly extracts specific diagnostic criteria and patient outcomes related to 5rd and PAIS, which are key components discussed in the source text. It accurately reflects the diagnostic process and patient findings. Summary B, while mentioning aspects of patient evaluation (follow-up records, sample collection, hormonal measurements), is less informative about specific diagnoses or outcomes and is more of a procedural description. Summary A is also more aligned with the reference summary's focus on diagnostic findings and patient categorization.",
+      "error": null
+    },
+    {
+      "sample": 47,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it captures more key facts from the source text, including the breakdown of specimen sources, recommended treatments for different patient severities, and the overall prevalence of MRSA in urine samples. Summary B is too brief and only includes the introductory sentence, failing to cover the core findings of the study. While Summary A is a bit fragmented towards the end, its coverage of crucial information makes it superior to Summary B, which offers minimal content. Both summaries are faithful to the source, coherent, and concise, but Summary A's coverage is significantly better.",
+      "error": null
+    },
+    {
+      "sample": 48,
+      "flipped": false,
+      "winner": "tie",
+      "reasoning": "Summary A is an incomplete excerpt of a table from the source text, making it difficult to evaluate its faithfulness, coverage, and coherence as a standalone summary. It does not present a narrative or a complete picture of the source. Summary B is an incomplete sentence followed by an excessive number of citation markers, rendering it incoherent and lacking any meaningful coverage or faithfulness to the source. Both summaries fail to meet the basic requirements of a good summary. Therefore, they are considered a tie in their inadequacy.",
+      "error": null
+    },
+    {
+      "sample": 49,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is significantly better than Summary A because it captures more of the key information from the source text, specifically the inclusion criteria for the study. Summary A is extremely poor, only capturing a fraction of the inclusion criteria and then including extraneous contact information. Summary B, while not perfect and containing some errors (e.g., 'coracoclavic ligaments', 'Endobutton Device (groups 1 and 2)'), is far more comprehensive and faithful to the source. The reference summary provides a good baseline, and while neither A nor B perfectly matches it, B's attempt to capture the inclusion criteria makes it superior. Both summaries suffer from coherence issues due to their incompleteness and errors. B is slightly more concise than a perfect summary would be, but A is so incomplete it cannot be judged on conciseness.",
+      "error": null
+    },
+    {
+      "sample": 50,
+      "flipped": false,
+      "winner": "tie",
+      "reasoning": "Summary A includes significantly more information from the source text, specifically detailing pre-operative lab results, a CBC with differential, and initial diagnostic imaging findings. It also captures the context of post-operative monitoring and the differential diagnosis considered. However, it contains a factual error regarding hemoglobin units (g/day instead of g/dL) and an incomplete sentence at the end. Summary B is extremely concise, only stating the patient's recent surgery and use of compression stockings. While faithful and coherent, its coverage is minimal, and it doesn't align well with the reference summary's level of detail. Neither summary is ideal: A is too detailed and contains an error, while B is too sparse. They are tied because A attempts more comprehensive coverage at the cost of accuracy, while B is accurate but lacks coverage.",
+      "error": null
+    },
+    {
+      "sample": 51,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it captures more of the key information from the source text, particularly regarding the comparison between supraclavicular and axillary approaches and the cosmetic benefits of minimally invasive surgery. Summary B is poorly written, difficult to understand, and focuses on minor details about the surgical instruments and a partial quote. Summary A, while not perfect, is more faithful, covers more ground, is more coherent, and aligns better with the reference summary's overall theme.",
+      "error": null
+    },
+    {
+      "sample": 52,
+      "flipped": false,
+      "winner": "with_kg",
+      "reasoning": "Summary B is better because it is more concise and directly presents the key information about the 'spiritual beliefs' category. Summary A includes an extraneous phrase about 'during the past two decades some studies have' which is not relevant to the core finding being presented and detracts from its conciseness. Both summaries are faithful, coherent, and align well with the reference and source text in terms of the information they do present. However, B's conciseness gives it the edge.",
+      "error": null
+    },
+    {
+      "sample": 53,
+      "flipped": false,
+      "winner": "with_kg",
+      "reasoning": "Summary B is better because it is more comprehensive and accurately reflects the content of the source text and the reference summary. Summary A includes technical details about CTP examination that are not central to the study's findings and also includes extraneous information like 'a,b,c,d,e,f,g,h,j,k,l,m,n,o,p,r,s,t,u,v,w,q,z,T,U,V,C,D,E,F,G,S,H,L,R,W,X,Y,Z,M,N,O,K' which is not present in the source text and seems like a copy-paste error. Summary B, while also containing some extraneous list, provides a better overview of the study's parameters and diagnostic criteria, aligning more closely with the reference summary's scope and content.",
+      "error": null
+    },
+    {
+      "sample": 54,
+      "flipped": true,
+      "winner": "with_kg",
+      "reasoning": "Summary A provides a more comprehensive overview of the case, including the initial diagnosis, surgical interventions, and chemotherapy treatment, while remaining faithful to the source text. Summary B is fragmented and includes extraneous details like image magnifications, making it less coherent and comprehensive. Although Summary A contains some details about the surgery that might be considered too specific for a general summary, it still offers a better overall representation of the case compared to Summary B. Neither summary fully aligns with the reference summary's scope, but Summary A's coverage and coherence are superior.",
+      "error": null
+    },
+    {
+      "sample": 55,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Summary A attempts to create a concise summary of the diagnostic criteria but introduces factual inaccuracies and incomprehensible terms ('asymptomosis', 'egdnational', 'urethraectomouses'). It fails on faithfulness, coherence, and coverage. Summary B is a disjointed collection of facts from the source text, including test results and diagnostic criteria, that do not form a coherent narrative. It fails significantly on coherence and coverage, as it only includes scattered facts without context. Neither summary effectively captures the essence of the source text or aligns with the reference summary. Both are poor, but for different reasons. Therefore, they are tied.",
+      "error": null
+    },
+    {
+      "sample": 56,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it is more coherent and faithful to the source text, even though it contains some minor inaccuracies in spelling and formatting. Summary A is a jumbled mess of incomplete sentences, citations, and nonsensical claims, making it almost entirely incomprehensible. Summary B, while not perfect, at least presents a somewhat coherent idea related to the source text, even with its flaws.",
+      "error": null
+    },
+    {
+      "sample": 57,
+      "flipped": false,
+      "winner": "with_kg",
+      "reasoning": "Summary B is better because it is more faithful to the source text, more coherent, and more concise. It accurately captures the key fact that a CT scan led to an inaccurate diagnosis, which was then corrected by EUS-FNA. Summary A includes extraneous details and figures from the source text, making it less coherent and concise. Additionally, Summary A includes a statement about gossypiboma that is not directly supported by the provided knowledge graph, while Summary B focuses on the diagnostic process highlighted in the source.",
+      "error": null
+    },
+    {
+      "sample": 58,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it provides more comprehensive coverage of the source text, including the patient's demographic, the method used, and key findings, which Summary A lacks. While Summary B has a minor typo ('0ct' instead of 'OCT'), it aligns better with the reference summary in terms of content and structure. Both summaries exhibit good faithfulness, coherence, and conciseness relative to their content, but Summary B's superior coverage makes it the better choice overall.",
+      "error": null
+    },
+    {
+      "sample": 59,
+      "flipped": false,
+      "winner": "tie",
+      "reasoning": "Both Summary A and Summary B fail to provide a coherent or faithful summary of the source text. Summary A attempts to extract specific details but is riddled with grammatical errors, misspellings, and nonsensical phrases, making it largely unreadable and factually questionable due to the severe distortions. Summary B is even worse, consisting almost entirely of seemingly random words, fragmented phrases, and a lengthy string of citations that do not form any coherent narrative or capture any key facts from the source. Neither summary can be considered 'better' as both are fundamentally flawed and unusable. They do not align with the reference summary, lack coverage, and are not coherent or concise in any meaningful way. The reference summary, while brief, is accurate and well-formed, highlighting the inadequacy of both A and B.",
+      "error": null
+    },
+    {
+      "sample": 60,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it is more faithful to the source text. Summary B contains several factual inaccuracies and introduces information not present in the source text, such as 'creatinic acidosis', 'rheurin's disease', and a discussion about dialysis recurrence. Summary A, while not a perfect summary, is more coherent and aligns better with the factual information presented in the source, particularly regarding creatine kinase levels and risk factors for renal injury. Both summaries lack coverage of the full scope of the source text, but Summary A's faithfulness makes it superior.",
+      "error": null
+    },
+    {
+      "sample": 61,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Both summaries are poor. Summary A is a fragmented collection of phrases and terms related to post-operative assessments and comparisons to other procedures, without a clear narrative or conclusion. It also includes incorrect location information for Optovue. Summary B is also highly fragmented, discusses 'fili' and its relation to hyperprolate shape and HOAs, but it introduces the nonsensical phrase 'abnormal hyperprolate shape of the lens' (should be cornea) and 'loss of confidence' instead of 'loss of bcva', which contradicts the source. Neither summary captures key facts from the source, is coherent, concise, or aligned with the reference summary. They are both equally bad in their own way.",
+      "error": null
+    },
+    {
+      "sample": 62,
+      "flipped": true,
+      "winner": "with_kg",
+      "reasoning": "Summary A is better because it accurately reflects key findings from the source text regarding the prognostic abilities of different scores and biomarkers, specifically referencing ROC analysis results and comparing strem-1, pct, apacheii, and sofa scores. Although it contains some minor typos ('d' instead of pct, 'apaceion Score' instead of apache ii score), the core information aligns with the source. Summary B, on the other hand, is a direct copy of a sentence from the source text describing the demographic and disease data collected, which is not a summary of the study's findings or conclusions. It fails to capture the essence of the research or its results, making it irrelevant as a summary of the study's outcomes. Therefore, Summary A, despite its flaws, is significantly more aligned with the purpose of summarizing the study's results.",
+      "error": null
+    },
+    {
+      "sample": 63,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Both summaries fail significantly on multiple criteria. Summary A is largely nonsensical, containing uninterpretable characters and phrases that contradict the source text and lack coherence. Summary B, while slightly more coherent, also contains factual inaccuracies (e.g., 'training in the cool' when it should be 'training in the heat', and incorrectly stating clothing for the heat condition) and is incomplete in its coverage. Neither summary effectively captures the key findings or aligns well with the reference summary. Due to the severe deficiencies in both summaries, they are considered a tie.",
+      "error": null
+    },
+    {
+      "sample": 64,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Both Summary A and Summary B are poor. They both attempt to include technical details and equations from the source text but do so in a highly incoherent and factually incorrect manner. They both fail significantly on faithfulness, coherence, and coverage. Summary A is slightly better than B as it tries to present some comparative data, even if it's misrepresented. Summary B is almost entirely gibberish. The reference summary is much better as it captures the core findings of the paper in a clear and concise way.",
+      "error": null
+    },
+    {
+      "sample": 65,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it is more faithful to the source text and captures more key information. While both summaries are poor, Summary B at least attempts to extract relevant details about goal achievement categories and the association between dual-goal achievement and reduced risk of microvascular complications. Summary A is largely nonsensical, pulling in unrelated terms and failing to convey any meaningful information from the source. The reference summary is by far the best and most accurate representation of the source text.",
+      "error": null
+    },
+    {
+      "sample": 66,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Summary A attempts to discuss the findings of the study regarding ultrasound measurements and traditional screening methods, but it contains factual inaccuracies ('posterior-neck hard tissue thickening parameters', 'tmd, iig, and mms, for example, were not significantly different from each other') and misinterprets the source text. It vaguely mentions ultrasound measurements predicting laryngoscopy but fails to capture specific findings. Summary B, on the other hand, focuses on a specific detail (optimal cutoff values from ROC analysis) but presents incorrect values and percentages that contradict the source text (e.g., 85.3% instead of 82.3% for MMS specificity, 95.7% instead of 93.7% for TMD specificity). It also omits crucial information like the specific measurements (dshb, dsem, dsac) and their predictive values. Neither summary accurately reflects the source material, making them equally poor in terms of faithfulness and coverage. Their reference alignment is also low due to factual errors. Both summaries are also poorly coherent and concise given their inaccuracies. Therefore, they are tied as being equally ineffective.",
+      "error": null
+    },
+    {
+      "sample": 67,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A, despite its numerical inaccuracies within the parenthetical lists, is superior because it is a coherent and factually grounded (though flawed in detail) representation of the source text. It mentions key findings like the detection of moderate pericardial effusion and the observation about atrial fibrillation. Summary B, on the other hand, is largely nonsensical, containing extraneous and irrelevant text ('so heuristica etinae cosi\u00f3phyllidatie...') that completely breaks coherence and faithfulness, rendering it unusable as a summary.",
+      "error": null
+    },
+    {
+      "sample": 68,
+      "flipped": false,
+      "winner": "tie",
+      "reasoning": "Both Summary A and Summary B fail to provide an accurate or coherent summary of the provided source text. Both summaries appear to be garbled, truncated, or nonsensical, likely due to a technical error in their generation. They do not capture key facts, align with the reference summary, or present coherent information. Summary A at least begins to list some mechanisms of cisplatin ototoxicity, which is a minor point in its favor, but it quickly devolves into unrelated and uninterpretable text. Summary B is even less coherent, presenting a jumbled mix of terms that do not form a discernible meaning related to the source text. Therefore, neither summary can be definitively considered 'better' than the other.",
+      "error": null
+    },
+    {
+      "sample": 69,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is more faithful, coherent, and concise than Summary B. Summary B is largely nonsensical and contains numerous factual inaccuracies and grammatical errors, making it impossible to evaluate against most criteria. Summary A, while short and focused on a specific detail, accurately reflects a potential side effect mentioned in the source text.",
+      "error": null
+    },
+    {
+      "sample": 70,
+      "flipped": false,
+      "winner": "tie",
+      "reasoning": "Both summaries are poor and do not accurately reflect the source text. Summary A includes a limitation from the source text and then a nonsensical list of abstinence hours followed by a partially correct statement about physiologic bases of AWS, but misnames 'adrenergic hyperactivity' as 'auditory hyperactivity'. Summary B attempts to describe the subtyping of AWS but is filled with gibberish and likely misinterpretations of the source text, rendering it largely incoherent. Neither summary captures key facts, aligns with the reference, or is coherent. They are equally bad in their own ways.",
+      "error": null
+    },
+    {
+      "sample": 71,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it is more faithful to the source text. Summary B makes a nonsensical statement by including \"religious tap water\" and the phrase \"(a - d)\" which is not present in the source text. Both summaries have similar coverage, coherence, and conciseness, but Summary A's faithfulness to the source makes it the superior choice.",
+      "error": null
+    },
+    {
+      "sample": 72,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Both summaries fail significantly in faithfulness and coverage. Summary A introduces incorrect information about CPAP, CLC, cholanectoma, and atypical CDCs, and misrepresents the nature of the disease and its recurrence risks. Summary B is also factually incorrect, misstating percentages and disease characteristics, and introducing terms like 'thorium' and 'craspinals pathways' which are not present in the source. Neither summary aligns well with the reference summary, which is a much more accurate and concise representation of the source text. Both summaries also struggle with coherence and conciseness, presenting jumbled and often nonsensical information. Due to the severe factual inaccuracies and lack of relevance to the source text in both summaries, they are equally poor.",
+      "error": null
+    },
+    {
+      "sample": 73,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it is more faithful and coherent than Summary A. Summary A appears to be corrupted and includes extraneous characters. Both summaries are extremely brief and therefore don't capture much coverage. They both align reasonably well with the reference summary due to their brevity. However, Summary B is superior because it is at least coherent and doesn't contain obvious corruption.",
+      "error": null
+    },
+    {
+      "sample": 74,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it captures more key information from the source text, including details about the diagnostic criteria, patient demographics, treatment types, and statistical findings. Summary B is too brief and only covers the measurement method. While Summary A does contain some extraneous information and minor inaccuracies (e.g., 'enumeration' instead of 'enucleation'), it provides a more comprehensive overview of the study's methodology and results compared to Summary B, and aligns better with the reference summary's scope. Both summaries lack specific detail on outcomes like recurrence rates, but A's broader coverage makes it superior.",
+      "error": null
+    },
+    {
+      "sample": 75,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it includes more factual information from the source text while maintaining faithfulness. Summary A is too concise and omits key findings. Both summaries are largely aligned with the reference summary, but Summary B's inclusion of the TDT analysis fact makes it superior in terms of coverage. Summary A also contains extraneous characters ('br ect a resymbros.') that detract from its coherence.",
+      "error": null
+    },
+    {
+      "sample": 76,
+      "flipped": false,
+      "winner": "error",
+      "reasoning": "",
+      "error": "All 5 attempts failed. Last error: Unexpected winner value: 'REFERENCE'"
+    },
+    {
+      "sample": 77,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it is a coherent and concise summary that accurately reflects the source text. Summary A is a nonsensical jumble of words and phrases that does not accurately represent the source text. Both summaries are completely unfaithful to the reference summary, as they do not contain any of the same information. However, summary B is coherent and concisely summarizes a minor detail from the source text, whereas summary A is incoherent.",
+      "error": null
+    },
+    {
+      "sample": 78,
+      "flipped": false,
+      "winner": "tie",
+      "reasoning": "Both summaries are extremely poor and do not reflect the source text or the reference summary. Summary A provides a single, isolated experimental detail about BSA incubation, which is only a small part of the methodology and lacks context. Summary B is even worse as it seems to be a garbled rendition of experimental procedures, mentioning 'recombination assay' which is not present in the source and 'af' and 'ethyl' which are likely misinterpretations of SDS and glycerol. Neither summary captures any key facts, aligns with the reference, or is coherent or concise. They are essentially meaningless as summaries.",
+      "error": null
+    },
+    {
+      "sample": 79,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it is more faithful to the source text and more coherent than Summary B. Summary B contains several nonsensical phrases and word substitutions (e.g., 'cft', 'cp and avya na oti rondings', 'g ed a lu - tional paralleling') that make it difficult to understand and detract from its quality. Summary A, while containing some minor errors and not perfectly capturing the entirety of the source, is significantly more understandable and presents information in a more logical flow. Both summaries have issues with coverage, as they focus heavily on the CT/CAD/CAM technology and do not adequately represent the study's findings on conventional stents. However, Summary A's faithfulness and coherence make it the superior choice.",
+      "error": null
+    },
+    {
+      "sample": 80,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is significantly better than Summary B. Summary A, while imperfect and containing some garbled text towards the end, attempts to extract specific findings related to correlations between b-cell subsets and clinical manifestations, even referencing statistical values and specific cell types. Although it becomes difficult to parse at the very end, it shows an effort to reflect factual content from the source. Summary B is almost entirely incoherent and nonsensical. It appears to be a jumbled collection of unrelated phrases and medical jargon, including \"Titerization of the blood cytologically and morphologically,\" \"neosporin \u2013 free erythraepidosuccintylated,\" and random letters and numbers. It does not accurately reflect the source text or the reference summary in any meaningful way and is not coherent or concise.",
+      "error": null
+    },
+    {
+      "sample": 81,
+      "flipped": true,
+      "winner": "with_kg",
+      "reasoning": "Summary A is more faithful to the source text by accurately listing the information included in the reserve. Summary B introduces inaccuracies, such as 'strain name hpv' and 'sequence status rcsb accession i d,' and includes extraneous information about a previous database, making it less coherent and faithful. While Summary B attempts broader coverage, its inaccuracies and lack of coherence make Summary A superior overall.",
+      "error": null
+    },
+    {
+      "sample": 82,
+      "flipped": false,
+      "winner": "with_kg",
+      "reasoning": "Summary B is better because it is more concise and aligns better with the reference summary. Summary A is too long and includes information not present in the reference summary, such as the introduction of astigmatism and complications of older methods. Summary B, while brief, captures the core information about the improved toric IOL designs and their stability, which is a key point also highlighted in the reference summary.",
+      "error": null
+    },
+    {
+      "sample": 83,
+      "flipped": true,
+      "winner": "with_kg",
+      "reasoning": "Summary A is better because it is more faithful to the source text and captures more key information. It accurately reflects the role of LMAN-RA synaptic transmission and NMDA receptors in song variability and vocal control, as described in the source. Summary B, while mentioning AMPA receptors and gain modulation, is a fragmented sentence from the source text and lacks context and completeness. Summary A aligns better with the reference summary's focus on NMDA receptors and gain modulation in the context of song production. Summary A is coherent, concise, and provides a more comprehensive overview of a specific aspect discussed in the source.",
+      "error": null
+    },
+    {
+      "sample": 84,
+      "flipped": true,
+      "winner": "with_kg",
+      "reasoning": "Summary A is better because it is more faithful to the source text. Summary B incorrectly states that limb-sparing vascular bypass grafts are the most important part of managing vascular pythiosis, which directly contradicts the source text's emphasis on amputation as the primary method for source control. Summary A, while brief, accurately reflects the source's key learning points without introducing misinformation. Both summaries are very similar in their alignment with the reference summary and their coherence. Summary A is more concise as it omits less relevant details found in Summary B.",
+      "error": null
+    },
+    {
+      "sample": 85,
+      "flipped": false,
+      "winner": "with_kg",
+      "reasoning": "Summary B is better because Summary A introduces several factual inaccuracies not present in the source text or knowledge graph, such as claiming the use of cytokinesic ubiquitin ligase and ubiquinone acetyltransferase inhibitor. Summary B, while very brief, accurately reflects the quantity of fragmented cDNA used and the hybridization process. Therefore, B is more faithful and coherent, even if its coverage is limited. The reference summary is a much more comprehensive overview of the source text's methodology and findings.",
+      "error": null
+    },
+    {
+      "sample": 86,
+      "flipped": false,
+      "winner": "tie",
+      "reasoning": "Both Summary A and Summary B are critically flawed and fail to provide a meaningful summary of the source text. They appear to be corrupted or incomplete, containing fragmented sentences, tables, and what look like internal formatting or references instead of coherent summaries. Neither summary demonstrates faithfulness, coverage, reference alignment, coherence, or conciseness. Therefore, they are considered a tie due to their equal lack of quality and utility.",
+      "error": null
+    },
+    {
+      "sample": 87,
+      "flipped": true,
+      "winner": "with_kg",
+      "reasoning": "Summary A is superior due to its faithfulness, coverage, coherence, and conciseness, and its alignment with the reference summary. It accurately captures key information about patient monitoring, stroke types, and outcomes, presenting it in a clear and logical manner. Summary B, while attempting to cover more ground, suffers from a lack of coherence, includes irrelevant information (meta-analysis of adult patients), and its fragmented nature makes it difficult to follow. It also misinterprets or poorly presents some of the source material, such as the description of operation timing.",
+      "error": null
+    },
+    {
+      "sample": 88,
+      "flipped": true,
+      "winner": "with_kg",
+      "reasoning": "Summary A is better because it accurately reflects the source text's findings regarding the combination therapy's enhanced RAAS blocking effect and its relationship to the antiproteinuric effect. Summary B, on the other hand, is not a summary at all; it appears to be a collection of unrelated phrases from the source text, including exclusion criteria and details about the washout period, making it incoherent and uninformative as a summary. Summary A's coverage is limited, but it is faithful and coherent, whereas Summary B fails on all counts.",
+      "error": null
+    },
+    {
+      "sample": 89,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it is more faithful to the source text and more coherent. Summary B introduces information about 'low level of recombination in vitro vs in vivo' which is not present in the source text and is logically inconsistent with the rest of the summary. Summary A accurately reflects the findings cited in the source text regarding the enhanced attachment of osteoblasts to biometals with submicron to nanometer consistent particles. Both summaries are concise. Summary A has better coverage of the specific scientific finding than Summary B.",
+      "error": null
+    },
+    {
+      "sample": 90,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it is more faithful to the source text than Summary B. Summary A accurately reports the quantity of sequence data (2.1 gb) and the URLs for clcbio and soap. Summary B misreports the quantity as '2.1 gp' and uses incorrect URLs for both clcbio and soap. Both summaries have similar coverage, coherence, and conciseness, but the factual inaccuracies in Summary B make Summary A the clear winner.",
+      "error": null
+    },
+    {
+      "sample": 91,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A, while containing some extraneous citations and minor grammatical errors, captures the essence of the source text regarding the limitations and challenges of bipolar hip arthroplasty (BHA) for avascular necrosis (AVN) of the hip. It correctly identifies issues like outer cup migration, acetabular erosion, and unpredictable pain relief as significant concerns, and touches upon the idea of acetabular preparation to mitigate these problems. Summary B is nonsensical and appears to be a jumbled collection of unrelated phrases and medical terms, making it completely unfaithful, uninformative, and incoherent.",
+      "error": null
+    },
+    {
+      "sample": 92,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it includes more key information from the source text while maintaining faithfulness and coherence. Summary A is too brief and only captures a small fraction of the relevant information. Summary B, while containing a significant amount of text, accurately reflects the Naranjo algorithm assessment and its supporting points, which are crucial for understanding the causality of VPA-induced hyperammonemia in the case. Although Summary B is less concise than Summary A, its comprehensiveness in capturing these critical details makes it the superior summary in this comparison.",
+      "error": null
+    },
+    {
+      "sample": 93,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it is more faithful to the source text, more coherent, and more concise than Summary A. Summary A contains a large amount of nonsensical text that is not present in the source text. Summary B, on the other hand, accurately reflects information from the source text and presents it in a coherent and concise manner. While neither summary perfectly aligns with the reference summary, Summary B's faithfulness and coherence make it the superior choice.",
+      "error": null
+    },
+    {
+      "sample": 94,
+      "flipped": false,
+      "winner": "tie",
+      "reasoning": "Summary A is a verbatim copy of a small section of the source text, including an equation and citation, making it not a summary but a quote. It does not capture key facts or align with the reference summary. Summary B is extremely garbled and appears to have been corrupted during generation, making it incoherent and unintelligible. It also does not capture key facts or align with the reference summary, and its faithfulness is questionable due to its incoherence. Both summaries fail on most criteria. Summary A is slightly less problematic as it at least directly quotes the source, whereas Summary B is nonsensical.",
+      "error": null
+    },
+    {
+      "sample": 95,
+      "flipped": false,
+      "winner": "tie",
+      "reasoning": "Summary A and Summary B are both poor. Summary A includes information from two different parts of the source text, making it incoherent and seemingly contradictory. It also fails to capture the main findings of the study. Summary B is also incoherent, as it lists specific glomerulonephritis types and then trails off with an irrelevant and nonsensical statement. It does not align with the reference summary and fails to capture key findings. Therefore, they are both considered a tie due to their significant flaws.",
+      "error": null
+    },
+    {
+      "sample": 96,
+      "flipped": false,
+      "winner": "no_kg",
+      "reasoning": "Summary A is better because it includes crucial information about potential diagnostic pitfalls (association with ABC, giant cell-rich lesions) which is a significant part of the source text's discussion on diagnosis. Summary B omits this important aspect, making it less comprehensive. Both summaries are faithful, coherent, and concise, but A's superior coverage makes it the better choice.",
+      "error": null
+    },
+    {
+      "sample": 97,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Summary A is a very poor summary that seems to have hallucinated some information and is not faithful to the source text. Summary B is also a poor summary because it only focuses on background information and completely ignores the methods, results, and conclusions of the study discussed in the source text. It also includes information that is not in the source text. Because both summaries are very bad, they are tied.",
+      "error": null
+    },
+    {
+      "sample": 98,
+      "flipped": true,
+      "winner": "no_kg",
+      "reasoning": "Summary B is better because it aligns more closely with the reference summary in terms of content and structure. Both summaries discuss adherence rates and highlight specific stages (Stage I and II) and issues like overtreatment. Summary A focuses more on general undertreatment in Turkey and specific studies, which is less aligned with the core findings presented in the reference summary. Summary B also includes more specific details about treatment approaches and adherence rates for particular stages, which are crucial elements of the source text and the reference summary. While Summary B has a minor error in stating 'students' instead of 'patients' in one instance, its overall coverage and alignment with the reference summary make it superior to Summary A.",
+      "error": null
+    },
+    {
+      "sample": 99,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Both Summary A and Summary B are nonsensical and do not accurately reflect the source text. They appear to be the result of a corrupted text generation process. Neither summary captures any key facts from the source, nor do they align with the reference summary. They are not coherent, concise, or faithful to the original information. Therefore, they are equally poor and a tie is the appropriate assessment.",
+      "error": null
+    },
+    {
+      "sample": 100,
+      "flipped": true,
+      "winner": "tie",
+      "reasoning": "Summary A accurately describes a method for extracting glycans using solid phase extraction with specific cartridges and solvents mentioned in the source text. However, it focuses on a very specific methodological detail and lacks broader coverage. Summary B attempts to describe analytical results related to monosaccharide derivatives and retention times, also from the source text. It uses incomplete phrasing ('tetra - alditol' and 'tri - or methyl galnac') and omits crucial context (e.g., what specific sugars are represented by 'tetra' and 'tri', and the figure reference is incomplete). Neither summary provides a good overview of the source text. Summary A is more faithful to a specific extraction process, while Summary B is less coherent and faithful due to its incomplete and context-lacking description of analytical results. Given their limited scope and different types of flaws, they are considered a tie.",
+      "error": null
+    }
+  ]
+}

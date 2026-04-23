@@ -1,0 +1,5916 @@
+{
+  "metadata": {
+    "total_samples": 100,
+    "valid_samples": 100,
+    "seed": 42,
+    "max_workers": 5,
+    "elapsed_seconds": 240.84030675888062
+  },
+  "aggregate": {
+    "avg_no_kg_factuality": 0.09200000000000001,
+    "avg_with_kg_factuality": 0.06600000000000003,
+    "delta": -0.02599999999999998
+  },
+  "results": [
+    {
+      "sample": 1,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What percentage of Parkinson's disease patients experience anxiety?",
+          "a": "Nearly 50%."
+        },
+        {
+          "q": "What specific cognitive tasks did patients with anxiety (PDA+) perform worse on compared to those without anxiety (PDA)?",
+          "a": "Digit span forward and backward test and part B of the Trail Making Task (TMT-B)."
+        },
+        {
+          "q": "Which cognitive domains showed no significant group differences between PD patients with and without anxiety?",
+          "a": "Verbal fluency, logical memory, and TMT-A performance."
+        },
+        {
+          "q": "What is the primary conclusion of the study regarding the impact of anxiety in Parkinson's disease?",
+          "a": "Anxiety in PD has a measurable impact on working memory and attentional set-shifting."
+        },
+        {
+          "q": "How many Parkinson's disease participants were included in the study?",
+          "a": "50."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 2,
+      "no_kg": {
+        "answers": [
+          "let-7, Mir-17 - 92, Let-7 ( mir-34 ), Mir-125, Mitochondria ( mur-128), Cyclin d1 3utr (mir-221/222 ) Erbb2/Her signaling pathway ( erbhb2 ); and p53 kinase 1 (pdcd1)",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "factuality": 0.8
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "The identification of the expression signature of these non - coding small ro and an understanding of their functional significance to oncogenes expression, tumor initiation and tumor cell metastasis may shed important new perspectives on the role of mirinae in the development and progression of breast carcinomas.",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What are some examples of small non-coding RNAs?",
+          "a": "siRNA, miRNA, piRNA, and snoRNA."
+        },
+        {
+          "q": "Which small non-coding RNA's involvement in mammary gland tumorigenesis has been widely studied?",
+          "a": "miRNA."
+        },
+        {
+          "q": "How does miRNA contribute to breast cancer onset and progression?",
+          "a": "By regulating the cell cycle and cellular proliferation."
+        },
+        {
+          "q": "What aspects of breast cancer stem cells and tumor regeneration are reviewed in relation to miRNA?",
+          "a": "Their regulation."
+        },
+        {
+          "q": "Besides miRNA, what other small non-coding RNAs are mentioned as having emerging evidence of involvement in breast cancer?",
+          "a": "piRNA and snoRNA."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 3,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What was the primary objective of the study regarding ovarian hyperstimulation syndrome (OHSS)?",
+          "a": "To evaluate the efficacy and safety of outpatient management of severe OHSS requiring pigtail catheter placement."
+        },
+        {
+          "q": "How many patients were included in the retrospective analysis for the study?",
+          "a": "Thirty-three consecutive patients."
+        },
+        {
+          "q": "What was the mean amount of ascitic fluid drained immediately after pigtail catheter placement?",
+          "a": "2085 cc."
+        },
+        {
+          "q": "In what percentage of patients was the pigtail catheter removed after an average of 7.8 days?",
+          "a": "All patients where the catheter was placed (implied as it was removed after 7.8 days)."
+        },
+        {
+          "q": "What percentage of patients managed on an outpatient basis experienced no complications?",
+          "a": "Eighty-eight percent (29 out of 33 patients)."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 4,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "suppressed 17 ohp levels can suggest suppression and over treatment"
+        ],
+        "scores": [
+          1
+        ],
+        "factuality": 1.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What causes congenital adrenal hyperplasia?",
+          "a": "Congenital adrenal hyperplasia is caused by enzyme deficiency."
+        },
+        {
+          "q": "What is the most common enzyme deficiency associated with congenital adrenal hyperplasia?",
+          "a": "The most common enzyme deficiency is 21 hydroxylase deficiency."
+        },
+        {
+          "q": "What are the two main forms of classic congenital adrenal hyperplasia?",
+          "a": "The classic forms are the simple virilising form or the salt-wasting type."
+        },
+        {
+          "q": "What percentage of patients in the study were female?",
+          "a": "76% of the patients in the study were females."
+        },
+        {
+          "q": "What can suppressed 17-OHP levels suggest in patients with congenital adrenal hyperplasia?",
+          "a": "Suppressed 17-OHP levels can suggest over-replacement therapy."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 5,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "The levels of glucose in diabetic mice were significantly reduced after treatment with pptx ( ip ) plasma on day 21, when compared to the values of non-fasted mice.",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the primary objective of the study regarding pentoxifylline?",
+          "a": "To investigate the therapeutic effects of pentoxifylline on the treatment of autoimmune diabetes in mice."
+        },
+        {
+          "q": "How was diabetes induced in the mice for this study?",
+          "a": "Diabetes was induced by multiple low dose streptozotocin (MLDS) injection."
+        },
+        {
+          "q": "What were the main effects of pentoxifylline treatment on diabetic mice?",
+          "a": "Pentoxifylline treatment prevented hyperglycemia and increased plasma insulin levels."
+        },
+        {
+          "q": "Which specific pro-inflammatory cytokines did pentoxifylline inhibit?",
+          "a": "Pentoxifylline significantly inhibited the production of interleukin 17 (IL-17) and interferon gamma (IFN-\u03b3)."
+        },
+        {
+          "q": "What is the potential therapeutic implication of pentoxifylline based on the study's findings?",
+          "a": "Pentoxifylline may have a therapeutic effect against the autoimmune destruction of pancreatic beta-cells in MLDS-induced type 1 diabetes in mice."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 6,
+      "no_kg": {
+        "answers": [
+          "88.9%",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What percentage of patients in the study presented positive results for staphylococcal toxin-specific IgE antibodies?",
+          "a": "43.7%"
+        },
+        {
+          "q": "In which city and country was the study conducted?",
+          "a": "Rio de Janeiro, Brazil"
+        },
+        {
+          "q": "What were the two groups of asthma severity used in the study based on the Global Initiative for Asthma criteria?",
+          "a": "Mild asthma (MA) and moderate or severe asthma (MSA)"
+        },
+        {
+          "q": "What was the main conclusion of the study regarding the association between IgE antibodies and asthma severity?",
+          "a": "Neither qualitative nor quantitative results showed a statistically significant association with the clinical severity of asthma."
+        },
+        {
+          "q": "What is the relationship between obesity and asthma according to the provided triples?",
+          "a": "Obesity has an effect on asthma."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 7,
+      "no_kg": {
+        "answers": [
+          "neurosurgery intensive care unit",
+          "al - zahra hospital",
+          "unanswerable",
+          "the nursing interventions had significant impact on the patient s family satisfaction",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "neurosurgery intensive care unit",
+          "al - zahra hospital",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "factuality": 0.6
+      },
+      "questions": [
+        {
+          "q": "What type of unit was the study conducted in?",
+          "a": "Neurosurgery ICU"
+        },
+        {
+          "q": "Where was the study conducted?",
+          "a": "Isfahan, Iran"
+        },
+        {
+          "q": "How many families were selected for the study?",
+          "a": "Sixty-four"
+        },
+        {
+          "q": "What was the primary finding of the study regarding nursing interventions?",
+          "a": "Nursing interventions based on family needs increase satisfaction."
+        },
+        {
+          "q": "When were the satisfaction questionnaires completed by the families?",
+          "a": "Two days after admission and on the fourth day."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 8,
+      "no_kg": {
+        "answers": [
+          "Anxiety is a common psychological response of cardiovascular patients.",
+          "To improve nurse-patient communication and establish more effective therapeutic communication processes which improves clinical basis and can have a positive impact on the treatment and discharge processes and rehabilitation of patients.",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "factuality": 0.6
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What psychological disorders are common in patients undergoing heart surgeries?",
+          "a": "Anxiety and depression."
+        },
+        {
+          "q": "What was the objective of the study?",
+          "a": "To examine the impact of Peplau's therapeutic communication model on anxiety and depression in patients undergoing coronary artery bypass surgery."
+        },
+        {
+          "q": "In which hospital and city was the study conducted?",
+          "a": "Al-Zahra Heart Hospital in Shiraz."
+        },
+        {
+          "q": "How were patients divided in the study, and how many were in each group?",
+          "a": "Patients were randomly divided into an intervention group and a control group, with 37 patients in each."
+        },
+        {
+          "q": "What were the results of the study regarding anxiety and depression levels in the intervention group?",
+          "a": "The mean anxiety and depression levels decreased in the intervention group after the therapeutic communication."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 9,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "2004/05",
+          "influenza a",
+          "alignment of the 329amino acid ha protein from 26 isolates obtained from this outbreak with the 2004/05 a / wyoming/3/03 vaccine strain and previous h3n2 vaccination strains indicated 4 evident amino acid changes present in most",
+          "h3n2"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the reason for the change in the 2005-2006 H3N2 influenza A vaccine strain?",
+          "a": "Worldwide emergence of variant viruses."
+        },
+        {
+          "q": "Which influenza season is mentioned in the text?",
+          "a": "2005-2006 influenza season."
+        },
+        {
+          "q": "What type of virus is mentioned in relation to the vaccine strain change?",
+          "a": "H3N2 influenza A virus."
+        },
+        {
+          "q": "What prompted the change in the influenza vaccine strain?",
+          "a": "Worldwide emergence of variant viruses."
+        },
+        {
+          "q": "What specific strain of influenza is mentioned as having its vaccine strain changed?",
+          "a": "H3N2 influenza A."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 10,
+      "no_kg": {
+        "answers": [
+          "the us, england, or taiwan",
+          "unanswerable",
+          "unanswerable",
+          "bmi and waist circumference",
+          "history of economic development, socioeconomic levels, general lifestyle habits, health behaviors,and health care systems"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What are the three nationally representative populations examined in the study?",
+          "a": "The US National Health and Nutrition Examination Survey, the English Longitudinal Study of Ageing, and the Social Environment and Biomarkers of Aging Study in Taiwan."
+        },
+        {
+          "q": "Which population had the highest levels of biological risk across all weight/waist groups?",
+          "a": "Americans."
+        },
+        {
+          "q": "Did obese Americans have elevated blood pressure compared to normal weight individuals?",
+          "a": "No, they did not have elevated blood pressure."
+        },
+        {
+          "q": "What two measures were used to define obesity in the study?",
+          "a": "Body mass index (BMI) and waist circumference."
+        },
+        {
+          "q": "What factors might explain cross-country variation in biological risk associated with obesity?",
+          "a": "Differences in health behaviors, lifestyle, medication use, and culture."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 11,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "spontaneous meningitis"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "suppurative meningitis"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What percentage of male macroprolactinomas were found to have suppurative meningitis?",
+          "a": "4.87%"
+        },
+        {
+          "q": "In how many cases did suppurative meningitis reveal the presence of a male macroprolactinoma?",
+          "a": "3 cases"
+        },
+        {
+          "q": "What medication was used to treat the male macroprolactinomas after the suppurative meningitis was sterilized?",
+          "a": "Bromocriptine"
+        },
+        {
+          "q": "What condition can be avoided by repairing bony defects secondary to aggressive tumors?",
+          "a": "Suppurative meningitis"
+        },
+        {
+          "q": "What specific type of meningitis is discussed in the reference?",
+          "a": "Suppurative meningitis (bacterial meningitis)"
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 12,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What percentage of patients in the study had excellent to good results according to modified MacNab's criteria?",
+          "a": "90%"
+        },
+        {
+          "q": "What was the average delay for patients to return to light and sedentary work after surgery?",
+          "a": "3 weeks"
+        },
+        {
+          "q": "What are the two complications observed in five patients each?",
+          "a": "Discitis and dural tear"
+        },
+        {
+          "q": "Through what size incision is the Endospine system device inserted?",
+          "a": "15 mm"
+        },
+        {
+          "q": "What is the minimum follow-up period for evaluating the results of the surgery?",
+          "a": "12 months"
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 13,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "In the minds of international patients, perceived travel benefits will positively influence the Destination Image, whereas perceived trade risks will negatively impact the destination Image."
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "To know in detail about the variables used in the framework scientific research databases the key words used to find out research variables as well as relationship between researches variables.",
+          "scientific research databases",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What aspects of medical tourism are yet to be thoroughly examined in literature, despite being well-examined in general travel and tourism?",
+          "a": "Role of information source, perceived benefits and risks, and destination image."
+        },
+        {
+          "q": "What was the purpose of the research described in the reference?",
+          "a": "To identify information sources, travel benefits, and perceived risks related to international patient movement and develop a conceptual model."
+        },
+        {
+          "q": "Which databases were searched for the study?",
+          "a": "Science Direct, utmj.org, nih.gov, nchu.edu.tw, palgrave-journals, medretreat, biomedcentral."
+        },
+        {
+          "q": "What do international patients always concern themselves with regarding travel?",
+          "a": "Benefits and risks related to travel."
+        },
+        {
+          "q": "What do benefits and risks related to travel form in the minds of international patients?",
+          "a": "Images of the destination."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 14,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "mediocre results obtained with monotherapy regimens thus far",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "this review highlights three rtk signaling pathways involved in head and neck squamous cell carcinoma ; egfr, the type 1 insulin - like growth factor receptor ( id ) and the hgif t."
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What is a specific method for treating cancers compared to standard cytotoxic therapeutics?",
+          "a": "Molecular therapeutics for treating epidermal growth factor receptor-(EGFR-) expressing cancers."
+        },
+        {
+          "q": "What has dampened the initial enthusiasm over targeted EGFR therapy?",
+          "a": "The finding that resistance to such therapy is common in clinical trials."
+        },
+        {
+          "q": "What has an improved molecular understanding of other receptor tyrosine kinases revealed?",
+          "a": "A rich network of cross-talk between receptor pathways with common downstream signaling pathways."
+        },
+        {
+          "q": "What may represent a key mechanism for resistance to EGFR-directed therapy?",
+          "a": "Cross-talk between receptor pathways."
+        },
+        {
+          "q": "In what context is the interplay between EGFR, MET, and IGF-1R tyrosine kinases reviewed, and what is a key characteristic of this tumor type?",
+          "a": "In the context of squamous cell cancer of the head and neck, a tumor known to be primarily driven by EGFR-related oncogenic signals."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 15,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the primary objective of the study?",
+          "a": "To investigate potential mechanisms mediating the neuroprotective effect of thymoquinone (TQ) on dopaminergic neurons."
+        },
+        {
+          "q": "Where was the study conducted?",
+          "a": "Chemistry and Biochemistry Institute, University of Veterinary Medicine, Vienna, Austria."
+        },
+        {
+          "q": "What chemical agent was used to induce damage to dopaminergic neurons?",
+          "a": "1-methyl-4-phenylpyridinium (MPP+)."
+        },
+        {
+          "q": "What effect did MPP+ have on dopaminergic neurons?",
+          "a": "MPP+ decreased the number of dopaminergic neurons by 40% and increased the release of lactate dehydrogenase (LDH)."
+        },
+        {
+          "q": "How does thymoquinone protect dopaminergic neurons, according to the conclusion?",
+          "a": "By enhancing lysosomal degradation that clears damaged mitochondria and inhibits mitochondria-mediated apoptotic cell death."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 16,
+      "no_kg": {
+        "answers": [
+          "femoral neck fractures",
+          "non-union",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "fracture of the neck of the femur",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What type of fracture is discussed as a clinical and therapeutic challenge for orthopedic surgeons?",
+          "a": "Fracture of the femoral neck."
+        },
+        {
+          "q": "What are two complications that a fracture of the femoral neck has a propensity for?",
+          "a": "Non-union and avascular necrosis."
+        },
+        {
+          "q": "In a case of non-union with an implant in place, what is a challenge for the orthopedic surgeon?",
+          "a": "Deciding when to intervene."
+        },
+        {
+          "q": "How long did it take for the fracture in the presented case to unite?",
+          "a": "32 months."
+        },
+        {
+          "q": "What does the case presented bolster the view of regarding treatment of persistent non-union signs?",
+          "a": "A continued conservative regime might entail good results."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 17,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "granuloma faciale ( gf )",
+          "topical tacrolimus 0.1% ointment",
+          "unanswerable",
+          "several authors have reported complete or near - complete resolution of lesions after application of topical tacrolimus 0.1% ointment"
+        ],
+        "scores": [
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "factuality": 0.6
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "multiple, well - defined, grey - brown, indurated, non - tender plaques varying in size from 0.5 cm to 1.5 cm 2.5 cm, present on the left cheek, left forehead, both arms and upper back.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What is granuloma faciale characterized by?",
+          "a": "Granuloma faciale is characterized by red-brown plaques with follicular accentuation, usually on the face."
+        },
+        {
+          "q": "What condition is described in the case study?",
+          "a": "The case study describes granuloma faciale (GF)."
+        },
+        {
+          "q": "What treatment was used in the case study for granuloma faciale?",
+          "a": "Topical tacrolimus was used."
+        },
+        {
+          "q": "What did the patient in the case study present with?",
+          "a": "The patient presented with plaques over the cheek and extra facial sites."
+        },
+        {
+          "q": "What does the case support regarding the treatment of granuloma faciale?",
+          "a": "The case supports previous reports of successful treatment of GF with topical tacrolimus."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 18,
+      "no_kg": {
+        "answers": [
+          "cmmol",
+          "grade iii mobility and painful gingivae with continuous bleeding",
+          "necrotic bone removal with ultrasonic bone surgery",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "factuality": 0.4
+      },
+      "with_kg": {
+        "answers": [
+          "cmmol",
+          "unanswerable",
+          "ultrasonic bone surgery",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What was the patient's primary diagnosis?",
+          "a": "Chronic myelomonocytic leukaemia (CMML)."
+        },
+        {
+          "q": "What symptom did the patient report at the initial visit?",
+          "a": "Uncontrolled gingival bleeding."
+        },
+        {
+          "q": "What surgical procedure was performed?",
+          "a": "Sequestrectomy with massive blood transfusion."
+        },
+        {
+          "q": "What was the cause of the patient's death?",
+          "a": "Cardiac arrest after haemorrhagic shock and cardiovascular failure due to CMML progressing to acute blastic crisis."
+        },
+        {
+          "q": "What was the goal of treatment in such cases, according to the experience described?",
+          "a": "To alleviate patient discomfort by applying minimally invasive actions to eliminate infection and improve quality of life without causing deterioration in CMML status."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 19,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "conversely, under some circumstances, the cardiac chambers may act as a'natural reservoir ', which entails blood stagnation and the risk for spontaneous intracardiac thrombosis.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "under some circumstances, the cardiac chambers may act as a 'natural reservoir'",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What is bivalirudin proposed as in patients undergoing extracorporeal membrane oxygenation (ECMO) or cardiopulmonary bypass?",
+          "a": "The sole anticoagulant."
+        },
+        {
+          "q": "What should be carefully avoided when using bivalirudin due to its pharmacodynamic properties?",
+          "a": "Areas of blood stagnation."
+        },
+        {
+          "q": "Does the ECMO circuit typically have blood stagnation areas?",
+          "a": "No, it has no reservoir and is usually devoid of blood stagnation areas."
+        },
+        {
+          "q": "Under what circumstances might intracardiac blood stagnation areas exist?",
+          "a": "Under some circumstances."
+        },
+        {
+          "q": "What is suggested regarding intracardiac blood flow and left heart valve movement when under bivalirudin anticoagulation?",
+          "a": "A minimal degree of intracardiac blood flow with left heart valve movement is allowed."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 20,
+      "no_kg": {
+        "answers": [
+          "echocardiography",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What imaging modality is frequently performed for coronary artery disease?",
+          "a": "Coronary computed tomography angiography (CCTA)."
+        },
+        {
+          "q": "What functional parameters of the left ventricle can be derived using automated software with retrospective gating in CCTA?",
+          "a": "Left ventricular ejection fraction (LVEF)."
+        },
+        {
+          "q": "How many patients were included in the study evaluating the automated software for LVEF assessment?",
+          "a": "113 patients."
+        },
+        {
+          "q": "What was the mean LVEF calculated by clinical echo in the study?",
+          "a": "58.6 \u00b1 4.5%."
+        },
+        {
+          "q": "What was the correlation coefficient between CT-derived LVEF and echo in the study?",
+          "a": "0.503."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 21,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the taxonomic family of Aristolochia?",
+          "a": "Aristolochiaceae"
+        },
+        {
+          "q": "What type of activity did Aristolochic acid 1 (aa-1) exhibit?",
+          "a": "Antibacterial activity"
+        },
+        {
+          "q": "Which bacterial strains showed the highest sensitivity to the methanol extract of Aristolochia bracteolata?",
+          "a": "Moraxella catarrhalis and sea urchin-derived Bacillus sp."
+        },
+        {
+          "q": "What happened to the antibacterial activity of aa-1 when it was modified to aa-1 methyl ester?",
+          "a": "It was completely abolished."
+        },
+        {
+          "q": "What is essential for aa-1's antibacterial activity?",
+          "a": "The coexistence of the phenanthrene ring and a free carboxylic acid."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 22,
+      "no_kg": {
+        "answers": [
+          "anti-proteinase 3-antineutrophil cytoplasmic antibody ( pr3-anca)-associated vascilitis",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "The patient's serological findings and clinical features mimicked aortic aneurysms.",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What condition did the patient's serological findings and clinical features mimic?",
+          "a": "Anti-proteinase 3-antineutrophil cytoplasmic antibody-associated vasculitis."
+        },
+        {
+          "q": "What were the key imaging findings that suggested an infected aortic aneurysm?",
+          "a": "A pseudoaneurysm and vegetations in the aorta."
+        },
+        {
+          "q": "What treatments were used to manage the patient's condition?",
+          "a": "Antibiotics and endovascular aortic repair."
+        },
+        {
+          "q": "Why is a precise diagnosis crucial in cases like this?",
+          "a": "To avoid inappropriate therapy such as immunosuppressive treatment, which could be life-threatening."
+        },
+        {
+          "q": "What specific finding was pathognomonic in the lumen of the descending aortic pseudoaneurysm?",
+          "a": "Oscillating vegetation."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 23,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "serum vitamin d levels",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What are the main symptoms of endometriosis?",
+          "a": "Dysmenorrhea, dyspareunia, and pelvic pain are the main symptoms of endometriosis."
+        },
+        {
+          "q": "What was the prescribed dosage of vitamin D in the study?",
+          "a": "Patients were randomly prescribed vitamin D (50,000 IU weekly for 12 weeks) or placebo."
+        },
+        {
+          "q": "What was the primary outcome measured in the study?",
+          "a": "The severity of pelvic pain and dysmenorrhea was compared between the groups using the VAS test."
+        },
+        {
+          "q": "Did vitamin D treatment have a significant effect on reducing dysmenorrhea after surgery for endometriosis?",
+          "a": "No, vitamin D treatment did not have a significant effect in reducing dysmenorrhea and/or pelvic pain after ablative surgery for endometriosis."
+        },
+        {
+          "q": "Were there significant differences in the severity of pelvic pain between the vitamin D and placebo groups at 24 weeks?",
+          "a": "No, there were no significant differences in the severity of pelvic pain between the two groups (p=0.513)."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 24,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What was the aim of the study?",
+          "a": "To compare the correspondence between gap formation and apical microleakage in root canals filled with epoxy resin-based (Ah Plus) combined or not with resinous primer or with a dimethacrylate-based root canal sealer (Epiphany)."
+        },
+        {
+          "q": "How many human premolars were used in the study?",
+          "a": "Thirty-nine lower single-rooted human premolars were used."
+        },
+        {
+          "q": "What statistical analysis was used to analyze the data?",
+          "a": "Ordinal logistic regression model and analysis of correspondence were used."
+        },
+        {
+          "q": "Did the resinous primer improve the sealing ability of Ah Plus sealer?",
+          "a": "No, the resinous primer did not improve the sealing ability of Ah Plus sealer."
+        },
+        {
+          "q": "Which sealer presented more regions containing gaps between dentin and sealer?",
+          "a": "Epiphany presented more regions containing gaps between dentin and sealer."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 25,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "Activating mutations in the KCNJ11 gene (encoding kir6.2) and the ABCC8 gene (of the KATP channel) are the most common causes of permanent neonatal diabetes mellitus, accounting for approximately 40% of all cases.",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What is permanent neonatal diabetes mellitus?",
+          "a": "Diabetes that occurs before 6 months of age and persists throughout life."
+        },
+        {
+          "q": "What are the most common genetic causes of permanent neonatal diabetes mellitus?",
+          "a": "Mutations in the KCNJ11 gene (encoding Kir6.2) and ABCC8 gene (encoding SUR1)."
+        },
+        {
+          "q": "How do sulfonylureas treat diabetes in patients with KCNJ11 or ABCC8 mutations?",
+          "a": "Sulfonylureas close the ATP-sensitive potassium (KATP) channel, which increases insulin secretion."
+        },
+        {
+          "q": "What factors are known to affect treatment outcomes after switching to sulfonylurea therapy for diabetes?",
+          "a": "The mutation type, presence of neurological features, and duration of diabetes."
+        },
+        {
+          "q": "What is the name of the gene encoding SUR1, a subunit of the ATP-sensitive potassium channel?",
+          "a": "ABCC8"
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 26,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "spot urine il-18, plasma creatinine, urine spot il-17, serum blood urea nitrogen (bun)",
+          "unanswerable",
+          "6 and 48 h",
+          "serum blood urea nitrogen (bun)"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "high contrast volume",
+          "serum blood urea nitrogen (bun), creatinine, na, and k,cl,and p,creat ed",
+          "unanswerable",
+          "6 and 24 h postcontests",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "factuality": 0.4
+      },
+      "questions": [
+        {
+          "q": "What is a significant cause of acute renal failure mentioned in the study?",
+          "a": "Radiocontrast administration."
+        },
+        {
+          "q": "What specific substances were analyzed before and after radiocontrast administration?",
+          "a": "Serum blood urea nitrogen, creatinine, na, k, cl, ca, p, creatinine clearance, and spot urine il-18 levels."
+        },
+        {
+          "q": "What was the observed trend in plasma creatinine levels after radiocontrast administration?",
+          "a": "An increase was observed at 24 and 48 hours, but it was not statistically significant."
+        },
+        {
+          "q": "At what time points were statistically significant increases in urinary il-18 levels observed after radiocontrast administration?",
+          "a": "At 6 and 24 hours."
+        },
+        {
+          "q": "Which parameter is implied to be an earlier indicator for kidney injury following radiocontrast administration?",
+          "a": "Spot urine il-18 levels."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 27,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "orthopaedics, trauma and dental surgery",
+          "unanswerable",
+          "ha (hyaluronan)",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What is the most common condition for bacteria and fungi?",
+          "a": "Living in biofilms."
+        },
+        {
+          "q": "What are the main surgical disciplines impacted by biofilm-related infections associated with implanted biomaterials?",
+          "a": "Orthopaedics and trauma, and cardio-surgery."
+        },
+        {
+          "q": "What is a necessary first step in microbial colonization and pathogenesis that provides a potential target for new preventive and treatment approaches?",
+          "a": "Adhesion."
+        },
+        {
+          "q": "Which polymer, along with some of its composites, has a proven ability to reduce bacterial adhesion and biofilm formation and a well-established long-term safety profile?",
+          "a": "Hyaluronic acid."
+        },
+        {
+          "q": "What is the aim of the review mentioned in the text?",
+          "a": "To summarize the available evidence concerning the antiadhesion/antibiofilm activity of hyaluronic acid and some of its derivatives to reduce/prevent bacterial adhesion and biofilm formation."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 28,
+      "no_kg": {
+        "answers": [
+          "52.2%",
+          "unanswerable",
+          "18.8%",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What percentage of bacterial strains studied were found to be multidrug-resistant (MDR)?",
+          "a": "37.1%"
+        },
+        {
+          "q": "Which antibiotic were all gram-negative bacterial strains sensitive to?",
+          "a": "Colistin"
+        },
+        {
+          "q": "What was the incidence of extensively drug-resistant (XDR) bacterial strains isolated?",
+          "a": "13.8%"
+        },
+        {
+          "q": "Were any pandrug-resistant (PDR) bacteria isolated in the study?",
+          "a": "No"
+        },
+        {
+          "q": "What is a major challenge for clinicians in treating patients, as mentioned in the background?",
+          "a": "Antimicrobial resistance"
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 29,
+      "no_kg": {
+        "answers": [
+          "a ureterocele is a cystic dilation of the distal ureter within the urinary bladder",
+          "ultrasonography and 99mTc-diethylene triamine pentaacetic acid scan scintigraphy",
+          "to assess perfusion, cortical function, and drainage of the left kidney",
+          "an intracystic ureterocele arising from the right side",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "persistent photopenia in the urinary bladder",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What is a ureterocele?",
+          "a": "A ureterocele is a common ureteric anomaly detected in the pediatric population."
+        },
+        {
+          "q": "What radiological methods are needed for ureterocele diagnosis and evaluation?",
+          "a": "A variety of radiological methods are needed."
+        },
+        {
+          "q": "What was the purpose of the 99mTc-diethylene triamine pentaacetic acid scan for the 5-year-old female child?",
+          "a": "The scan was for evaluation of glomerular filtration rate and excretory function of kidneys."
+        },
+        {
+          "q": "What incidental finding was noted in the urinary bladder?",
+          "a": "Incidental photopenia was noted."
+        },
+        {
+          "q": "What was the cause of the photopenia found on ultrasonography of the abdomen?",
+          "a": "The cause was an intravesical ureterocele."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 30,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "lower scores for the physical functional domain were found among women with low physical activity compared with those with moderate or high activity"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What was the primary aim of the study?",
+          "a": "To investigate the impact of asymptomatic vertebral fractures on the quality of life in older women."
+        },
+        {
+          "q": "What type of study design was used?",
+          "a": "Cross-sectional study."
+        },
+        {
+          "q": "How were asymptomatic vertebral fractures identified?",
+          "a": "Using lateral thoracic and lumbar spine x-ray scans with a semi-quantitative method."
+        },
+        {
+          "q": "Did women with asymptomatic vertebral fractures have better or worse quality of life scores compared to women without fractures?",
+          "a": "Worse."
+        },
+        {
+          "q": "What factors were related to lower total scores and physical function domain scores for the quality of life questionnaire?",
+          "a": "High body mass index, lower physical activity, and the presence of vertebral fractures."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 31,
+      "no_kg": {
+        "answers": [
+          "the purpose of this study is to compare the effectiveness of the explora model i tool with the conventional d&c technique for obtaining adequate endometrial samples that are capable of providing specific and informative histopathologic diagnoses.",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "to compare the effectiveness of the explora model i tool with the conventional d&c technique for obtaining adequate endometrial samples that are capable of providing specific and informative histopathological diagnoses",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What was the primary aim of the study comparing the endometrial explora sampler i - mx120 with conventional dilatation and curettage (d&c)?",
+          "a": "To compare the adequacy and diagnostic yield of samples obtained by the two techniques."
+        },
+        {
+          "q": "How many endometrial samples were received in the histopathology laboratories for the study?",
+          "a": "A total of 1270 endometrial samples were received."
+        },
+        {
+          "q": "What percentage of the endometrial samples were inadequate for the study?",
+          "a": "19.9% of the endometrial samples were inadequate."
+        },
+        {
+          "q": "Which technique resulted in a higher incidence of insufficient tissue?",
+          "a": "The explora technique resulted in a higher incidence of insufficient tissue (17.6%) compared to d&c (2.2%)."
+        },
+        {
+          "q": "What was the conclusion regarding specimen adequacy between the explora and d&c?",
+          "a": "The study concluded that d&c provided better specimen adequacy compared to the explora, which had a higher rate of sample insufficiency."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 32,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "sandy clay with coaly fragments",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What geological formation do the observed deposits in the Eirunep region belong to?",
+          "a": "The observed deposits belong to the upper part of the Solim\u00f5es Formation."
+        },
+        {
+          "q": "What type of sedimentary deposits were recorded in the Eirunep region?",
+          "a": "Vertically as well as laterally highly variable fine-grained clastic successions were recorded."
+        },
+        {
+          "q": "What kind of river system is suggested by the lithofacies assemblages?",
+          "a": "The lithofacies assemblages suggest fluvial deposits, possibly of an anastomosing river system."
+        },
+        {
+          "q": "What paleontological evidence indicates exclusively freshwater conditions in the Eirunep region during the late Miocene?",
+          "a": "The mollusc and ostracod content, along with very light 18O and 13C values measured on ostracod valves, indicate exclusively freshwater conditions."
+        },
+        {
+          "q": "Can the influx of marine waters be excluded for the Eirunep region during the late Miocene based on the findings?",
+          "a": "Yes, any influx of marine waters can be excluded for that region during the late Miocene."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 33,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "69.23%",
+          "unanswerable",
+          "unanswerable",
+          "12"
+        ],
+        "scores": [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "factuality": 0.4
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "69.23%",
+          "unanswerable",
+          "unanswerable",
+          "15.38%"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What was the mean age of patients included in the study?",
+          "a": "The mean patient age was 50.32 years."
+        },
+        {
+          "q": "What proportion of incidental adrenal enlargement cases were nonfunctional lesions?",
+          "a": "54 cases (69.23%) were nonfunctional lesions."
+        },
+        {
+          "q": "What was identified as a risk factor for functional lesions?",
+          "a": "Nodular adrenal enlargement was a risk factor for functional lesions."
+        },
+        {
+          "q": "What was the most common method for discovering clinical onsets leading to the discovery of incidental adrenal enlargement?",
+          "a": "Routine medical checkup was the most common method, found in 43.59% of cases."
+        },
+        {
+          "q": "How many cases of subclinical Cushing syndrome were identified?",
+          "a": "There were 12 cases (15.38%) of subclinical Cushing syndrome."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 34,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "The mean of correct answers in the pre-test stage was 59.22, while the mean for the post-testing stage was 81.",
+          "The difference in knowledge promotion among females and males was not significant (p=0.8). The knowledge mark was increased to 19.93 among parents who at most had a high school diploma and 23.47 among parents with upper educational levels (p=0.5)."
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "The frequency of correct answers in the pre-test stage is 59.22, while the same figure for the post-test step is 81.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What was the primary objective of the study?",
+          "a": "To propose an innovative method of knowledge transfer to improve health literacy about pediatric infectious diseases prevention in families."
+        },
+        {
+          "q": "In which year and city was the study conducted?",
+          "a": "The study was conducted in Hamedan in 2009."
+        },
+        {
+          "q": "What was the method used to teach children about infectious diseases?",
+          "a": "Seven infectious disease topics were changed into childish poems and taught to the children."
+        },
+        {
+          "q": "What was the percentage of correct answers in the pretest compared to the post-test?",
+          "a": "The mean of correct answers was 59.22% in the pretest and 81.00% in the post-test."
+        },
+        {
+          "q": "Did the knowledge degree of the parents significantly change the results?",
+          "a": "No, gender and knowledge degree could not change the results significantly."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 35,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "ultrasound or mri",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "ultrasound or mri",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What is a significant risk associated with septic arthritis of the shoulder if not treated promptly?",
+          "a": "Septic arthritis of the shoulder can lead to septic shock and osteomyelitis if not treated promptly."
+        },
+        {
+          "q": "What imaging modality is useful in the early detection of atypical causes of shoulder pain?",
+          "a": "MRI is a useful adjunct in early detection of atypical causes of shoulder pain."
+        },
+        {
+          "q": "What is a potential challenge in accurately diagnosing septic arthritis of the shoulder?",
+          "a": "Accurate diagnosis can be particularly challenging in patients with underlying liver disease."
+        },
+        {
+          "q": "What emergency procedure was performed for the patient in the case report with septic arthritis of the left gleno-humeral joint?",
+          "a": "Emergency arthroscopic debridement was performed."
+        },
+        {
+          "q": "Why is septic arthritis of the shoulder considered a surgical emergency?",
+          "a": "It is a surgical emergency because joint destruction occurs rapidly and can lead to significant morbidity and mortality."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 36,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "nbca",
+          "unanswerable",
+          "unanswerable",
+          "NBCA is a less invasive option than hepatic resection, especially for high-risk patients with posttransplant bile duct injuries, and decreases morbidity associated with chronic external biliary drainage."
+        ],
+        "scores": [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "factuality": 0.4
+      },
+      "with_kg": {
+        "answers": [
+          "the use of nbca in obl ed ductal cholesteronysis",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is a major cause of morbidity after split-liver transplantation (SLT)?",
+          "a": "Biliary complications."
+        },
+        {
+          "q": "What material was used for percutaneous embolization in the reported case?",
+          "a": "N-butyl cyanoacrylate (NBCA)."
+        },
+        {
+          "q": "What was the patient experiencing one year after SLT?",
+          "a": "Intrahepatic bile duct dilatation with severe cholangitis episodes."
+        },
+        {
+          "q": "What procedure involves the segmentary bile duct of hepatic segments VI-VII being unidentified and tied?",
+          "a": "In situ split-liver procedure."
+        },
+        {
+          "q": "What are the potential benefits of using NBCA for obliteration of dilated bile ducts compared to other treatments?",
+          "a": "It is a less invasive option than hepatic resection and may decrease morbidity associated with chronic external biliary drainage."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 37,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the rate-limiting enzyme in DNA synthesis and repair that has been studied as a target for cancer treatment?",
+          "a": "Ribonucleotide reductase (RR)"
+        },
+        {
+          "q": "What was one of the first RR inhibitors studied, and in what type of cancer was it initially incorporated into treatment protocols?",
+          "a": "Hydroxyurea; cervical cancer"
+        },
+        {
+          "q": "What type of cancer is hydroxyurea currently used to treat according to the provided triples?",
+          "a": "Head and neck cancers"
+        },
+        {
+          "q": "What are some examples of drugs used in the treatment of cervical cancer mentioned in the triples?",
+          "a": "Pelvic irradiation, fluorouracil, leucovorin, triapine"
+        },
+        {
+          "q": "What is the role of p53r2 in relation to p53?",
+          "a": "p53 has p53r2 as a part."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 38,
+      "no_kg": {
+        "answers": [
+          "experimental analysis such as fluorescence - activated cell sorting ( facs ) or quantitative pcr ( qppcr ) as well as downstream applications such as primary cell culture of bone cells.",
+          "unanswerable",
+          "long bones",
+          "primary cell culture of bone cells, fluorescence - activated cell sorting ( facs ), quantitative pcr ( qppcr ), isolation of bone hyaluronate, osteoclasts, or osteoblasts",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "mice",
+          "mouse hind Long Bones",
+          "fluorescence-activated cell sorting (FACS), quantitative PCR (qptc), primary cell culture of bone neural cells",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What are the key research fields that investigate the bone and bone marrow?",
+          "a": "Basic bone biology, immunology, hematology, cancer metastasis, biomechanics, and stem cell biology."
+        },
+        {
+          "q": "What animal model is commonly used to study effects on bone and bone marrow?",
+          "a": "Mice."
+        },
+        {
+          "q": "What long bones are described in the dissection procedure?",
+          "a": "Femur and tibia."
+        },
+        {
+          "q": "What are some downstream applications for the described bone dissection procedure?",
+          "a": "Histomorphologic analysis and strength testing."
+        },
+        {
+          "q": "What method is used for rapid isolation of bone marrow from long bones?",
+          "a": "Centrifugation."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 39,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "TB should be included in the differential diagnosis in chronic soft tissue and bony infection when the diagnosis may not be evident from the history and examination and no obvious risk factors may be present.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "TB may not be evident from the history and examination in chronic soft tissue and bone infection and no obvious risk factors may be present.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the chance of a healthy individual with tuberculosis infection converting to the active disease over their lifetime?",
+          "a": "5-10%"
+        },
+        {
+          "q": "What was the presenting complaint of the 76-year-old female in the case report?",
+          "a": "Wrist pain"
+        },
+        {
+          "q": "How long did it take for the 76-year-old female to be diagnosed with TB?",
+          "a": "Three years"
+        },
+        {
+          "q": "When should TB be included in the differential diagnosis, according to the case report?",
+          "a": "When treating patients with an infection resistant to conventional antibiotics"
+        },
+        {
+          "q": "Tuberculosis is a major health issue in which types of countries?",
+          "a": "Developing and developed countries"
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 40,
+      "no_kg": {
+        "answers": [
+          "reduced levels of glucose and elevated levels of ketone bodies",
+          "caloric restriction, and fluid restriction",
+          "unanswerable",
+          "directly inhibiting voltage - gated sodium and calcium channels, activating a lipid - sensitive potassium channel, enhancing the activity of the sodium pump to limit neuronal excitability, activated peroxisome proliferator - activated receptor- ( ppar ), and inducing the expression and activity of brain - specific uncoupling proteins in the mitochondria, thereby induction of a neuroprotective effect",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "increased amount of fat",
+          "caloric restriction",
+          "unanswerable",
+          "the potential ability of pufas to block seizure activity in the brain is speculated to be associated with some rather more complicated mechanisms, including ( 1) directly inhibiting voltage - gated sodium and calcium channels, (2 ) activating a lipid -sensitive potassium channel, (3 ) enhancing the activity of the sodium pump to limit neuronal excitability, (4 ) activated receptor- ( ptr ), (5 ) inducing the expression and activity of brain -specific uncoupling proteins in the mitochondria, thereby induction of a neuroprotective effect.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What is the primary metabolic change caused by the ketogenic diet?",
+          "a": "Chronic ketosis."
+        },
+        {
+          "q": "Besides chronic ketosis, what is another significant metabolic change caused by the ketogenic diet?",
+          "a": "High levels of polyunsaturated fatty acids (PUFAs)."
+        },
+        {
+          "q": "What are some examples of secondary effects of the ketogenic diet?",
+          "a": "Changes in mitochondrial density and gene expression."
+        },
+        {
+          "q": "What are the clinically considered influences of the ketogenic diet on the brain?",
+          "a": "Anticonvulsive and neuroprotective."
+        },
+        {
+          "q": "What is still an enigma regarding the ketogenic diet?",
+          "a": "Its mechanism of action."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 41,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "cricoid cartilage, vocal cord, manubriosternal junction",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the purpose of placing an endotracheal tube at the optimal level?",
+          "a": "To avoid single lung ventilation or accidental extubation."
+        },
+        {
+          "q": "What anatomical landmarks were identified in the midline sagittal plane for the study?",
+          "a": "Vocal cords, cricoid cartilage, suprasternal notch, manubriosternal junction, and carina."
+        },
+        {
+          "q": "What was the difference between the extcc-ssn and the mid-tracheal level in millimeters?",
+          "a": "6.6 (12.5) mm"
+        },
+        {
+          "q": "In which gender was the difference between the extcc-ssn and the mid-tracheal level smaller?",
+          "a": "Females"
+        },
+        {
+          "q": "What surface distance can predict the mid-tracheal level in adults, especially in females?",
+          "a": "The surface distance between the cricoid cartilage and suprasternal notch."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 42,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What are the three countries where the linked qualitative studies on embryo donation to stem cell research were carried out?",
+          "a": "The studies were carried out in the United Kingdom, Switzerland, and China."
+        },
+        {
+          "q": "What method was used in all three studies to examine donors' and non-donors' rationales for donation decisions?",
+          "a": "Semi-structured interviews were used."
+        },
+        {
+          "q": "What was the aim of gaining information on contextual and other factors in donor decisions?",
+          "a": "To identify how these factors relate to those usually included in theoretical ethics evaluations."
+        },
+        {
+          "q": "What factor was previously suggested as being of ethical concern, but found to have no evidence of importance in the empirical work?",
+          "a": "Interpersonal gratitude."
+        },
+        {
+          "q": "What type of desire did the empirical data support as a factor in giving something back to medical research?",
+          "a": "A solidarity-based desire."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 43,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "mutations in the extracellular cysteine-rich region of the RET tyrosine receptor"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "dominantly inherited or de novo activating mutations",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What percentage of thyroid malignancies does medullary thyroid carcinoma (MTC) account for?",
+          "a": "3 to 5%"
+        },
+        {
+          "q": "What type of inheritance pattern is observed in hereditary MTC?",
+          "a": "Autosomal dominant"
+        },
+        {
+          "q": "What is the primary standard treatment for MTC?",
+          "a": "Surgery involving total thyroidectomy and central neck node dissection"
+        },
+        {
+          "q": "What are two broad spectrum receptor tyrosine kinase inhibitors used for advanced MTC?",
+          "a": "Vandetanib and cabozantinib"
+        },
+        {
+          "q": "What is a strong genotype-phenotype correlation observed in hereditary MTC related to?",
+          "a": "Germ-line gain of function mutations of the RET proto-oncogene"
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 44,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "FEM requires remeshing and node duplication, while XFEM requires adding dofs and may involve Heaviside dofs.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is a limitation of current neuronavigation systems?",
+          "a": "They cannot adapt to changing intraoperative conditions over time."
+        },
+        {
+          "q": "What is the core component of the presented system for updating 3D preoperative images?",
+          "a": "A nonrigid registration technique using a biomechanical model."
+        },
+        {
+          "q": "What two methods can deform the biomechanical model?",
+          "a": "FEM or XFEM."
+        },
+        {
+          "q": "What types of deformation are considered by FEM and XFEM in this context?",
+          "a": "FEM is used for brain shift, and XFEM is used for resection."
+        },
+        {
+          "q": "How many intraoperative MR images were used for each patient case described?",
+          "a": "Five."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 45,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What are the two main omega-3 polyunsaturated fatty acids (n-3 PUFAs) acknowledged for their health benefits and potential in disease protection?",
+          "a": "Eicosapentaenoic acid (EPA) and docosahexanoic acid (DHA)."
+        },
+        {
+          "q": "By what general mechanisms may n-3 PUFAs exert their anticancer actions?",
+          "a": "By influencing cell proliferation, cell survival, angiogenesis, inflammation, and metastasis."
+        },
+        {
+          "q": "What specific actions do n-3 PUFAs have in relation to gastrointestinal cancers and inflammation?",
+          "a": "They exert anti-inflammatory and antioxidant actions, and can restore or modify inflammation-associated lipid distortion and alteration of lipid rafts."
+        },
+        {
+          "q": "What aspect of n-6/n-3 fatty acid balance is suggested for future work in experimental design and analysis regarding n-3 PUFAs?",
+          "a": "The n-6/n-3 fatty acid ratio."
+        },
+        {
+          "q": "What is the general understanding of the mechanisms of n-3 PUFAs against GI cancer, according to the provided text?",
+          "a": "The understanding is still limited."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 46,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the broad category of conditions that 46 XY disorders of sexual development (DSD) cover?",
+          "a": "Phenotypes ranging from unambiguous female genitalia to ambiguous male genitalia with hypospadias or dysgenetic gonads."
+        },
+        {
+          "q": "What factors influence the management of patients with 46 XY DSD?",
+          "a": "The cause of DSD, degree of feminization, age at presentation, and gender orientation."
+        },
+        {
+          "q": "How many patients were included in the study evaluating the presentation and management of 46 XY DSD?",
+          "a": "Nineteen patients."
+        },
+        {
+          "q": "What types of disorders were identified in eight patients with 46 XY DSD?",
+          "a": "Disorders of gonadal development and disorders of androgen synthesis and action."
+        },
+        {
+          "q": "According to the study, what is required for an accurate diagnosis of DSD, given the overlapping clinical and biochemical parameters?",
+          "a": "Genetic studies with long-term follow-up."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 47,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What percentage of MRSA isolates showed 100% resistance to flucloxacillin and co-amoxiclav?",
+          "a": "100%"
+        },
+        {
+          "q": "Which antimicrobial agent had the lowest resistance rate among the studied MRSA isolates?",
+          "a": "Nitrofurantoin (2.7%)"
+        },
+        {
+          "q": "According to the study, which class of antibiotics should be avoided for MRSA treatment due to significant resistance rates?",
+          "a": "Fluoroquinolones"
+        },
+        {
+          "q": "What was the resistance rate of MRSA isolates to ciprofloxacin?",
+          "a": "98%"
+        },
+        {
+          "q": "For which type of patient is nitrofurantoin suggested as a suitable agent for MRSA eradication in the study?",
+          "a": "The well patient"
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 48,
+      "no_kg": {
+        "answers": [
+          "cll and aae",
+          "unanswerable",
+          "unanswerable",
+          "exploratory laparotomy with small bowel resection",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What condition can cause severe abdominal pain mimicking an acute surgical abdomen, and is treatable?",
+          "a": "Acquired angioedema (AAE)."
+        },
+        {
+          "q": "What is AAE an acquired deficiency of?",
+          "a": "C1esterase inhibitor."
+        },
+        {
+          "q": "What other disorders is AAE strongly associated with?",
+          "a": "Chronic lymphocytic leukemia (CLL) and other indolent lymphoplasmacytic disorders."
+        },
+        {
+          "q": "What surgery did the patient with CLL ultimately undergo due to severe abdominal pains?",
+          "a": "Partial bowel resection."
+        },
+        {
+          "q": "What could wider appreciation of AAE in patients with lymphoproliferative disorders lead to?",
+          "a": "Preventive therapy and sparing unnecessary surgery."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 49,
+      "no_kg": {
+        "answers": [
+          "acute, isolated, non - com minuted and combminuted fractures of the lateral clavicle",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What type of injury is a distal clavicle fracture associated with complete coracoclavicular ligament disruption?",
+          "a": "An unstable injury."
+        },
+        {
+          "q": "How many patients underwent osteosynthesis in the study?",
+          "a": "A total of 15 patients."
+        },
+        {
+          "q": "What were the three clinical outcome measures used in the study?",
+          "a": "Constant score (CS), Simple Shoulder Test (SST), and Walch ACJ score (WS)."
+        },
+        {
+          "q": "What was the overall union rate observed in the study?",
+          "a": "93.3%."
+        },
+        {
+          "q": "Which fixation technique resulted in significantly lower reoperation rates?",
+          "a": "A combination of distal radius plate and ligament reconstruction device."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 50,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "hip fracture",
+          "left bipolar hemiarthroplasty",
+          "unanswerable",
+          "acute or sub - acute inflammation"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "hip fracture",
+          "left bipolar hemiarthroplasty",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What was the chief complaint of the 68-year-old woman?",
+          "a": "Pain, swelling, and a warm sensation in her left thigh."
+        },
+        {
+          "q": "What medical condition did the woman suffer from?",
+          "a": "Polycythemia vera."
+        },
+        {
+          "q": "What procedure did the woman undergo 24 days prior to presentation?",
+          "a": "A left bipolar hemiarthroplasty following a hip fracture."
+        },
+        {
+          "q": "What was initially suspected as the cause of her symptoms?",
+          "a": "A postoperative infection."
+        },
+        {
+          "q": "What diagnosis was confirmed via color doppler ultrasonography?",
+          "a": "Deep vein thrombosis."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 51,
+      "no_kg": {
+        "answers": [
+          "minimally invasive robot - assisted surgery",
+          "supraclavicular approach",
+          "unanswerable",
+          "thoracic brachiomal lesions",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is a new procedure for brachial plexus surgery mentioned in the text?",
+          "a": "Brachial plexus surgery using the da Vinci surgical robot."
+        },
+        {
+          "q": "What is a well-known approach for robotic surgery for brachial plexus?",
+          "a": "The supraclavicular approach."
+        },
+        {
+          "q": "What was the purpose of the cadaveric study?",
+          "a": "To evaluate the robotic axillary approach for brachial plexus surgery."
+        },
+        {
+          "q": "For which condition is robotic surgery particularly recommended according to the results?",
+          "a": "Thoracic outlet syndrome."
+        },
+        {
+          "q": "What do the authors emphasize is needed in addition to the current study?",
+          "a": "New instruments should be designed and further studies are needed to evaluate in vivo results."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 52,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "seeking help from god in difficulties, only god's power over life and death, and doing good deeds is the god\u2019s will",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "spiritual beliefs was a main category that emerged from the participants lived experiences of spiritual concept and this category was further subcategorized into three subcategories including seeking help from god in difficulties, only god's power over life and death, and doing good deeds is the god s will.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What was the primary aim of the study conducted on Iranian healthy elderly individuals?",
+          "a": "To explore the concept of spirituality from the perspectives of Iranian healthy elderly individuals."
+        },
+        {
+          "q": "How many healthy elderly individuals participated in the study?",
+          "a": "21"
+        },
+        {
+          "q": "What data collection method was used in the study?",
+          "a": "Semi-structured interviews"
+        },
+        {
+          "q": "What are the three main categories that emerged from the data analysis regarding spirituality?",
+          "a": "Spiritual health, spiritual beliefs, and religious practice."
+        },
+        {
+          "q": "According to the study's conclusion, what role does spirituality play in the lives of elderly individuals?",
+          "a": "Spirituality is a fundamental element that helps them adapt to daily living conditions."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 53,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is defined as delayed, weak, and persistent opacification of proximal segments of the cerebral arteries?",
+          "a": "Stasis filling."
+        },
+        {
+          "q": "What are the two main groups of patients included in the study?",
+          "a": "Brain dead (BD) patients and control patients."
+        },
+        {
+          "q": "What type of curves did cerebral time-density curves represent in BD patients?",
+          "a": "Flat curves."
+        },
+        {
+          "q": "What were the median values for time to peak enhancement in BD patients compared to controls?",
+          "a": "32 s in BD patients vs. 21 s in controls."
+        },
+        {
+          "q": "What did CTP reveal regarding cerebral blood flow and volume in all BD patients?",
+          "a": "Zero values."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 54,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "The ureteral tumour was described by the pathologists not as a neoplastic infiltration encroaching on the urater, yet as : a metastatic focus to the urteral wall."
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "intensified symptoms of left - sided renal colic",
+          "left ovary",
+          "sigmoid colon",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What symptoms did the patient present with, which were initially attributed to a ureter issue?",
+          "a": "Symptoms of left-sided renal colic."
+        },
+        {
+          "q": "What organ was involved by the malignant tumor causing the renal colic?",
+          "a": "The ureter."
+        },
+        {
+          "q": "Besides the stomach and ureter, what other organs were found to be involved by the multifocal malignant process during surgery?",
+          "a": "Two parts of the colon, the left ovary, and the side of the pelvis."
+        },
+        {
+          "q": "What procedures were performed during the surgery to address the malignant process?",
+          "a": "Resection or partial resection of involved organs, and reconstruction of the alimentary tract and the ureter."
+        },
+        {
+          "q": "What is the histopathological diagnosis that supports the nature of this malignant process?",
+          "a": "Disseminated stomach cancer."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 55,
+      "no_kg": {
+        "answers": [
+          "The presence of gastrointestinal symptoms, histological presentation of regenerative epithelial tissue with peeling off, of the necrotic tissue ( fig.",
+          "unanswerable",
+          "unanswerable",
+          "The presence of gastrointestinal symptoms",
+          "severe edematous wall thickening with focal localized low attenuation of the fundus and cardia of the stomach ( Fig."
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "The histological presentation of asymptomsis.",
+          "unanswerable",
+          "unanswerable",
+          "gastrointestinal symptoms",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What is a characteristic feature of eosinophilic gastroenteritis?",
+          "a": "Eosinophilic infiltration of the gastrointestinal tract in the absence of any definite causes of eosinophilia."
+        },
+        {
+          "q": "What type of disorder is eosinophilic gastroenteritis?",
+          "a": "A very rare disorder."
+        },
+        {
+          "q": "What immediate effect did steroid treatment have on the patient's eosinophil count?",
+          "a": "The eosinophil count decreased to the reference range."
+        },
+        {
+          "q": "What clinical gastrointestinal manifestations is eosinophilic gastroenteritis associated with?",
+          "a": "Various clinical gastrointestinal manifestations."
+        },
+        {
+          "q": "What specific type of change was observed in the patient's eosinophilic gastritis?",
+          "a": "Necrotic change such as necrotizing gastritis."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 56,
+      "no_kg": {
+        "answers": [
+          "caspase-14 could first cleave these filagegrin pieces, leading to further degradation by another endo- and/or exopeptidases ; or ( 2 ), caspaein-14 could directly or indirectly ( by inactivating an inhibitor )",
+          "unanswerable",
+          "in the cornified layer only active caspare 14 is found",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the main role of caspase-14 in the skin?",
+          "a": "Terminal keratinocyte differentiation and formation of the epidermal barrier."
+        },
+        {
+          "q": "Which protein family does caspase-14 belong to?",
+          "a": "Cysteinyl aspartate specific proteinases."
+        },
+        {
+          "q": "Where is caspase-14 expression mainly confined?",
+          "a": "Cornifying epithelia, such as the skin."
+        },
+        {
+          "q": "What is the function of caspase-14 deficiency in mice, as mentioned in the text?",
+          "a": "It affects the correct degradation of (pro)filaggrin and the formation of the epidermal barrier."
+        },
+        {
+          "q": "Besides inflammation and apoptosis, what other processes are implicated for cysteinyl aspartate specific proteinases?",
+          "a": "Proliferation and differentiation."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 57,
+      "no_kg": {
+        "answers": [
+          "gossypibome describes a mass of cotton or a sponge that is retained in the body after a surgery.",
+          "unanswerable",
+          "unanswerable",
+          "histological examination of the tissue adjacent to the foreign body revealed granuloma formations with fragmented silken threads. endoscopic ultrasound ( eus)-fine - needle aspiration using forward - view eu a foreign body ( string of gauze ) obtained using the 22-gauge needle, with macrophage cells and necrotic tissue granularity formations.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "computed tomography ( ct ) scan and endoscopic ultrasound - fine - needle aspiration ( eus - fna )",
+          "endoscopic ultrasound - fine - needle aspiration ( eus - fna )"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "factuality": 0.4
+      },
+      "questions": [
+        {
+          "q": "What is a gossypiboma?",
+          "a": "A foreign mass within the body composed of a cotton matrix."
+        },
+        {
+          "q": "What are the potential complications of a gossypiboma?",
+          "a": "Infection or abscess formation."
+        },
+        {
+          "q": "For how long can a gossypiboma remain clinically silent?",
+          "a": "Many years."
+        },
+        {
+          "q": "What are some methods used to diagnose a gossypiboma?",
+          "a": "Abdominal x-ray films, abdominal ultrasound, contrast-enhanced CT scan, and during surgery."
+        },
+        {
+          "q": "What is a novel method mentioned for diagnosing gossypiboma?",
+          "a": "Endoscopic ultrasound-fine-needle aspiration."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 58,
+      "no_kg": {
+        "answers": [
+          "EDI-OCT was used to image the choroid that was inaccessible to ultrasound sonography.",
+          "The choroidal nevus lesion was located in the macula.",
+          "unanswerable",
+          "The thickened choroid measured 1,376 325 m in the larger vertical cut.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "1,376 325 m",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the purpose of enhanced depth imaging optical coherence tomography (EDI-OCT) in the context of choroidal lesions?",
+          "a": "To investigate choroidal lesions inaccessible to ultrasound sonography."
+        },
+        {
+          "q": "In the described case, where was the choroidal nevus lesion located?",
+          "a": "In the superior macula."
+        },
+        {
+          "q": "What was the reflectivity of the choroidal nevus?",
+          "a": "Homogeneous."
+        },
+        {
+          "q": "What were the dimensions of the thickened choroid in the larger vertical cut?",
+          "a": "1,376 x 325 \u00b5m."
+        },
+        {
+          "q": "According to the conclusion, what is EDI-OCT considered for measuring choroidal nevi and lesions?",
+          "a": "An excellent technique."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 59,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "hexo-titration is required for apoptosis to occur.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the primary role of nuclear factor e2-related factor 2 (nrf2)?",
+          "a": "Nrf2 is a transcription factor that upregulates genes to combat oxidative and electrophilic stress."
+        },
+        {
+          "q": "How is nrf2 stabilized in response to reactive oxygen species?",
+          "a": "Modification of kelch-like ech-associated protein 1 (keap1) by reactive oxygen species stabilizes nrf2 by preventing its degradation."
+        },
+        {
+          "q": "What does activated nrf2 bind to on the promoter region of genes?",
+          "a": "Activated nrf2 binds to antioxidant response elements (AREs)."
+        },
+        {
+          "q": "What is a potential negative consequence of activating the nrf2 pathway?",
+          "a": "Activation of the nrf2 pathway can protect cancer cells from oxidative stress and promote cell proliferation, and is critical for resistance to chemotherapeutic agents."
+        },
+        {
+          "q": "What is the aim of the review mentioned in the text?",
+          "a": "The aim is to provide a molecular basis for using nrf2 inhibitors to overcome chemoresistance."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 60,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is rhabdomyolysis?",
+          "a": "Rhabdomyolysis is an acute life-threatening condition that can occur in childhood."
+        },
+        {
+          "q": "What are the two main causes of rhabdomyolysis in childhood?",
+          "a": "The two main causes are viral myositis and trauma."
+        },
+        {
+          "q": "What can viral myositis and trauma sometimes lead to?",
+          "a": "They can sometimes lead to acute renal failure."
+        },
+        {
+          "q": "What was the peak plasma creatine kinase level in the reported 3-year-old male child?",
+          "a": "The peak plasma creatine kinase level was extremely high."
+        },
+        {
+          "q": "Did the child in the study with a 7-digit creatine kinase level require renal dialysis?",
+          "a": "No, the child did not require renal dialysis."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 61,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the primary purpose of the described cryopreservation technique?",
+          "a": "To enable long-term storage of refractive lenticules extracted after Relex Smile for subsequent use."
+        },
+        {
+          "q": "What medical condition was treated using cryopreserved corneal lenticules in the study?",
+          "a": "Hyperopia and aphakia."
+        },
+        {
+          "q": "What was the mean duration for which the lenticules were stored in liquid nitrogen before use?",
+          "a": "96 days."
+        },
+        {
+          "q": "What was the mean residual spherical equivalent for the hyperopic eyes treated in the study?",
+          "a": "+0.6 D."
+        },
+        {
+          "q": "What percentage of eyes in the study showed evidence of rejection at the end of the follow-up period?",
+          "a": "None of the eyes showed evidence of rejection."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 62,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "0.953 for sofa score",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What is the primary objective of the study regarding serum biomarkers in sepsis patients?",
+          "a": "To investigate the prognostic significance of serum soluble triggering receptor expressed on myeloid cells-1 (sTREM-1), procalcitonin (PCT), N-terminal proBNP, C-reactive protein (CRP), cytokines, and clinical severity scores in patients with sepsis."
+        },
+        {
+          "q": "Which biomarkers showed significantly higher levels in the nonsurvival group compared to the survival group on day 1?",
+          "a": "Serum sTREM-1, PCT, and IL-6 levels."
+        },
+        {
+          "q": "Which score had the highest area under the ROC curve for predicting 28-day mortality?",
+          "a": "SOFA score (0.953)."
+        },
+        {
+          "q": "What did multivariate logistic analysis identify as independent predictors of 28-day mortality?",
+          "a": "Serum baseline sTREM-1 and PCT levels, and SOFA score."
+        },
+        {
+          "q": "Which combination of factors provided the best prognostic utility for sepsis mortality, according to the conclusion?",
+          "a": "Combination of serum sTREM-1 and PCT levels and SOFA score."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 63,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What was the primary aim of the study regarding heat acclimatization?",
+          "a": "To determine the effects of heat acclimatization on performance and pacing during outdoor cycling time trials in the heat."
+        },
+        {
+          "q": "How many cyclists participated in the study?",
+          "a": "Nine cyclists."
+        },
+        {
+          "q": "What were the approximate ambient temperatures for the hot (TTH) and cool (TTC) conditions?",
+          "a": "Approximately 37\u00b0C for TTH and 8\u00b0C for TTC."
+        },
+        {
+          "q": "What was the difference in cycling time between TTH-1 and TTH-2?",
+          "a": "TTH-1 (77 \u00b1 6 min) was slower than TTH-2 (69 \u00b1 5 min)."
+        },
+        {
+          "q": "What was the final rectal temperature in the hot conditions compared to the cool conditions?",
+          "a": "The final rectal temperature was higher in the hot conditions (40.2\u00b0C \u00b1 0.4\u00b0C) than in the cool conditions (38.5\u00b0C \u00b1 0.6\u00b0C)."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 64,
+      "no_kg": {
+        "answers": [
+          "vis and nir spectrum, 780-1400 nm range, 780-2000 nm range",
+          "luminous transmittance, ir transmittance",
+          "unanswerable",
+          "unanswerable",
+          "metallic reflective filters available in the market versus the interference filters developed by the authors"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "luminous transmittance (2) where () = spectral transmittrance, v() is a spectro-metal d65 ; ir transmission within the 7801400 nm range (a), ir transmittory within the 7802000 nmoles of the illuminant d95",
+          "luminous transmittance, spectral transmittrance, spectro-metal d65, ir transmission, ir transmittory, a, n, reflectance",
+          "unanswerable",
+          "protection",
+          "the mean value of the reflectance of the filters with the highest levels of protection was 0.006% compared to a value of 0.02% for the other filters, while the values of a and n for the interference filters showed a difference of only 0.5% and a little less than that of the metallic ones."
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What types of spectrum range are considered in the analysis of protective optic filters?",
+          "a": "Visible and near infrared spectrum range."
+        },
+        {
+          "q": "What optical parameters are analyzed in the paper?",
+          "a": "Transmission and reflection of optic radiation."
+        },
+        {
+          "q": "What do the newly developed interference filters do more effectively compared to currently used filters?",
+          "a": "They provide more effective blocking of infrared radiation."
+        },
+        {
+          "q": "What are the protective optic filters used for?",
+          "a": "Protection of the eyes against hazardous radiation."
+        },
+        {
+          "q": "What is compared in the paper regarding the optic filters?",
+          "a": "The indexes characterizing transmission and reflection of optic radiation."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 65,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the primary objective of the study regarding dual-goal achievement in veterans with type 2 diabetes mellitus?",
+          "a": "To compare the clinical and economic benefits of achieving both HbA1c and LDL-C goals versus achieving only one of the goals."
+        },
+        {
+          "q": "What type of study design was used to evaluate electronic medical records for this research?",
+          "a": "Retrospective cohort analysis."
+        },
+        {
+          "q": "What were the inclusion criteria for patients in the study, specifically concerning measurements?",
+          "a": "Adult T2DM patients with two or more measurements of LDL-C and HbA1c."
+        },
+        {
+          "q": "Which statistical models were used to compare microvascular and cardiovascular outcomes by goal achievement status?",
+          "a": "Cox proportional hazards models."
+        },
+        {
+          "q": "What were the reported economic benefits of dual-goal achievement compared to achieving only the LDL-C goal?",
+          "a": "Fewer hospitalization days, fewer outpatient visits, and lower diabetes-related annual medical costs."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 66,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "The study aims to determine the optimal cutoff values for mms, iig, or tmd to predict difficult laryngoscopy.",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "hyoid bone and thyoratel membrane levels",
+          "unanswerable",
+          "to predict difficult laryngoscopy",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What are the three levels at which ultrasound measurements of anterior neck soft tissue thickness were taken?",
+          "a": "Hyoid bone, thyrohyoid membrane, and anterior commissure."
+        },
+        {
+          "q": "What is the correlation coefficient between dsem and dshb?",
+          "a": "0.74"
+        },
+        {
+          "q": "What does the study aim to determine regarding ultrasound measurements and laryngoscopy?",
+          "a": "If ultrasound measurements of anterior neck soft tissue thickness can predict difficult laryngoscopy."
+        },
+        {
+          "q": "How many patients were categorized as having difficult laryngoscopy out of the total included in the study?",
+          "a": "28"
+        },
+        {
+          "q": "What does the acronym 'tmd' stand for in the context of screening tests for difficult laryngoscopy?",
+          "a": "Thyromental distance"
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 67,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "yes"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What are two common complications that occur after coronary artery surgery?",
+          "a": "Pericardial effusion and atrial fibrillation."
+        },
+        {
+          "q": "What was the aim of the study regarding posterior pericardiotomy?",
+          "a": "To evaluate its effects on the occurrence of pericardial effusion, tamponade, and atrial fibrillation."
+        },
+        {
+          "q": "How many patients were in the control group (group ii)?",
+          "a": "33 patients."
+        },
+        {
+          "q": "In which group was postoperative hospitalization significantly higher?",
+          "a": "Group ii (controls)."
+        },
+        {
+          "q": "Were there significant differences found between the groups with regard to postoperative atrial fibrillation?",
+          "a": "No, significant differences were not found."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 68,
+      "no_kg": {
+        "answers": [
+          "Cisplatin ototoxicity",
+          "To examine the cellular mechanisms of cisplatin ototoxicity",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.4
+      },
+      "with_kg": {
+        "answers": [
+          "ototoxicity",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "cancer treatment"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What is a major side effect of cisplatin treatment that can negatively impact a patient's quality of life?",
+          "a": "Ototoxicity, leading to hearing loss."
+        },
+        {
+          "q": "What is the primary purpose of the review mentioned in the text regarding cisplatin?",
+          "a": "To provide an overview of cisplatin-associated ototoxicity, including its features, incidence, mechanisms, and risk factors."
+        },
+        {
+          "q": "What is currently lacking for the routine prevention of cisplatin-associated ototoxicity?",
+          "a": "An otoprotective agent."
+        },
+        {
+          "q": "What is highlighted as necessary to mitigate further loss in quality of life for patients experiencing cisplatin-associated ototoxicity?",
+          "a": "A team-based approach that complements an audiological monitoring program."
+        },
+        {
+          "q": "What is the therapeutic role of cisplatin mentioned in the context of cancer treatment?",
+          "a": "Cisplatin is an effective drug used in the treatment of many cancers."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 69,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "aminophenylalanine",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What two fields have a constant need for chemical tools to introduce new functionality on protein surfaces?",
+          "a": "Chemical biology and biomaterials science."
+        },
+        {
+          "q": "What type of strategy is demonstrated for the modification of n-terminal residues on peptides and proteins?",
+          "a": "An oxidative strategy."
+        },
+        {
+          "q": "What two classes of compounds are oxidized to active coupling species in situ?",
+          "a": "o-aminophenols or o-catechols."
+        },
+        {
+          "q": "Which amino acid residue is particularly reactive in this peptide modification reaction?",
+          "a": "Proline residues."
+        },
+        {
+          "q": "How can free cysteines be protected during the coupling reaction?",
+          "a": "Through disulfide formation."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 70,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "3",
+          "factor 1 hallucinogenic, factor 2 isopl, and a third unnamed factor"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What is the primary objective of the study concerning alcohol withdrawal syndrome?",
+          "a": "To identify the underlying factor structure of alcohol withdrawal syndrome as measured with CIWA-AR."
+        },
+        {
+          "q": "How many alcohol-dependent male patients were included in the study?",
+          "a": "201 alcohol-dependent male patients."
+        },
+        {
+          "q": "What statistical method was used to analyze the CIWA-AR items?",
+          "a": "Exploratory factor analysis."
+        },
+        {
+          "q": "How many factors were identified in the study's solution?",
+          "a": "A three-factor solution was obtained."
+        },
+        {
+          "q": "What are the names given to the three identified factors of alcohol withdrawal?",
+          "a": "Delirious, autonomic, and nonspecific factors."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 71,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "Workers who drank more than 6 l of liquid had a higher production output."
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "the summary indicates that workers who drank more than 6 L of liquid had the highest production output."
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is a major cause of preventable morbidity worldwide?",
+          "a": "Heat illness is a major cause of preventable morbidity worldwide."
+        },
+        {
+          "q": "What is the subclass of heat illness?",
+          "a": "Heat illness is a subclass of preventable morbidity."
+        },
+        {
+          "q": "What does heat stress directly impact besides worker health?",
+          "a": "Heat stress directly impacts production by causing poor task performance."
+        },
+        {
+          "q": "When are sugarcane workers exposed to excessive sunlight and heat during the harvest period?",
+          "a": "Sugarcane workers are exposed to excessive sunlight and heat from approximately 6 am to 3 pm during the harvest period."
+        },
+        {
+          "q": "What was the outcome of the new rehydration measures on productivity?",
+          "a": "Productivity improved with the new rehydration measures."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 72,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "no",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "adults",
+          "unanswerable",
+          "fourth ventricle",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What percentage of all intracranial tumors do choroid plexus papillomas account for?",
+          "a": "0.5%"
+        },
+        {
+          "q": "In what age group do the majority of choroid plexus papillomas occur?",
+          "a": "The first 2 years of life"
+        },
+        {
+          "q": "Is dense calcification of the tumor common in choroid plexus papillomas?",
+          "a": "No, it is uncommon."
+        },
+        {
+          "q": "In the reported adult case, where did the atypical choroid plexus papilloma originate from?",
+          "a": "The cerebellopontine angle"
+        },
+        {
+          "q": "What should the finding of calcification at the cerebellopontine angle in an adult suggest?",
+          "a": "The possible presence of choroid plexus papilloma"
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 73,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What kind of signals can corrupt microwave imaging techniques?",
+          "a": "Unwanted multipath signals."
+        },
+        {
+          "q": "Why are near-field systems especially vulnerable to signal corruption?",
+          "a": "Signals can scatter and reflect from structural objects within or on the boundary of the imaging zone."
+        },
+        {
+          "q": "What exacerbates issues with signal corruption in microwave imaging?",
+          "a": "Surface waves generated with the potential of propagating along transmitting and receiving antenna feed lines and other low-loss paths."
+        },
+        {
+          "q": "What was the purpose of conducting experiments with a near-field microwave imaging array?",
+          "a": "To analyze the contributions of multipath signals arising from surface wave effects."
+        },
+        {
+          "q": "Under what condition can surface wave effects be eliminated?",
+          "a": "Provided the feed line lengths are sufficiently long."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 74,
+      "no_kg": {
+        "answers": [
+          "analyze and assess the therapeutic effects of decompressive treatment for patients who underwent decompressment followed by enumeration",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What was the primary objective of the study regarding cystic lesions of the jaw?",
+          "a": "To evaluate the treatment efficacy of enucleation after decompression."
+        },
+        {
+          "q": "How many patients were treated with decompression followed by enucleation in the study?",
+          "a": "A total of 17 patients."
+        },
+        {
+          "q": "What was the mean percentage of reduction of cystic lesions after decompression?",
+          "a": "The mean percentage of reduction was 64%."
+        },
+        {
+          "q": "According to the study, which type of cystic lesions showed a faster reduction rate after decompression?",
+          "a": "Larger cystic lesions had a faster reduction rate than smaller lesions."
+        },
+        {
+          "q": "What were the findings regarding complications and recurrence in the study?",
+          "a": "There were no complications, and one case recurred."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 75,
+      "no_kg": {
+        "answers": [
+          "retn",
+          "retn at -420",
+          "unanswerable",
+          "yes",
+          "unanswerable"
+        ],
+        "scores": [
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.4
+      },
+      "with_kg": {
+        "answers": [
+          "retn",
+          "retn at -420",
+          "unanswerable",
+          "Yes, inherited variation in retn at -420 appears to be associated with heritable acne vulgaris.",
+          "unanswerable"
+        ],
+        "scores": [
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.6
+      },
+      "questions": [
+        {
+          "q": "What gene was investigated for its potential role in the pathogenesis of acne vulgaris?",
+          "a": "The retn gene."
+        },
+        {
+          "q": "What specific polymorphism of the retn gene was studied?",
+          "a": "The retn-420c/g polymorphism."
+        },
+        {
+          "q": "What was the case-control study design to investigate the retn-420c/g polymorphism?",
+          "a": "180 patients with acne vulgaris and 180 healthy individuals were studied."
+        },
+        {
+          "q": "Was the retn-420c/g polymorphism found to be associated with acne vulgaris?",
+          "a": "Yes, it was significantly associated with acne in patients compared to healthy controls."
+        },
+        {
+          "q": "What was the p-value for the association between the retn-420c/g polymorphism and acne in patients compared to controls?",
+          "a": "The p-value was 0.014."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 76,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "compound 2 offers an enriched cis - Ephedrine",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What type of reactions are promoted by indium in this study?",
+          "a": "Indium-promoted coupling reactions between propargyl aldehydes and -chloropropargylphenyl sulfide."
+        },
+        {
+          "q": "Which solvent, not previously known for indium-promoted reactions, accelerated the Barbier-style reactions?",
+          "a": "N-methylformamide (NMF)."
+        },
+        {
+          "q": "What skeletal structures can be easily formed using the reactions described in the paper?",
+          "a": "Epoxydiyne and enediyne skeletal structures."
+        },
+        {
+          "q": "Did the indium-promoted reactions in this study show regiocontrol and stereocontrol?",
+          "a": "Yes, they showed excellent regiocontrol and good stereocontrol."
+        },
+        {
+          "q": "What was the observed pattern regarding water's effect on indium metal-promoted reactions in this series, compared to general knowledge?",
+          "a": "The reverse pattern was observed; water accelerated the reactions in general, but not in this specific series."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 77,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What are the two biomarkers used to detect acute kidney injury (AKI) in pediatric sepsis patients in this study?",
+          "a": "Blood urea nitrogen (BUN) and serum creatinine (CR) levels."
+        },
+        {
+          "q": "What is baicalin and where is it derived from?",
+          "a": "Baicalin is a flavonoid derived from Scutellaria baicalensis Georgi."
+        },
+        {
+          "q": "What were the results of baicalin adjunctive therapy on BUN and CR levels in pediatric sepsis patients?",
+          "a": "Baicalin adjunctive therapy significantly decreased BUN and CR levels."
+        },
+        {
+          "q": "How did baicalin affect apoptotic cells in the renal tissue of the CLP mouse model?",
+          "a": "Baicalin reduced the percentage of apoptotic cells in the renal tissue."
+        },
+        {
+          "q": "What are the main conclusions of the study regarding baicalin's role in pediatric sepsis with AKI?",
+          "a": "Baicalin can suppress renal cell apoptosis and protect against AKI in pediatric sepsis, suggesting it as a potential adjunctive therapy."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 78,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What specific type of advanced glycation end-products (AGEs) enhanced the malignancy of melanoma cells in a recent study?",
+          "a": "Glyceraldehyde-derived AGEs (glycer-AGEs)."
+        },
+        {
+          "q": "What was the effect of glycer-AGEs on the proliferation of cultured lung cancer A549 cells?",
+          "a": "Glycer-AGEs significantly attenuated cell proliferation."
+        },
+        {
+          "q": "How did glycer-AGEs affect the migration capacity of A549 cells?",
+          "a": "Glycer-AGEs enhanced the migration capacity of the cells."
+        },
+        {
+          "q": "What molecular pathway was activated by glycer-AGEs to enhance the migration of A549 cells?",
+          "a": "Rac1 was activated via ROS."
+        },
+        {
+          "q": "What role do glycer-AGEs play in cancer malignancy, according to the study's findings?",
+          "a": "Glycer-AGEs play a critical role in the malignancy of cancer rather than its proliferation."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 79,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "The primary benefit of the surgical stents mentioned in the study is that they allow the clinician to predetermine implant locations virtually and surgically place them without reflecting a tissue flap.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "The surgical stents prepared with CFT and CAD/CAM technology are very much more cost effective than a conventional surgical one.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the main aim of the study?",
+          "a": "To evaluate the efficacy of surgical stents in determining the position and diameter of dental implants."
+        },
+        {
+          "q": "How many patients were included in the study?",
+          "a": "45 patients"
+        },
+        {
+          "q": "How many implants were placed in the study?",
+          "a": "89 implants"
+        },
+        {
+          "q": "What is the primary benefit of the surgical stents mentioned in the study?",
+          "a": "They show extreme accuracy in implant installation regarding position and diameter."
+        },
+        {
+          "q": "What is the increasing demand from implant patients?",
+          "a": "Demand for quality and efficient treatment."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 80,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "T1D",
+          "MZB and fo cells, and mzp cells",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "Type 1 diabetes, type 2 diabetes, LADA",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the primary role of B lymphocytes in the context of autoimmune diabetes?",
+          "a": "B lymphocytes play an important role in the immunopathogenesis of autoimmune diabetes."
+        },
+        {
+          "q": "What types of diabetes were studied, along with healthy controls?",
+          "a": "Type 1 diabetes (T1D), latent autoimmune diabetes in adults (LADA), type 2 diabetes (T2D), and normal glucose tolerance (NGT) controls."
+        },
+        {
+          "q": "Which B-cell subsets were measured using flow cytometry?",
+          "a": "Marginal zone B (MZB), follicular B (FOB), and IL-10-producing regulatory B (B10) cells."
+        },
+        {
+          "q": "How did the percentages of MZB and FOB cells differ in patients with T1D or LADA compared to healthy controls and T2D patients?",
+          "a": "Patients with T1D or LADA had increased percentages of MZB cells and decreased percentages of FOB cells."
+        },
+        {
+          "q": "What was the observed relationship between B10 cell frequency and fasting C-peptide (FCP) and hemoglobin A1c?",
+          "a": "The frequency of B10 cells was positively correlated with FCP and negatively correlated with hemoglobin A1c."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 81,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "Strain-specific detailed information such as strain name, sequence status, associated disease information with references, genomic statistics (GC%, AT%), and gene content.",
+          "unanswerable",
+          "unanswerable",
+          "The reserve comprises strain-specific detailed information on its name, sequencing status, submission details, date of submission, NCBI IDs, disease types and subtypes, type of DNA, genome length, molecular weight, nucleotide composition (A), number of genes and proteins, and protein list."
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "reserve comprises the strain - specific detailed informationon its name, sequencing status, submission details, date of submission, ncbi ids, type of dna, genome length, molecular weight, nucleotide content, number of genes and proteins, and protein list."
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the leading cause of cancer mortality among women worldwide?",
+          "a": "Human papillomavirus (HPV) infection."
+        },
+        {
+          "q": "What kind of information is available on the web regarding HPV, but is not well-customized for certain analyses?",
+          "a": "Genomic, proteomic, structural, and disease-related information."
+        },
+        {
+          "q": "What is the name of the online resource designed with comprehensive information on HPV?",
+          "a": "The Human Papillomavirus Proteome Database (HPVPDB)."
+        },
+        {
+          "q": "How many HPV strains are sequenced and included in the HPVPDB?",
+          "a": "150 HPV strains."
+        },
+        {
+          "q": "What are some important features of the HPVPDB?",
+          "a": "Simultaneous expandability and retrieval of strain-specific data, sequence analysis, exploration of predicted structures, and easy access for curation and annotation."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 82,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What type of intraocular lens (IOL) was implanted in the study?",
+          "a": "AcrySof toric IOL."
+        },
+        {
+          "q": "How many eyes of how many patients underwent the IOL implantation?",
+          "a": "Twenty-nine eyes of 19 patients."
+        },
+        {
+          "q": "What was the uncorrected visual acuity in most eyes one and six months after the operation?",
+          "a": "0.5 in 89.7% of eyes."
+        },
+        {
+          "q": "What was the mean toric IOL axis rotation one month postoperation?",
+          "a": "2.2 \u00b1 1.5 degrees."
+        },
+        {
+          "q": "What is the conclusion regarding the stability of one-piece hydrophobic acrylic toric IOLs?",
+          "a": "They appear to have acceptable stability."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 83,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "ampa- type receptors, unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "nmda receptors, suggested to be associated with vocal and respiratory muscles",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What nucleus in the songbird's brain directly influences the song?",
+          "a": "The nucleus of RA (robust nucleus of the arcopallium) influences the song directly."
+        },
+        {
+          "q": "What type of receptors are associated with variability in adult birdsong, and where are they located?",
+          "a": "NMDA receptors in LMAN-RA synapses are associated with variability in adult birdsong."
+        },
+        {
+          "q": "What was observed to increase the slope (gain) of the firing rate-current relationship in RA projection neurons?",
+          "a": "NMDA substantially increased the slope (gain) of the firing rate-current relationship in RA projection neurons."
+        },
+        {
+          "q": "What receptor-dependent excitability played a crucial role in the modulation of gain by NMDA?",
+          "a": "AMPA receptor-dependent excitability played a crucial role in the modulation of gain by NMDA."
+        },
+        {
+          "q": "What function do NMDA receptors appear to regulate in RA projection neurons, according to the results?",
+          "a": "NMDA receptors may regulate the dynamics of RA projection neurons by input-output gain."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 84,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "the common femoral artery and the proximal portion of the superficial fc artery were oversewn and left in place",
+          "unanswerable",
+          "adequate source control with limb - sparing vascular bypass grafts"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is pythiosis?",
+          "a": "Pythiosis is a serious life- and limb-threatening infection."
+        },
+        {
+          "q": "Where is pythiosis endemic?",
+          "a": "Pythiosis is endemic to Thailand."
+        },
+        {
+          "q": "What was the initial management for the patient's vascular pythiosis?",
+          "a": "The initial management was limb-sparing vascular bypass grafts."
+        },
+        {
+          "q": "What organism was found to be causing the vascular pythiosis in the patient?",
+          "a": "Pythium insidiosum"
+        },
+        {
+          "q": "What is the ultimate management for vascular pythiosis?",
+          "a": "Surgical source control is the ultimate management."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 85,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "a quantity of 0.025 mg / ml fragmented cy5-labled cdna was hybridized overnight at 42 c using the hybbag hybridization system with 1 onearray hybridization buffer ( phalanx biotech ) and 0.01 mg/ml sheared salmon sperm vs.",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What types of cells were used in the three-dimensional human oral cell culture model?",
+          "a": "Oral keratinocytes and fibroblasts."
+        },
+        {
+          "q": "What condition is the cell culture model intended to represent?",
+          "a": "Oral mucositis, a side effect of chemotherapy and radiation."
+        },
+        {
+          "q": "How was the 3D cell culture model treated?",
+          "a": "Irradiated with 12 or 2 Gy."
+        },
+        {
+          "q": "When was total RNA collected after irradiation?",
+          "a": "6 hours after irradiation."
+        },
+        {
+          "q": "Where have the microarray data been deposited?",
+          "a": "Gene Expression Omnibus (GEO) under accession number GSE62395."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 86,
+      "no_kg": {
+        "answers": [
+          "HSV-2 and HIV",
+          "unanswerable",
+          "unanswerable",
+          "dried blood spot",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "venipuncture",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What are the two main sexually transmitted infections (STIs) whose biomarkers are examined in the study?",
+          "a": "Human Immunodeficiency Virus (HIV) and Herpes Simplex Virus Type 2 (HSV-2)."
+        },
+        {
+          "q": "In which region of Africa are there growing interests in using HIV and other STI biomarkers for intervention trials?",
+          "a": "Sub-Saharan Africa."
+        },
+        {
+          "q": "What method was used to collect whole blood samples in Kenya for the biomarker procedures?",
+          "a": "Venipuncture."
+        },
+        {
+          "q": "Which sample collection method is described as more convenient and efficient for field research in the study?",
+          "a": "Dried blood spots (DBS)."
+        },
+        {
+          "q": "What is a concern with the current serological diagnosis for HSV-2 when prevalence is low?",
+          "a": "It has a low positive predictive value, resulting in an unacceptable proportion of false positives."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 87,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "4 patient received pcpcs score of 2 ( mild disability ) and 3 (moderate Disability ) after 3 years later post operation."
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is considered an effective treatment option for refractory intracranial hypertension?",
+          "a": "Decompressive hemicraniectomy."
+        },
+        {
+          "q": "What is the mean age of the children included in the study?",
+          "a": "34.6 months."
+        },
+        {
+          "q": "What was the mean time point of craniectomy after stroke attack in the study?",
+          "a": "12 hours."
+        },
+        {
+          "q": "What was the long-term mortality rate for the children who underwent decompressive hemicraniectomy?",
+          "a": "No children died."
+        },
+        {
+          "q": "According to the pediatric cerebral performance category scale, what score did 4 of the children receive?",
+          "a": "A score of 2 (mild disability)."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 88,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "major cardiovascular disease ( within 6 months ), heart failure ( new york heart association class ii",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "yes"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What type of trial was conducted to investigate the antiproteinuric effect of aliskiren?",
+          "a": "A double-blind, randomized, crossover trial."
+        },
+        {
+          "q": "What were the inclusion criteria for the patients in the study?",
+          "a": "Type 2 diabetes, hypertension, and albuminuria (> 100 mg/day)."
+        },
+        {
+          "q": "What was the primary endpoint of the study?",
+          "a": "A change in albuminuria."
+        },
+        {
+          "q": "How much did aliskiren treatment reduce albuminuria compared to placebo?",
+          "a": "Aliskiren treatment reduced albuminuria by 48% compared to placebo."
+        },
+        {
+          "q": "Was the combination of aliskiren and irbesartan more antiproteinuric than monotherapy?",
+          "a": "Yes, the combination of aliskiren and irbesartan was more antiproteinuric than monotherapy."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 89,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "cpti, ty6al4v,and cocrmo",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "The summary mentions that the initial attachment of osteoblasts onto the surface of biometals such as cpti, tis6al4v, orcocrmo has a positive impact on the cytocompatibility of nanoparticles.",
+          "unanswerable",
+          "cpti, tis6al4v, orcocrmo",
+          "unanswerable",
+          "initial attachment of osteoblasts onto the surface of biometals"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the significance of cell-surface interactions for biomaterial applications in orthopaedics?",
+          "a": "Cell-surface interactions play a crucial role in biomaterial applications in orthopaedics."
+        },
+        {
+          "q": "What factors influence cellular adherence, migration, proliferation, and differentiation on biomaterials?",
+          "a": "Both the chemical composition and surface topography of a biomaterial influence cellular adherence, migration, proliferation, and differentiation."
+        },
+        {
+          "q": "What types of orthopaedic biomaterials are discussed in the review?",
+          "a": "The review discusses titanium (Ti), cobalt-chrome-molybdenum (CoCrMo) alloys, stainless steel (SS), and synthetic polymers (UHMWPE, XLPE, PEEK, PLLA)."
+        },
+        {
+          "q": "What is the stated purpose of applying nanostructured surfaces in medicine?",
+          "a": "Nanostructured surfaces are applied in medicine to improve the cytocompatibility and osteointegration of orthopaedic implants."
+        },
+        {
+          "q": "What aspects of cell-surface interactions are elucidated in the review?",
+          "a": "The review elucidates the principle mechanisms of nano- and microscale cell-surface interactions in vitro for different cell types onto typical orthopaedic biomaterials."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 90,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is unique about legumes among cultivated plants?",
+          "a": "Legumes can perform endosymbiotic nitrogen fixation with rhizobial bacteria."
+        },
+        {
+          "q": "What specialized structure is involved in endosymbiotic nitrogen fixation in legumes?",
+          "a": "The nodule."
+        },
+        {
+          "q": "Which group of eurosids do legumes belong to?",
+          "a": "The fabidae."
+        },
+        {
+          "q": "What is the largest clade of legumes, and what does it contain?",
+          "a": "Papilionoids, which contain most cultivated species."
+        },
+        {
+          "q": "What is Medicicago truncatula (mt) considered for the study of legume biology?",
+          "a": "A long-established model."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 91,
+      "no_kg": {
+        "answers": [
+          "migration of the outer cup ( secondary to the acetabular erosion ) and unpredictable pain relief.",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is a common complication of bipolar hip arthroplasty when treating avascular necrosis of the femoral head?",
+          "a": "Acetabular erosion and groin pain."
+        },
+        {
+          "q": "What was the mean age of the male patients included in the study who were treated with bipolar hip arthroplasty for avascular necrosis of the femoral head?",
+          "a": "42 years."
+        },
+        {
+          "q": "What was the average preoperative Harris Hip Score (HHS) for patients undergoing bipolar hip arthroplasty in this study?",
+          "a": "39.3."
+        },
+        {
+          "q": "What was the mean follow-up period for the hips treated with bipolar hip arthroplasty in the study?",
+          "a": "7.52 years."
+        },
+        {
+          "q": "According to the study's conclusion, what can be achieved in midterm follow-up for bipolar hip arthroplasty in avascular necrosis of the hip?",
+          "a": "Low incidence of groin pain, acetabular erosion, and revision, with good outcome and mid-term survival irrespective of Ficat stage."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 92,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "hyperammonemia",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What are some of the conditions for which valproic acid (VPA) has been used therapeutically?",
+          "a": "Absence seizures, partial seizures, tonic-clonic seizures, bipolar disorder, schizoaffective disorder, social phobias, neuropathic pain, and migraine headaches."
+        },
+        {
+          "q": "What is a common side-effect of VPA that is caused by several proposed etiologies?",
+          "a": "Hyperammonemia."
+        },
+        {
+          "q": "What treatment was the patient given for her elevated serum VPA and ammonia levels?",
+          "a": "Levocarnitine."
+        },
+        {
+          "q": "What were the patient's liver enzymes like during her treatment?",
+          "a": "Her liver enzymes were never elevated."
+        },
+        {
+          "q": "What does the different decay kinetics of venous ammonia in the presence of high and low VPA concentrations suggest?",
+          "a": "That VPA can cause symptomatic hyperammonemia via more than one concurrent etiological mechanism."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 93,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "efficacy of imm treatment varies according to the causative pathogen, with the best therapeutic response being shown for mastitis caused by streptococci, coagulae - negative staphylococci, and corynebacterium spp.",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What should mastitis treatment be based on when a bacteriological diagnosis is available?",
+          "a": "Bacteriological diagnosis and national and international guidelines on prudent use of antimicrobials."
+        },
+        {
+          "q": "How should treatment be initiated for acute mastitis if a bacteriological diagnosis is not immediately available?",
+          "a": "Treatment should be initiated based on herd data and personal experience."
+        },
+        {
+          "q": "Why is treating subclinical mastitis with antimicrobials during lactation seldom economical?",
+          "a": "Due to high treatment costs and generally poor efficacy."
+        },
+        {
+          "q": "What is needed to facilitate the proper selection of antimicrobials for mastitis treatment?",
+          "a": "Rapid bacteriological diagnosis."
+        },
+        {
+          "q": "What practice promotes judicious use of antimicrobials and reduces their use in mastitis treatment?",
+          "a": "Use of on-farm written protocols for mastitis treatment."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 94,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "Which of the following pathogens are blood borne in humans: HIV, malaria, hepatitis B and C, West Nile virus, dengue, and other viral hemorrhagic fevers?",
+          "a": "All of the listed pathogens are blood borne in humans."
+        },
+        {
+          "q": "Is HIV transmitted by blood-feeding arthropods?",
+          "a": "No, HIV is not transmitted by blood-feeding arthropods."
+        },
+        {
+          "q": "What are two potential explanations for why HIV has not evolved arthropod transmission?",
+          "a": "One explanation is that mechanical transmission strains would induce a faster onset of AIDS, limiting their spread. Another is a lack of appropriate genetic variation in HIV or a conflict between natural selection within and between infected individuals."
+        },
+        {
+          "q": "What might limit the spread of HIV strains that are mechanically transmitted by arthropods?",
+          "a": "Mechanical transmission strains would induce a faster onset of AIDS during infection, which would limit their ability to spread."
+        },
+        {
+          "q": "What is a possible reason why biological transmission of HIV by arthropods has not occurred?",
+          "a": "A lack of appropriate genetic variation in HIV is one possible explanation."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 95,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "In healthy kidneys, where is alpha-smooth muscle actin (ASMA) typically expressed immunohistochemically?",
+          "a": "In the blood vessels."
+        },
+        {
+          "q": "What pathological conditions can lead to ASMA visualization in glomerular mesangial cells and interstitial myofibroblasts?",
+          "a": "Pathological conditions."
+        },
+        {
+          "q": "What was the aim of the study regarding ASMA expression in glomerulonephritis?",
+          "a": "To explore the possible correlation between ASMA expression and indicators of renal function."
+        },
+        {
+          "q": "How was the immunoexpression of ASMA analyzed quantitatively in the study?",
+          "a": "Using computer-assisted morphometric analysis."
+        },
+        {
+          "q": "In children, what was correlated with greater ASMA expression in the interstitium?",
+          "a": "High blood pressure."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 96,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "aneurysmal bone cyst ( abc )",
+          "cartilaginous matrix, plenty of scattered osteoclast - type multinucleated giant cells, and bluish granular calcification surrounding individual cells chicken wire calcifying",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        "factuality": 0.4
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What type of bone neoplasm is chondroblastoma?",
+          "a": "Chondroblastoma is a rare, giant cell-rich, benign neoplasm of bone."
+        },
+        {
+          "q": "What diagnostic technique has gained momentum in the preoperative diagnosis of bone lesions?",
+          "a": "Fine needle aspiration cytology (FNAC) has gained momentum in preoperative diagnosis of bone lesions."
+        },
+        {
+          "q": "What are some giant cell-rich tumors and lesions that fall under the differential diagnosis of chondroblastoma at cytology?",
+          "a": "Aneurysmal bone cyst (ABC), giant cell tumor, and chondromyxoid fibroma."
+        },
+        {
+          "q": "What are characteristic cytomorphological features of chondroblastoma at cytology?",
+          "a": "Presence of giant cells, chondroid matrix, mononuclear cells with nuclear indentation and grooving, and glassy, vacuolated cytoplasm."
+        },
+        {
+          "q": "What is a useful clue for the accurate diagnosis of chondroblastoma at FNAC?",
+          "a": "The presence of chicken wire calcification."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 97,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "the japanese version of the attitudes toward suicide questionnaire ( atts )",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the age range most affected by suicide as a public health issue?",
+          "a": "15-44 years."
+        },
+        {
+          "q": "What was the aim of the study concerning parental rearing and attitudes toward suicide?",
+          "a": "To examine the effects of parental rearing on attitudes toward suicide among Japanese medical college students."
+        },
+        {
+          "q": "What instrument was used to assess the attitudes and behaviors of parents in the study?",
+          "a": "The parental bonding instrument."
+        },
+        {
+          "q": "What percentage of participants agreed that anyone could commit suicide?",
+          "a": "88.8%."
+        },
+        {
+          "q": "What aspect of parental bonding was shown to be significantly associated with the 'common occurrence' attitude toward suicide?",
+          "a": "Maternal care."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 98,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "Overtreatment with regular lama and laba for stage i patients, and overtreatment which was combined one or more long-acting bronchodilator and ic for stage II patients.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "under or overprescription cause the inappropriate treatment of the disease.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What was the primary objective of the study conducted in Turkey?",
+          "a": "To investigate the rates of adherence to GOLD 2010 guidelines for COPD treatment among pulmonologists."
+        },
+        {
+          "q": "How many patients were included in the study?",
+          "a": "719 patients were included in the study."
+        },
+        {
+          "q": "What percentage of patients received appropriate treatment according to GOLD guidelines?",
+          "a": "Only 59.5% of patients received appropriate treatment."
+        },
+        {
+          "q": "What were the main causes of inappropriate therapies in the study?",
+          "a": "Inappropriate therapies were due to overtreatment in early stages and excessive use of inhaled corticosteroid (ICS) in all disease stages."
+        },
+        {
+          "q": "What was the most preferred treatment regimen in the study?",
+          "a": "The most preferred regimen was long-acting 2-agonist - inhaled corticosteroid - long-acting muscarinic antagonist."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 99,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "The summary mentions hypomagnesemia as a possible electrolyte imbalance, but does not state it was notably observed."
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the most clinically significant adverse reaction of amphotericin B?",
+          "a": "Nephrotoxicity."
+        },
+        {
+          "q": "What was the primary objective of the study regarding amphotericin B?",
+          "a": "To assess the frequency, time of onset, and possible associated factors of amphotericin B nephrotoxicity."
+        },
+        {
+          "q": "What were the inclusion criteria for patients in the study?",
+          "a": "Patients aged 15 years or older with no documented history of acute kidney injury or chronic kidney disease, scheduled for intravenous amphotericin B for at least one week."
+        },
+        {
+          "q": "What percentage of patients in the study developed amphotericin B nephrotoxicity?",
+          "a": "27.5%."
+        },
+        {
+          "q": "What electrolyte imbalances were notably observed in patients during amphotericin B treatment?",
+          "a": "Hypokalemia and renal potassium wasting."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 100,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "selected ion chromatogram",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "solid phase extraction on a porous graphitized carbon cartridge and reversed-phase C18 cartridge",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What are the four monosaccharide constituents that make up snail O-glycans?",
+          "a": "N-acetylgalactosamine, galactose, mannose, and fucose."
+        },
+        {
+          "q": "What is the common trisaccharide core structure determined in Arion lusitanicus?",
+          "a": "N-acetylgalactosamine linked to the protein elongated by two 4-O-methylated galactose residues."
+        },
+        {
+          "q": "Besides the four main monosaccharides, what additional modification is found in snail O-glycans?",
+          "a": "Methylation of the hexoses."
+        },
+        {
+          "q": "What analytical techniques were used to analyze the released O-glycans?",
+          "a": "Liquid chromatography coupled to electrospray ionization mass spectrometry and gas chromatography/mass spectrometry."
+        },
+        {
+          "q": "Why do the glycosylation abilities of snails deserve attention?",
+          "a": "Because snail species serve as intermediate hosts in the developmental cycles of some human and cattle parasites, and glycosylation may contribute to host-parasite interactions."
+        }
+      ],
+      "error": null
+    }
+  ]
+}

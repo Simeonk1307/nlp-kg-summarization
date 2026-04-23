@@ -18,7 +18,7 @@ def merge(base_data, other_data, label):
             "triples": base_item["triples"],
             "reference_summary": base_item["reference_summary"],
             "summary_without_kg": base_item["generated_summary"],
-            f"summary_with_kg_{label}": other_item["generated_summary"]
+            f"summary_with_kg": other_item["generated_summary"]
         })
     return merged
 
