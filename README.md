@@ -69,24 +69,23 @@ cd nlp-kg-summarization
 bash setup.sh
 ```
 
-For evaluation pipelines, create a `.env` file in the `evaluation/` directory (refer `.env.example`):
+#### For evaluation pipelines, create a `.env` file in the `evaluation/` directory (refer `.env.example`):
 
 ```env
 GEMINI_API_KEY=your_api_key_here
 ```
 
-For running summary generators, main.ipynb or train.py `src/dataset/pubmed_with_triples_v` must exist  
-So you must unzip `pubmed_with_triples_v.zip` to this specific directory from root  
-Take `pubmed_with_triples_v.zip` from the drive  
+#### For running summary generators, main.ipynb or train.py `src/dataset/pubmed_with_triples_v` must exist 
 
 ```bash
+Take `pubmed_with_triples_v.zip` from the drive and put in project root
 unzip pubmed_with_triples_v.zip -d ./src/dataset/
 ```
 
-For running custom summary generator `src/checkpoints/phase1_best.pt` or equivalent must be there  
-Take `phase1_best.pt` and put it in `src/checkpoints`
+#### For running custom summary generator `src/checkpoints/phase1_best.pt` or equivalent must be there. 
 
 ```bash
+Take `phase1_best.pt` from the drive and put in project root
 mv phase1_best.pt ./src/checkpoints/
 ```
 
