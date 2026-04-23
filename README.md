@@ -115,6 +115,8 @@ cp phase1_best.pt ./src/checkpoints/
 
 Pre-extract REBEL triples from the [PubMed summarization](https://huggingface.co/datasets/ccdv/pubmed-summarization)  when you use dataset and save an enriched copy to disk:
 
+** NOTE: This is also quite slow so advised would be to use the pre-processed dataset from drive **
+
 ```bash
 cd src
 python3 rebel_triple_extraction.py \
@@ -130,6 +132,8 @@ NOTE: It is loaded using `datasets library` in this file (so if you want to use 
 ---
 
 ## Training (To skip look at `Installation & Setup`)
+
+** NOTE: This is also quite slow so advised would be to use the checkpoint from drive **
 
 ```bash
 cd src
@@ -149,6 +153,8 @@ Checkpoints are saved to `src/checkpoints/`. The best validation checkpoint is s
 ---
 
 ## Inference
+
+** NOTE: Summary generation is a slow process so GPU would be better to speed up the process **
 
 **Baseline (vanilla LongT5):**
 
@@ -173,7 +179,7 @@ python custom_phase_1_summary_generator.py \
 
 ## Evaluation
 
-**Step 1 — Merge outputs:**
+**Step 1 — Merge outputs:** (FAST)
 
 ```bash
 cd evaluation
@@ -185,7 +191,10 @@ python merge.py \
 
 This reads from `src/results/` and writes `summaries_20.json`.
 
-**Step 2 — Run evaluation pipelines:**
+**Step 2 — Run evaluation pipelines:** (FAST but be careful)
+
+** NOTE: Be very mindful while running this. Track your current usage and check if you have billing account or not.
+if you do then ensure to cap the amount O/w Try to be within the token and requests limit or change models**
 
 ```bash
 cd evaluation
