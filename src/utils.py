@@ -5,7 +5,60 @@ from kg_extractor import KGExtractor, Triple
 from base_model import KATSum
 from rouge_score.rouge_scorer import RougeScorer
 import numpy as np
+import re
 
+def smart_chunk_text(text: str, tokenizer, max_length: int = 4096):
+    paragraphs = [p.strip() for p in re.split(r'\n\s*\n+', text) if p.strip()]
+    chunks_text, current_chunk = [], []
+    current_tokens = 0
+    max_tokens = max_length - 100
+
+    for para in paragraphs:
+        para_tokens = tokenizer(para, return_tensors="pt", add_special_tokens=False)["input_ids"].shape[1]
+        
+        if current_tokens + para_tokens <= max_tokens:
+            current_chunk.append(para)
+            current_tokens += para_tokens
+            
+        elif para_tokens > max_tokens:
+            if current_chunk:
+                chunks_text.append("\n\n".join(current_chunk))
+                current_chunk, current_tokens = [], 0
+                
+            sentences = re.split(r'(?<=[.!?])\s+', para)
+            sent_buffer, sent_tokens = [], 0
+            
+            for sent in sentences:
+                s_toks = tokenizer(sent, return_tensors="pt", add_special_tokens=False)["input_ids"].shape[1]
+                if s_toks > max_tokens:
+                    if sent_buffer: chunks_text.append(" ".join(sent_buffer))
+                    chunks_text.append(sent)
+                    sent_buffer, sent_tokens = [], 0
+                    continue
+                    
+                if sent_tokens + s_toks <= max_tokens:
+                    sent_buffer.append(sent)
+                    sent_tokens += s_toks
+                else:
+                    chunks_text.append(" ".join(sent_buffer))
+                    sent_buffer = [sent_buffer[-1], sent] if sent_buffer else [sent]
+                    sent_tokens = tokenizer(" ".join(sent_buffer), return_tensors="pt")["input_ids"].shape[1]
+                    
+            if sent_buffer:
+                chunks_text.append(" ".join(sent_buffer))
+                
+        else:
+            if current_chunk:
+                chunks_text.append("\n\n".join(current_chunk))
+            current_chunk, current_tokens = [para], para_tokens
+
+    if current_chunk:
+        chunks_text.append("\n\n".join(current_chunk))
+
+    if not chunks_text: 
+        chunks_text = [text[:1000]]
+
+    return tokenizer(chunks_text, max_length=max_length, truncation=True, padding=True, return_tensors="pt")
 
 class SummarizationDataset(Dataset):
     """

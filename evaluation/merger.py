@@ -1,10 +1,10 @@
 import json
 
 DATA_DIR = "../src/results/"
-with open(DATA_DIR+'base_model_test_results.json', 'r', encoding='utf-8') as f:
+with open(DATA_DIR+'base_model_test_results_20.json', 'r', encoding='utf-8') as f:
     base_data = json.load(f)
 
-with open(DATA_DIR+'katsum_phase_1_model_test_results.json', 'r', encoding='utf-8') as f:
+with open(DATA_DIR+'katsum_phase_1_model_test_results_20.json', 'r', encoding='utf-8') as f:
     custom_data = json.load(f)
 
 merged_data = []
