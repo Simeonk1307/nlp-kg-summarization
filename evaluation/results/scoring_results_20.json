@@ -1,0 +1,406 @@
+{
+  "metadata": {
+    "total_samples": 20,
+    "valid_samples": 20,
+    "errors": 0,
+    "elapsed_seconds": 14.911532878875732
+  },
+  "dimension_stats": {
+    "faithfulness": {
+      "no_kg_avg": 2.3,
+      "with_kg_avg": 2.9,
+      "delta": 0.6000000000000001
+    },
+    "coverage": {
+      "no_kg_avg": 1.65,
+      "with_kg_avg": 1.35,
+      "delta": -0.2999999999999998
+    },
+    "reference_alignment": {
+      "no_kg_avg": 1.65,
+      "with_kg_avg": 1.3,
+      "delta": -0.34999999999999987
+    },
+    "coherence": {
+      "no_kg_avg": 2.5,
+      "with_kg_avg": 3.2,
+      "delta": 0.7000000000000002
+    },
+    "hallucination": {
+      "no_kg_avg": 2.5,
+      "with_kg_avg": 3.3,
+      "delta": 0.7999999999999998
+    },
+    "overall": {
+      "no_kg_avg": 1.8,
+      "with_kg_avg": 1.85,
+      "delta": 0.050000000000000044
+    }
+  },
+  "all_scores": {
+    "no_kg": [
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 1,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is extremely short and only captures a single recommendation from the original text, missing most of the key findings and context. It also incorrectly focuses on memory when the recommendation was about disentangling anxiety and depression's effects on cognitive impairments in general. The reference summary provides a much more comprehensive overview of the study's findings."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 2,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is very poor. It is mostly nonsensical and appears to be a garbled version of a sentence from the original text. It fails to capture any key information from the source text and is not aligned with the provided reference summary. The coherence is very low, making it difficult to understand. It does not hallucinate new information, but the information presented is so mangled it's essentially useless."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 2,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is largely inaccurate and nonsensical. It mixes unrelated terms like 'ovarian syndrome' and 'polycystic orlando syndrome' and misinterprets the citations. It also fails to capture any key information from the source text. The reference alignment is poor due to the severe incoherence and factual errors."
+      },
+      {
+        "faithfulness": 5,
+        "coverage": 2,
+        "reference_alignment": 1,
+        "coherence": 4,
+        "hallucination": 5,
+        "overall": 3,
+        "reasoning": "The generated summary focuses heavily on the presentation details of male and female patients, including specific percentages and age ranges. While faithful to the source text, it omits several key facts present in the reference summary, such as the cause of the disorder, the most common deficiency, the varying clinical spectrums, the total number of patients studied, the gender distribution, and the prevalence of short stature and over-replacement therapy. The reference summary provides a more comprehensive overview of the disorder and the study's findings. The generated summary's focus is too narrow compared to the reference."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 1,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is extremely poor. It is a fragmented sentence that seems to be cut off and repeats some phrases nonsensically. It fails to capture any meaningful information from the source text or the reference summary. It mentions cytokines and stimulation index, which are present in the source, but in a way that is incomprehensible. There is no logical flow or coherence. It appears to be a hallucinated or heavily corrupted fragment."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 1,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is completely unrelated to the source text and the reference summary. It introduces information about patients without asthma and mentions studies by Kowalski et al. in a way that is not supported by the provided context. The prevalence percentages and comparisons made are not found in the source material. Therefore, all metrics are rated very low."
+      },
+      {
+        "faithfulness": 4,
+        "coverage": 4,
+        "reference_alignment": 4,
+        "coherence": 4,
+        "hallucination": 5,
+        "overall": 4,
+        "reasoning": "The generated summary is quite good and aligns well with the reference summary. It captures the core message about the effectiveness of nursing interventions in improving family satisfaction in the ICU. The faithfulness is high, as it doesn't contradict the source text. Coverage is also good, hitting the main points of the study's purpose and findings. Coherence is decent, though some phrasing could be slightly smoother. Hallucination is excellent, as no external information is added. The reference alignment is strong, mirroring the reference summary's structure and content. The minor deduction in faithfulness and coverage is because the generated summary doesn't explicitly mention the study's context (family as a social system, stress sources) as clearly as the reference, and it omits the materials and methods details. However, it effectively conveys the study's main conclusion and recommendations."
+      },
+      {
+        "faithfulness": 4,
+        "coverage": 3,
+        "reference_alignment": 4,
+        "coherence": 3,
+        "hallucination": 5,
+        "overall": 3,
+        "reasoning": "The generated summary is mostly faithful to the source text but introduces a few minor inaccuracies and lacks comprehensive coverage of key findings, particularly regarding the specific results of the study. The reference alignment is good, and it is coherent and free of hallucinations. However, its coverage and coherence could be improved to better reflect the study's outcomes and provide a more complete overview."
+      },
+      {
+        "faithfulness": 2,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 2,
+        "hallucination": 2,
+        "overall": 1,
+        "reasoning": "The summary is very poor. It is a jumbled collection of phrases and sentences from the source text that do not form a coherent or accurate summary. It contains several factual errors, such as stating that San Antonio is in Georgia, and it completely fails to capture the main points of the source text or align with the reference summary. It also hallucinates information by combining unrelated phrases and misrepresenting their context."
+      },
+      {
+        "faithfulness": 5,
+        "coverage": 5,
+        "reference_alignment": 4,
+        "coherence": 5,
+        "hallucination": 5,
+        "overall": 5,
+        "reasoning": "The generated summary is almost identical to the first paragraph of the source text, making it highly faithful, coherent, and free of hallucinations. Its coverage is also excellent as it captures the core research question and the populations studied. It aligns well with the reference summary, although it is more detailed. The reference summary is a better concise overview of the entire paper, whereas the generated summary is more of an introductory sentence."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 2,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is largely incoherent and repeats information from the source text without proper integration or summarization. It pulls fragmented sentences and phrases, creating a disjointed narrative. The dimensions are rated low due to the lack of true summarization and poor coherence."
+      },
+      {
+        "faithfulness": 5,
+        "coverage": 3,
+        "reference_alignment": 4,
+        "coherence": 5,
+        "hallucination": 5,
+        "overall": 4,
+        "reasoning": "The generated summary accurately reflects the advantages of minimally invasive spinal surgery and introduces the destandau endospine system and foley and smith's metrx system as alternatives to open surgery. It also states the study's aim, which aligns with the source text. However, it does not cover the patient numbers, outcomes, or complications mentioned in the reference summary, leading to a lower coverage score. The reference alignment is good as it captures the introductory information similarly. The summary is coherent and avoids hallucinations. Overall, it's a good summary but lacks the depth of the reference."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 2,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is extremely poor. It picks two seemingly unrelated sentences from different parts of the source text and presents them as a single summary. The first sentence mentions six dimensions of risks associated with health travelers in Israel, but the summary only presents the beginning of that sentence. The second part talks about foreign patients visiting India and their worries, which is also a partial statement. There's no logical connection between the two parts, making it incoherent. It does not align with the reference summary, which provides a much more comprehensive overview of the research. It's also factually incomplete and doesn't represent the main points of the source text. The hallucination score is low because it does not invent new information, but it fails to accurately represent the source material."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 1,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is extremely poor. It is a jumbled mess of phrases seemingly pulled from different parts of the source text without any logical connection or grammatical structure. It starts with a sentence about a mouse xenograft model and then abruptly shifts to a list of mechanisms for acquired resistance, which are presented as incomplete bullet points. There is no coherent thought or flow. The information is not faithful to any single idea in the source, coverage is minimal and nonsensical, and it barely aligns with the reference. It reads as a collection of random words and phrases, indicating severe hallucination and lack of coherence."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 1,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is extremely short and appears to be a jumbled collection of phrases from the source text, with incorrect information (e.g., \"georgetown, mauria\"). It does not accurately reflect the methods or findings of the study and is largely nonsensical. It also doesn't align with the reference summary at all."
+      },
+      {
+        "faithfulness": 2,
+        "coverage": 2,
+        "reference_alignment": 2,
+        "coherence": 3,
+        "hallucination": 2,
+        "overall": 2,
+        "reasoning": "The generated summary is too fragmented and includes incomplete sentences (e.g., \"the teeming, who refused additional procedures after his non union had been established.\"). It also misses key context from the source text, such as the patient's age and the specific outcome of the case. The summary incorrectly states \"the teeming\" instead of \"the femur.\" The reference summary is much more cohesive and informative."
+      },
+      {
+        "faithfulness": 2,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 2,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary contains significant hallucinations. It mentions \"interferon-gamma, topical calcineurin inhibitors and topical corticosteroids, cryotherapy, pulsed dye laser, puva, systemic steroids, dapsone and antimalarials\" as treatments, but the source text indicates that topical tacrolimus was the treatment discussed and tested in the presented case, while the other modalities had variable success or were tried prior to tacrolimus. The summary also incorrectly implies that all listed treatments were reported by several authors for complete or near-complete resolution. The coverage is very low as it focuses on a detail from the abstract and misinterprets the role of various treatments. It does not align well with the reference summary which correctly highlights the case presentation and the support for topical tacrolimus."
+      },
+      {
+        "faithfulness": 2,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 3,
+        "hallucination": 5,
+        "overall": 1,
+        "reasoning": "The generated summary is a disjointed collection of facts from the source text and does not form a coherent narrative. It mentions a diagnosis date, a surgical procedure, and dental prosthetics, but fails to connect these elements meaningfully or capture the core story of the case report. The reference summary provides a much better overview of the patient's condition, treatment, and outcome."
+      },
+      {
+        "faithfulness": 5,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 5,
+        "hallucination": 5,
+        "overall": 2,
+        "reasoning": "The generated summary is highly faithful and coherent, but it is extremely brief and only captures a very small part of the source text. It fails to provide adequate coverage of the key information and thus does not align well with the reference summary's scope."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 1,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is extremely poor. It is a jumbled collection of phrases and sentences from the source text and other irrelevant sources (like the href link). It completely fails to capture the essence of the source text or the reference summary. It is not coherent, faithful, or comprehensive. It appears to be a random string of text rather than a summary."
+      }
+    ],
+    "with_kg": [
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 1,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is extremely poor. It introduces nonsensical and irrelevant terms like \"neo-axis\" and \"neuropsychialistically,\" which are not present in the source text or the reference summary. It also adds information about \"sleep\" and \"verbal and nonverbal communication, responsiveness\" that is not supported by the source. The structure is convoluted and does not accurately reflect the findings of the study. The only element that is vaguely related to the source is the mention of \"digit span forward test\" and a p-value, but the context and surrounding text make it incomprehensible. The reference alignment is extremely low because the generated summary does not capture any of the key findings or structure of the reference summary."
+      },
+      {
+        "faithfulness": 5,
+        "coverage": 3,
+        "reference_alignment": 2,
+        "coherence": 4,
+        "hallucination": 5,
+        "overall": 4,
+        "reasoning": "The generated summary focuses on the therapeutic and diagnostic potential of dysregulated miRNAs in breast cancer, which is a valid aspect of the source text. It also touches upon the significance of understanding miRNA expression signatures for gaining new perspectives on breast cancer development. However, it misses key details about how miRNAs regulate the cell cycle, proliferation, and cancer stem cells, which are central themes in the source text and highlighted in the reference summary. The generated summary is largely faithful and coherent, but its coverage is limited. Its reference alignment is low because it doesn't capture the main points of the reference summary. The second sentence has a typo ('ro' instead of 'RNA')."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 2,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is extremely poor. It lists several medical parameters (blood pressure, creatinine, serum albumin, total protein, coagulation parameters) and patient characteristics (age, gender, body weight) that are mentioned in the source text, but it does not connect them to the main topic of the study, which is the outpatient management of OHSS using pigtail catheters. The summary also incorrectly states that ascites involves drainage from \"peritoneal and/orifices of the abdomen, pelvis and thorax,\" which is not accurate. The reference summary clearly outlines the objective, methods, results, and conclusion of the study, focusing on the efficacy of outpatient management with pigtail catheters. The generated summary fails to capture any of these key elements and instead provides a jumbled list of terms with little to no logical connection to the study's findings."
+      },
+      {
+        "faithfulness": 2,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 3,
+        "hallucination": 2,
+        "overall": 1,
+        "reasoning": "The generated summary significantly deviates from the source text and the reference summary. It introduces unsupported information such as 'early onset adrenal hyperthyroidism (asymptomather's disease)' and inaccurately describes PCOS as a sub-type of CAH. While it mentions genital ambiguity in females, it misinterprets the percentages and context. The summary lacks coverage of key facts present in both the source and reference, such as the overall prevalence, male presentation, and short stature issues."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 1,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is extremely poor. It lists chemicals and terms from the source text (stz, citrate buffer, pentoxifylline, RPMI 1640, L-glutamine, DMSO, concanavalin A, MTT, TNF) and incorrectly states they are 'anti-inflammatory cytokine producing cells in the pancrea \u2013 tory'. It then makes a nonsensical claim about these 'cells' having an effect on their own but not on non-diabetic mice, citing changes in plasma insulin levels. This summary is factually incorrect, lacks coherence, and introduces significant hallucinations by misinterpreting chemical compounds as cellular components and fabricating relationships between them and biological processes. It does not align with the reference summary at all."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 1,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is nonsensical and appears to be a jumbled collection of words and phrases from the source text, specifically focusing on exclusion criteria. It does not accurately reflect the study's findings, methods, or conclusions. It is incoherent, lacks coverage of key information, and is not faithful to the source. The reference alignment is also extremely poor. There is a clear hallucination of meaning and content."
+      },
+      {
+        "faithfulness": 5,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 5,
+        "hallucination": 5,
+        "overall": 2,
+        "reasoning": "The generated summary is faithful and coherent, but it only includes information about the inclusion criteria of the study, neglecting the main purpose, methods, and findings. It has very low coverage and reference alignment due to this limited scope. It does not hallucinate information."
+      },
+      {
+        "faithfulness": 5,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 5,
+        "hallucination": 5,
+        "overall": 2,
+        "reasoning": "The generated summary only includes information about the ethical considerations of the study, which is a very small part of the source text and reference summary. It completely misses the main objective, methods, and results of the study, making its coverage and reference alignment very low. However, the information it does present is accurate and well-phrased, leading to high faithfulness and coherence ratings."
+      },
+      {
+        "faithfulness": 4,
+        "coverage": 2,
+        "reference_alignment": 1,
+        "coherence": 5,
+        "hallucination": 5,
+        "overall": 3,
+        "reasoning": "The generated summary is a direct quote from the source text but only includes part of the sentence, making it grammatically incomplete and lacking context. It also contains a typo in the titer value (1:1,020 instead of 1:1,280). While faithful to the portion it quotes and not hallucinatory, it lacks coverage of key information and does not align well with the reference summary's broader scope."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 1,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is nonsensical and appears to be a garbled extraction of phrases from the source text without any logical flow or meaning. It includes random numbers, incomplete sentences, and irrelevant jargon. It does not accurately represent the source text or the reference summary."
+      },
+      {
+        "faithfulness": 5,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 5,
+        "hallucination": 5,
+        "overall": 2,
+        "reasoning": "The generated summary is a verbatim copy of a small, incomplete fragment from the source text. It does not summarize the content but rather presents a snippet of descriptive text. Therefore, coverage and reference alignment are extremely low. Faithfulness, coherence, and hallucination are high because it accurately reflects the text it copied, without adding external information."
+      },
+      {
+        "faithfulness": 4,
+        "coverage": 3,
+        "reference_alignment": 4,
+        "coherence": 5,
+        "hallucination": 5,
+        "overall": 4,
+        "reasoning": "The generated summary is a good paraphrase of the introduction and discussion sections of the source text, highlighting the advantages of minimally invasive techniques and mentioning the specific systems studied. It aligns well with the reference summary's focus on the benefits of the technique. However, it does not include the core results (patient numbers, outcomes, complications) which are present in both the source text and the reference summary, thus limiting its coverage. Despite this, the summary is coherent, faithful, and avoids hallucinations."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 1,
+        "hallucination": 5,
+        "overall": 1,
+        "reasoning": "The generated summary is extremely poor. It appears to be a truncated and nonsensical fragment of the source text, possibly due to an error in the summarization process. It does not accurately reflect any part of the source text or the reference summary. The information presented is incoherent and lacks any meaningful connection to the topic of medical tourism. It fails to capture any key facts, is not aligned with the reference, and is completely incoherent."
+      },
+      {
+        "faithfulness": 3,
+        "coverage": 2,
+        "reference_alignment": 2,
+        "coherence": 4,
+        "hallucination": 4,
+        "overall": 3,
+        "reasoning": "The generated summary is factually accurate but very brief. It correctly identifies the three main receptor tyrosine kinase (RTK) pathways discussed in the text (EGFR, IGF-1R, and MET). However, it misses the crucial context that these pathways are involved in head and neck squamous cell carcinoma (HNSCC) and their role in targeted therapies and resistance mechanisms, which are central themes of the source text. The summary also introduces typos ('id-1r', 'hgl'). It aligns somewhat with the reference summary by focusing on the three RTKs, but the reference summary is much more comprehensive and contextualized. The generated summary is coherent and avoids significant hallucinations, but its lack of coverage of key information from the source text and reference summary limits its overall quality."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 1,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is almost entirely hallucinated. It mentions protecting rat cortical neurons against ethanol and A1-42, which is not present in the source text or reference summary. It also mentions 'cytoplasmic polymorphonucleosis', which is an unrelated medical term and not present in the source. The only part that vaguely relates to the source is the mention of primary mesencephalic cell cultures, but the context is entirely fabricated."
+      },
+      {
+        "faithfulness": 1,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 2,
+        "hallucination": 1,
+        "overall": 1,
+        "reasoning": "The generated summary is extremely brief and contains a factual error in mentioning '3radiograph' instead of referring to a radiograph taken at 32 months. It fails to capture any of the key details or nuances from the source text or the reference summary, making it largely uninformative and incoherent. The phrase 'fractured neck of fte' is also incomplete."
+      },
+      {
+        "faithfulness": 2,
+        "coverage": 2,
+        "reference_alignment": 2,
+        "coherence": 3,
+        "hallucination": 3,
+        "overall": 2,
+        "reasoning": "The generated summary includes a detailed description of the patient's cutaneous examination findings, which is present in the source text but not in the reference summary. It also abruptly transitions to discussing the mechanism of action of tacrolimus, mentioning specific cytokines, which is not well-integrated and deviates from the reference summary's focus on the case presentation and successful treatment. The reference summary is much more concise and directly addresses the key points of the source text, highlighting the patient's condition and the successful outcome with topical tacrolimus, aligning better with a summary's purpose."
+      },
+      {
+        "faithfulness": 5,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 5,
+        "hallucination": 5,
+        "overall": 2,
+        "reasoning": "The generated summary is highly faithful and coherent, accurately reflecting a specific procedural detail from the source text. However, its coverage is extremely low, focusing on a single sentence describing a surgical step while omitting almost all other critical information, including the diagnosis, the patient's condition, the treatment rationale, and the final outcome. Consequently, it does not align well with the reference summary, which provides a much broader overview of the case. The low coverage and poor alignment significantly impact the overall quality."
+      },
+      {
+        "faithfulness": 5,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 5,
+        "hallucination": 5,
+        "overall": 2,
+        "reasoning": "The generated summary is faithful and coherent, but it is extremely short and only captures a very small part of the source text. It does not align well with the reference summary, which covers more key information."
+      },
+      {
+        "faithfulness": 5,
+        "coverage": 1,
+        "reference_alignment": 1,
+        "coherence": 5,
+        "hallucination": 5,
+        "overall": 2,
+        "reasoning": "The generated summary is a single sentence that is directly extracted from the source text. While it is faithful, coherent, and avoids hallucination, it completely lacks coverage of the main findings and objective of the study. It also poorly aligns with the reference summary, which provides a much more comprehensive overview. The sentence chosen, while present in the source, is a minor point in the discussion section and does not represent the core message of the research."
+      }
+    ]
+  }
+}

@@ -1,0 +1,1196 @@
+{
+  "metadata": {
+    "total_samples": 20,
+    "valid_samples": 20,
+    "seed": 42,
+    "max_workers": 5,
+    "elapsed_seconds": 21.8172607421875
+  },
+  "aggregate": {
+    "avg_no_kg_factuality": 0.16,
+    "avg_with_kg_factuality": 0.030000000000000006,
+    "delta": -0.13
+  },
+  "results": [
+    {
+      "sample": 1,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "The digit span forward test",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What percentage of Parkinson's disease patients experience anxiety?",
+          "a": "Nearly 50% of patients."
+        },
+        {
+          "q": "What specific cognitive domains showed group differences between Parkinson's patients with and without anxiety?",
+          "a": "Working memory and attentional set-shifting."
+        },
+        {
+          "q": "Which test showed worse performance in Parkinson's patients with anxiety (PDA+) compared to those without (PDA)?",
+          "a": "Digit span forward and backward test and part B of the trail making task (TMT-B)."
+        },
+        {
+          "q": "Were there any group differences in verbal fluency, logical memory, or TMT-A performance between the PDA+ and PDA groups?",
+          "a": "No."
+        },
+        {
+          "q": "What is the impact of anxiety in Parkinson's disease on quality of life?",
+          "a": "It has a negative impact."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 2,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "oncogene expression, tumor initiation and tumor cell metastases",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "breast cancer",
+          "oncogenes expression, tumor initiation and tumor cell metastasis",
+          "small ro",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What are some examples of small non-coding RNAs?",
+          "a": "small non-coding RNAs include sirna, mirna, pirna and snorna."
+        },
+        {
+          "q": "What specific type of cancer has been studied in relation to microRNAs regulating the cell cycle and proliferation?",
+          "a": "breast cancer"
+        },
+        {
+          "q": "What roles of microRNAs in breast cancer are discussed in the summary?",
+          "a": "mirna in breast cancer onset and progression through regulating the cell cycle and cellular proliferation, and the regulation of breast cancer stem cells and tumor regeneration."
+        },
+        {
+          "q": "Besides microRNAs, what other small non-coding RNAs are mentioned as having emerging evidence of involvement in breast cancer?",
+          "a": "pirna and snorna"
+        },
+        {
+          "q": "What is the status of understanding the role of other small non-coding RNAs (besides microRNAs) in mammary gland tumorigenesis?",
+          "a": "the role for other small non-coding rnas remains unclear ."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 3,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "mean amount of ascitic fluid drained from the peritoneal and/orifices of the abdomen, pelvis and thorax",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What type of catheter was used for managing severe ovarian hyperstimulation syndrome (OHSS)?",
+          "a": "A pigtail catheter was used."
+        },
+        {
+          "q": "What was the mean amount of ascitic fluid drained immediately after pigtail catheter placement?",
+          "a": "The mean amount was 2085 cc."
+        },
+        {
+          "q": "What percentage of patients managed on an outpatient basis had no complications?",
+          "a": "88% of patients were managed on an outpatient basis without complications."
+        },
+        {
+          "q": "What was the conception rate among patients who had embryo transfer?",
+          "a": "84% conceived."
+        },
+        {
+          "q": "For how long was the pigtail catheter removed on average?",
+          "a": "The pigtail catheter was removed after an average of 7.8 days."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 4,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "one child was identified at birth via a neonatal screening program, one child presented with early pubarche, the other 5 infants presented between their 3rd and 6th week of life with features suggestive of adrenal crisis - poor feeding, vomiting and failure to gain weight.",
+          "unanswerable",
+          "suppression and over treatment"
+        ],
+        "scores": [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "factuality": 0.4
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What causes congenital adrenal hyperplasia?",
+          "a": "Congenital adrenal hyperplasia is caused by enzyme deficiency."
+        },
+        {
+          "q": "What is the most common enzyme deficiency associated with congenital adrenal hyperplasia?",
+          "a": "The most common deficiency is 21 hydroxylase deficiency."
+        },
+        {
+          "q": "What are the typical presenting symptoms for male babies with congenital adrenal hyperplasia?",
+          "a": "Male babies typically present with adrenal crisis between the 3rd to 6th week of life."
+        },
+        {
+          "q": "What percentage of patients in the study were female?",
+          "a": "76% of the patients were females."
+        },
+        {
+          "q": "What is suggested by suppressed 17 OHp levels in patients with congenital adrenal hyperplasia?",
+          "a": "Suppressed 17 OHp levels suggest over-replacement therapy, which may contribute to a reduction in adult height."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 5,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "The study measured the stimulation index (SI) of diabetic murine splenocytes induced by con A ex vivo.",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "increase or decrease in plasma insulin levels",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the primary therapeutic effect of pentoxifylline on autoimmune diabetes in mice as indicated by the study?",
+          "a": "Pentoxifylline may have a therapeutic effect against the autoimmune destruction of pancreatic beta-cells."
+        },
+        {
+          "q": "How was diabetes induced in the male C57BL/6 mice for this study?",
+          "a": "Diabetes was induced by multiple low doses of streptozotocin (MLDS) injection."
+        },
+        {
+          "q": "What were the measured outcomes in the mice after treatment with pentoxifylline?",
+          "a": "Blood glucose levels, plasma insulin levels, splenocyte proliferation, and cytokine production were measured."
+        },
+        {
+          "q": "Which specific pro-inflammatory cytokine production was significantly inhibited by pentoxifylline treatment?",
+          "a": "Interleukin-17 (IL-17) and interferon gamma (IFN-\u03b3) production were significantly inhibited."
+        },
+        {
+          "q": "What was the duration of pentoxifylline treatment in the diabetic mice?",
+          "a": "The mice were treated with pentoxifylline for 21 days."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 6,
+      "no_kg": {
+        "answers": [
+          "88.9%",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "factuality": 0.8
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What percentage of patients in the study presented positive results for staphylococcal toxin-specific IgE antibodies?",
+          "a": "43.7%"
+        },
+        {
+          "q": "Which city in Brazil was the study conducted in?",
+          "a": "Rio de Janeiro"
+        },
+        {
+          "q": "What were the two groups of asthma severity used in the study?",
+          "a": "Mild asthma (MA) and moderate or severe asthma (MSA)"
+        },
+        {
+          "q": "Were there statistically significant differences in qualitative or quantitative results between the mild asthma group and the moderate/severe asthma group?",
+          "a": "No"
+        },
+        {
+          "q": "What is the subclass of COPD?",
+          "a": "Aeroallergens"
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 7,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "al - zahra hospital",
+          "unanswerable",
+          "the nursing interventions increased the patient s family satisfaction in the Neurosurgerry intensive care Unit of Al - Zahrana Hospital."
+        ],
+        "scores": [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "factuality": 0.4
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "neuro intensive care unit of al - zahra hospital",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What type of unit is an intensive care unit a subclass of?",
+          "a": "Hospitalization"
+        },
+        {
+          "q": "In which country is Isfahan located?",
+          "a": "Iran"
+        },
+        {
+          "q": "What was the location of the study?",
+          "a": "The neurosurgery ICU of Al-Zahra hospital, Isfahan, Iran"
+        },
+        {
+          "q": "How many families were selected for the study?",
+          "a": "Sixty-four"
+        },
+        {
+          "q": "What was the main finding of the study regarding nursing interventions?",
+          "a": "Nursing interventions based on family needs increase patient family satisfaction in the ICU."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 8,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "to improve the nurse - patient communication and establish more effective therapeutic communication processes which improves clinical basis and can have a positive impact on the treatment and discharge processes and rehabilitation of patients, especially in patients with chronic diseases, training courses should be included in in - service courses to train and introduce medical team with simple and inexpensive communication skills.",
+          "unanswerable",
+          "hospital anxiety scale",
+          "therapeutic communication processes improves clinical basis and can have a positive impact on the treatment and discharge processes and rehabilitation of patients"
+        ],
+        "scores": [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "factuality": 0.4
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What psychological disorders are common in patients undergoing heart surgeries?",
+          "a": "Anxiety and depression."
+        },
+        {
+          "q": "What was the objective of the study?",
+          "a": "To examine the impact of Peplau's therapeutic communication model on anxiety and depression in patients scheduled for coronary artery bypass surgery."
+        },
+        {
+          "q": "How many patients were included in the study, and how were they divided?",
+          "a": "74 patients were randomly divided into an intervention group and a control group, with 37 patients in each."
+        },
+        {
+          "q": "What scale was used to assess anxiety and depression levels?",
+          "a": "The Hospital Anxiety and Depression Scale (HADS)."
+        },
+        {
+          "q": "What was the conclusion regarding the effectiveness of therapeutic communication?",
+          "a": "Therapeutic communication plays a positive role in reducing anxiety and depression in patients and is recommended as a simple, cost-effective, and efficient method."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 9,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "4 of 9 nepal isolates showed 4-fold lower titers ( 1:320 versus 1:1,020 vs.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What type of influenza vaccine strain was changed for the 2005-2006 season?",
+          "a": "H3N2 influenza A"
+        },
+        {
+          "q": "What prompted the change in the 2005-2006 influenza A vaccine strain?",
+          "a": "Worldwide emergence of variant viruses"
+        },
+        {
+          "q": "What was the influenza season for which the vaccine strain was changed?",
+          "a": "2005-2006"
+        },
+        {
+          "q": "What specific change occurred to the H3N2 influenza A vaccine strain?",
+          "a": "It was changed."
+        },
+        {
+          "q": "What factor led to the alteration of the H3N2 influenza A vaccine strain?",
+          "a": "The global appearance of variant viruses."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 10,
+      "no_kg": {
+        "answers": [
+          "the us, england, or taiwan",
+          "using an indicator that considers both bmi and waist circumference",
+          "unanswerable",
+          "unanswerable",
+          "history of economic development, socioeconomic levels, general lifestyle habits, health behaviors,and health care systems"
+        ],
+        "scores": [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "factuality": 0.4
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What are the three nationally representative populations examined in the study for associations of weight with indicators of biological risk?",
+          "a": "The US National Health and Nutrition Examination Survey, the English Longitudinal Study of Ageing, and the Social Environment and Biomarkers of Aging Study in Taiwan."
+        },
+        {
+          "q": "How were obese individuals defined in the study?",
+          "a": "Obese individuals were defined using body mass index (BMI) and waist circumference."
+        },
+        {
+          "q": "Which population had the highest levels of biological risk across all weight/waist groups?",
+          "a": "Americans."
+        },
+        {
+          "q": "Did obese Americans have elevated blood pressure (BP) in the study?",
+          "a": "No, obese Americans did not have elevated blood pressure."
+        },
+        {
+          "q": "What factors may explain cross-country variation in biological risk associated with obesity?",
+          "a": "Differences in health behaviors, lifestyle, medication use, and culture."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 11,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "bromocriptine",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What percentage of male macroprolactinomas were found to have suppurative meningitis?",
+          "a": "4.87%"
+        },
+        {
+          "q": "In how many cases did suppurative meningitis reveal the presence of male macroprolactinoma?",
+          "a": "3 cases"
+        },
+        {
+          "q": "What medication was used to treat the male macroprolactinomas after the suppurative meningitis was sterilized?",
+          "a": "Bromocriptine"
+        },
+        {
+          "q": "What medical condition was the 4th case hospitalized for?",
+          "a": "A large multidirectional prolactinoma invading and/or arising from the skull base."
+        },
+        {
+          "q": "What can be avoided by repairing the bony defect secondary to aggressive tumors as soon as possible?",
+          "a": "Suppurative meningitis"
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 12,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What percentage of patients had excellent to good results based on modified MacNab's criteria?",
+          "a": "90%"
+        },
+        {
+          "q": "What is the size of the skin and fascial incision used for the endospine system?",
+          "a": "15 mm"
+        },
+        {
+          "q": "How many patients experienced discitis as a complication?",
+          "a": "Five patients"
+        },
+        {
+          "q": "What is the average delay for patients to return to light and sedentary work?",
+          "a": "3 weeks"
+        },
+        {
+          "q": "What is the main conclusion regarding endoscopic discectomy?",
+          "a": "It provides a safe and minimal access corridor for lumbar discectomy, allowing early postoperative mobilization and faster return to work."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 13,
+      "no_kg": {
+        "answers": [
+          "Risks associated with health travelers visiting Israel.",
+          "unanswerable",
+          "accommodation quality, food hygiene, and personal safety.",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the primary focus of the research discussed in the reference summary regarding medical tourism?",
+          "a": "To identify the source of information, travel benefits, and perceived risks related to the movement of international patients and develop a conceptual model."
+        },
+        {
+          "q": "What is the current state of examination for the role of information sources, perceived benefits and risks, and destination image in medical tourism literature?",
+          "a": "It has yet to be examined thoroughly."
+        },
+        {
+          "q": "What are international patients always concerned about in relation to travel?",
+          "a": "Benefits and risks related to travel."
+        },
+        {
+          "q": "How do different sources of information influence international patients?",
+          "a": "They make international patients aware of the associated benefits and risks."
+        },
+        {
+          "q": "According to the reference, what is scarce in the literature regarding international patient travel decision-making?",
+          "a": "Literature explaining the relationship between different factors involved."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 14,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "receptor independent activation of downstream signaling cascades, cross - talk with other rtks and converging signalling pathways",
+          "igf-1r"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "egfr, the type 1 insulin - like growth factor receptor ( id-1r ) and the hepatocyte growth force (hgl) receptors"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is a specific method for treating cancers compared to general cell loss with standard cytotoxic therapeutics?",
+          "a": "Molecular therapeutics for treating epidermal growth factor receptor-(egfr-) expressing cancers."
+        },
+        {
+          "q": "What has dampened the initial enthusiasm over targeted treatment for cancers?",
+          "a": "The finding that resistance to such therapy is common in clinical trials."
+        },
+        {
+          "q": "What has been revealed by an improved molecular understanding of other receptor tyrosine kinases active in cancer?",
+          "a": "A rich network of cross-talk between receptor pathways with a key finding of common downstream signaling pathways."
+        },
+        {
+          "q": "What may represent a key mechanism for resistance to egfr-directed therapy?",
+          "a": "Cross-talk between receptor pathways."
+        },
+        {
+          "q": "In the context of squamous cell cancer of the head and neck, what tyrosine kinases are reviewed for their interplay and contribution to anti-egfr therapeutic resistance?",
+          "a": "EGFR and MET and the type 1 insulin-like growth factor receptor (IGF-1R) tyrosine kinases."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 15,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "a1 - 42",
+          "unanswerable",
+          "through inhibition of mitochondrial membrane depolarization"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the primary objective of the study?",
+          "a": "To investigate potential mechanisms mediating the neuroprotective effect of thymoquinone (TQ) on dopaminergic neurons."
+        },
+        {
+          "q": "In which city and country was this study conducted?",
+          "a": "Vienna, Austria."
+        },
+        {
+          "q": "What chemical compound was used to induce damage to dopaminergic neurons?",
+          "a": "1-methyl-4-phenylpyridinium (MPP+)."
+        },
+        {
+          "q": "What was the effect of MPP+ on dopaminergic neurons?",
+          "a": "MPP+ decreased the number of dopaminergic neurons by 40% and increased the release of lactate dehydrogenase (LDH)."
+        },
+        {
+          "q": "How does thymoquinone protect dopaminergic neurons according to the conclusion?",
+          "a": "By enhancing lysosomal degradation that clears damaged mitochondria and inhibiting mitochondria-mediated apoptotic cell death."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 16,
+      "no_kg": {
+        "answers": [
+          "Non-union",
+          "unanswerable",
+          "Good results might be expected in cases as far as 32 months into the post fixation period as long as the implant is holding and the patient is regularly followed up.",
+          "Regular follow-up and maintaining implant integrity in cases of non-union.",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "with_kg": {
+        "answers": [
+          "non-union",
+          "unanswerable",
+          "The patient refused additional procedures after his non-union had been established.",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is a common complication of femoral neck fractures?",
+          "a": "Non-union and avascular necrosis."
+        },
+        {
+          "q": "What clinical challenge do orthopedic surgeons face with femoral neck fractures?",
+          "a": "Deciding when to intervene in cases of non-union with an existing implant."
+        },
+        {
+          "q": "What was the outcome in the presented case of femoral neck fracture?",
+          "a": "The fracture eventually united after 32 months."
+        },
+        {
+          "q": "What treatment approach is suggested by the case presented?",
+          "a": "A continued conservative regime."
+        },
+        {
+          "q": "What does the case bolster the view of regarding non-union of femoral neck fractures?",
+          "a": "That a continued conservative regime might entail good results."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 17,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "topical tacrolimus 0.1% ointment, topical alpha - gamma, topical calcineurin inhibitors and topical corticosteroids, cryotherapy, pulsed dye laser, puva, systemic steroids, dapsone and antimalarials",
+          "unanswerable",
+          "topical tacrolimus 0.1% ointment has led to complete or near-complete resolution of lesions"
+        ],
+        "scores": [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "factuality": 0.4
+      },
+      "with_kg": {
+        "answers": [
+          "Granuloma faciale (GF) is a condition characterized by multiple, well-defined, grey-brown, indurated, non-tender plaques.",
+          "The plaques were present on the left cheek, left forehead, both arms, and upper back.",
+          "The summary mentions successful treatment of granuloma faciale (GF) with topical tacrolimus, but does not specify the treatment used in the particular case described.",
+          "unanswerable",
+          "The summary mentions that granuloma faciale involves t-cell proliferation and the production of pro-inflammatory cytokines, and that topical tacrolimus has been successfully used to treat it."
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is granuloma faciale (GF)?",
+          "a": "Granuloma faciale is a chronic condition characterized by red-brown plaques with follicular accentuation, usually present on the face."
+        },
+        {
+          "q": "What is the typical location of the plaques in granuloma faciale?",
+          "a": "The plaques are usually present on the face."
+        },
+        {
+          "q": "What treatment was used in the case described?",
+          "a": "Topical tacrolimus was used."
+        },
+        {
+          "q": "What was the patient's age and history of the condition?",
+          "a": "The patient was a 35-year-old female with a 5-year history of plaques."
+        },
+        {
+          "q": "What does this case support regarding the treatment of GF?",
+          "a": "This case supports previous reports of successful treatment of GF with topical tacrolimus."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 18,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "cmmol",
+          "ultrasonic bone surgery",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What was the patient's initial presenting symptom related to his mouth?",
+          "a": "Uncontrolled gingival bleeding."
+        },
+        {
+          "q": "What diagnosis was the 68-year-old man suffering from?",
+          "a": "Chronic myelomonocytic leukaemia (CMML)."
+        },
+        {
+          "q": "What surgical procedure was performed to address the osteomyelitis?",
+          "a": "Sequestrectomy with massive blood transfusion."
+        },
+        {
+          "q": "What was the ultimate cause of the patient's death?",
+          "a": "Cardiac arrest after haemorrhagic shock and cardiovascular failure."
+        },
+        {
+          "q": "What was the reason for the patient's severe pain despite potent opioid analgesia?",
+          "a": "Osteomyelitis of the mandible."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 19,
+      "no_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "under some circumstances, the cardiac chambers may act as a 'natural reservoir'",
+          "unanswerable"
+        ],
+        "scores": [
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "under some circumstances, the cardiac chambers may act as a 'natural reservoir'",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "factuality": 0.2
+      },
+      "questions": [
+        {
+          "q": "What is bivalirudin proposed as in patients undergoing extracorporeal membrane oxygenation (ECMO) or cardiopulmonary bypass?",
+          "a": "The sole anticoagulant."
+        },
+        {
+          "q": "What should be carefully avoided when using bivalirudin due to its pharmacodynamic properties?",
+          "a": "Areas of blood stagnation."
+        },
+        {
+          "q": "Does the ECMO circuit typically have a reservoir?",
+          "a": "No, the ECMO circuit has no reservoir."
+        },
+        {
+          "q": "Under what circumstances may intracardiac blood stagnation areas exist?",
+          "a": "Under some circumstances."
+        },
+        {
+          "q": "What is suggested to be allowed under bivalirudin anticoagulation to mitigate intracardiac thrombus risk?",
+          "a": "A minimal degree of intracardiac blood flow with left heart valve movement."
+        }
+      ],
+      "error": null
+    },
+    {
+      "sample": 20,
+      "no_kg": {
+        "answers": [
+          "coronary ct examination",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "with_kg": {
+        "answers": [
+          "coronary angiography",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable",
+          "unanswerable"
+        ],
+        "scores": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "factuality": 0.0
+      },
+      "questions": [
+        {
+          "q": "What is the primary examination method discussed for evaluating coronary artery disease?",
+          "a": "Coronary computed tomography angiography (CCTA)."
+        },
+        {
+          "q": "What functional parameter of the left ventricle can be derived using automated software with retrospective gating in CCTA?",
+          "a": "Left ventricular ejection fraction (LVEF)."
+        },
+        {
+          "q": "What was the mean LVEF calculated by clinical echo in the study?",
+          "a": "58.6 \u00b1 4.5%."
+        },
+        {
+          "q": "What type of analysis showed a trend towards MDCT resulting in slightly higher LVEF values compared to echo?",
+          "a": "Bland-Altman analysis."
+        },
+        {
+          "q": "What is the conclusion regarding the fully automated software for assessing LV functional parameters?",
+          "a": "The software is simple, reliable, user-friendly, and provides rapid assessment with good reproducibility."
+        }
+      ],
+      "error": null
+    }
+  ]
+}

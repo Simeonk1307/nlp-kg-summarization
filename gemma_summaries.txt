@@ -1,0 +1,86 @@
+For test_Dataset ohss 2nd data point
+
+gemma 6b
+[['gonadotropin releasing hormone', 'subclass of', 'gonadotropin'], 
+['pigtail catheter', 'subclass of', 'catheter'], 
+['albumin', 'subclass of', 'total protein'], 
+['golan classification', 'subclass of', 'ascitic fluid'], 
+['hespan', 'subclass of', 'prophylactic'], 
+['inpatient', 'different from', 'intensive care unit'], 
+['intensive care unit', 'different from', 'inpatient'], 
+['trans - vaginally', 'different from', 'trans - abdominally'], 
+['trans - abdominally', 'different from', 'trans - vaginally'], 
+['pulmonary embolism', 'subclass of', 'thromboembolic'], 
+['netherlands', 'located in the administrative territorial entity', 'united kingdom'], 
+['united kingdom', 'contains administrative territorial entity', 'netherlands'], 
+['trocar and cannula', 'use', 'intra - fallopian treatment']]
+
+Without KG (2nd best)
+Ovarian Hyperstimulation Syndrome (OHSS) is a serious IVF complication (1-10% incidence) 
+driven by VEGF-induced capillary permeability, causing ascites and potentially life-threatening 
+conditions. While severe OHSS traditionally requires inpatient care, this study evaluates pigtail catheter 
+drainage for outpatient management. In a retrospective study of 33 patients with severe/critical OHSS, 88% were 
+successfully managed as outpatients. By combining pigtail catheter drainage, intravenous fluid replacement (using hespan), 
+and diligent monitoring, most For test_Dataset ohss 2nd data point
+
+gemma 6b
+[['gonadotropin releasing hormone', 'subclass of', 'gonadotropin'], 
+['pigtail catheter', 'subclass of', 'catheter'], 
+['albumin', 'subclass of', 'total protein'], 
+['golan classification', 'subclass of', 'ascitic fluid'], 
+['hespan', 'subclass of', 'prophylactic'], 
+['inpatient', 'different from', 'intensive care unit'], 
+['intensive care unit', 'different from', 'inpatient'], 
+['trans - vaginally', 'different from', 'trans - abdominally'], 
+['trans - abdominally', 'different from', 'trans - vaginally'], 
+['pulmonary embolism', 'subclass of', 'thromboembolic'], 
+['netherlands', 'located in the administrative territorial entity', 'united kingdom'], 
+['united kingdom', 'contains administrative territorial entity', 'netherlands'], 
+['trocar and cannula', 'use', 'intra - fallopian treatment']]
+
+Without KG (2nd best)
+Ovarian Hyperstimulation Syndrome (OHSS) is a serious IVF complication (1-10% incidence) 
+driven by VEGF-induced capillary permeability, causing ascites and potentially life-threatening 
+conditions. While severe OHSS traditionally requires inpatient care, this study evaluates pigtail catheter 
+drainage for outpatient management. In a retrospective study of 33 patients with severe/critical OHSS, 88% were 
+successfully managed as outpatients. By combining pigtail catheter drainage, intravenous fluid replacement (using hespan), 
+and diligent monitoring, most patients achieved rapid symptom relief and faster recovery. Only 12% required hospitalization, primarily 
+due to severe pleural effusion. The study concludes that pigtail catheter drainage is a safe and efficient alternative for managing many 
+severe OHSS cases outside the hospital. However, clinicians must remain vigilant, as rapid clinical deterioration can occur, necessitating 
+immediate hospital admission for critical patients.
+
+With KG (triples at start) (act as noise and focus here) (worst)
+OHSS is a serious complication of ovulation induction, often manifesting as ascites. This study evaluates the use of a pigtail catheter 
+(a type of catheter) for the outpatient management of severe OHSS patients, categorized by the Golan classification. Using a GIFT (gamete intra-fallopian treatment) 
+trocar and cannula for trans-abdominal insertion, researchers found that 30 of 33 patients were managed safely as outpatients. Treatment involved rehydration with 
+crystalloids and Hespan (a prophylactic) instead of albumin (a total protein). While most patients recovered at home, some required admission to an inpatient setting 
+or an intensive care unit due to complications like severe pleural effusion or pulmonary embolism (a thromboembolic condition). The study concludes that pigtail catheter drainage is a safe, 
+effective alternative to repeated paracentesis, though critical cases still necessitate intensive hospital management to avoid mortality.
+
+With KG (triples at end) (best)
+Ovarian Hyperstimulation Syndrome (OHSS) is a serious IVF complication driven by VEGF and hCG, 
+causing ascites and potentially life-threatening thromboembolic events like pulmonary embolism. Classified via the Golan classification, 
+OHSS ranges from mild to severe. Prevention involves GnRH antagonists and freeze-all cycles. This study evaluates pigtail catheter drainage as an outpatient alternative to 
+repeated trans-vaginal or trans-abdominal paracentesis. In a study of 33 patients, 30 were successfully managed as outpatients using the catheter (inserted via a GIFT trocar and cannula) and 
+IV fluids like hespan. While pigtail catheter drainage provided rapid relief and was effective for most, patients with critical symptoms or severe pleural effusion still require inpatient management. Outpatient care is viable for stable patients but requires strict monitoring due to the risk of rapid clinical deterioration.
+
+patients achieved rapid symptom relief and faster recovery. Only 12% required hospitalization, primarily 
+due to severe pleural effusion. The study concludes that pigtail catheter drainage is a safe and efficient alternative for managing many 
+severe OHSS cases outside the hospital. However, clinicians must remain vigilant, as rapid clinical deterioration can occur, necessitating 
+immediate hospital admission for critical patients.
+
+With KG (triples at start) (act as noise and focus here) (worst)
+OHSS is a serious complication of ovulation induction, often manifesting as ascites. This study evaluates the use of a pigtail catheter 
+(a type of catheter) for the outpatient management of severe OHSS patients, categorized by the Golan classification. Using a GIFT (gamete intra-fallopian treatment) 
+trocar and cannula for trans-abdominal insertion, researchers found that 30 of 33 patients were managed safely as outpatients. Treatment involved rehydration with 
+crystalloids and Hespan (a prophylactic) instead of albumin (a total protein). While most patients recovered at home, some required admission to an inpatient setting 
+or an intensive care unit due to complications like severe pleural effusion or pulmonary embolism (a thromboembolic condition). The study concludes that pigtail catheter drainage is a safe, 
+effective alternative to repeated paracentesis, though critical cases still necessitate intensive hospital management to avoid mortality.
+
+With KG (triples at end) (best)
+Ovarian Hyperstimulation Syndrome (OHSS) is a serious IVF complication driven by VEGF and hCG, 
+causing ascites and potentially life-threatening thromboembolic events like pulmonary embolism. Classified via the Golan classification, 
+OHSS ranges from mild to severe. Prevention involves GnRH antagonists and freeze-all cycles. This study evaluates pigtail catheter drainage as an outpatient alternative to 
+repeated trans-vaginal or trans-abdominal paracentesis. In a study of 33 patients, 30 were successfully managed as outpatients using the catheter (inserted via a GIFT trocar and cannula) and 
+IV fluids like hespan. While pigtail catheter drainage provided rapid relief and was effective for most, patients with critical symptoms or severe pleural effusion still require inpatient management. Outpatient care is viable for stable patients but requires strict monitoring due to the risk of rapid clinical deterioration.
+
