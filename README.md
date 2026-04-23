@@ -27,7 +27,7 @@ Custom KATSum is a knowledge-graph-augmented summarization model built on top of
 │   ├── base_summary_generator.py         # Inference script for the vanilla LongT5 baseline
 │   ├── custom_phase_1_summary_generator.py # Inference script for KATSum model
 │   ├── utils.py                          # Dataset class, collate_fn, train/eval loops
-│   ├── main.ipynb                        # Exploratory notebook (run "run-once-before-main.py" for the first time)
+│   ├── main.ipynb                        # Exploratory notebook
 │   ├── checkpoints/
 │   │   ├── phase1_best.pt                # Best Phase 1 checkpoint
 │   ├── dataset/
@@ -57,17 +57,19 @@ Custom KATSum is a knowledge-graph-augmented summarization model built on top of
 
 ---
 
-## Installation
+## Installation & Setup
+
 
 ```bash
 git clone git@github.com:Simeonk1307/nlp-kg-summarization.git
 cd nlp-kg-summarization
+```
+```
+NOTE: add pubmed_with_triples_v.zip (236 MB cannot be pushed to github directly) file in the root before setup.sh
+```
 
-python3 -m venv .venv
-source .venv/bin/activate
-
-pip install -r requirements.txt
-python3 -m spacy download en_core_web_sm
+```bash
+bash setup.sh
 ```
 
 For evaluation pipelines, create a `.env` file in the `evaluation/` directory:

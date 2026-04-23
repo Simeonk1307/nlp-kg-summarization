@@ -1,6 +1,5 @@
-
 from base_model import KATSum
-from transformers import LongT5ForConditionalGeneration,AutoTokenizer
+from transformers import LongT5ForConditionalGeneration, AutoTokenizer
 from kg_embedder import KGEncoder
 
 MODEL_NAME = "google/long-t5-tglobal-base"
