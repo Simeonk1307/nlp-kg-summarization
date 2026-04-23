@@ -177,7 +177,7 @@ def run_phase(
 
 
 def main(args):
-    # ---- Config ------------------------------------------------------------
+    # Config
     MODEL_NAME = "google/long-t5-tglobal-base"
     SAVE_DIR = Path("checkpoints")
     BATCH_SIZE = 4
