@@ -8,7 +8,7 @@ def load_json(path):
         return json.load(f)
 
 
-def merge(base_data, other_data, label):
+def merge(base_data, other_data):
     assert len(base_data) == len(other_data), "Mismatch in dataset lengths"
 
     merged = []
@@ -18,7 +18,7 @@ def merge(base_data, other_data, label):
             "triples": base_item["triples"],
             "reference_summary": base_item["reference_summary"],
             "summary_without_kg": base_item["generated_summary"],
-            f"summary_with_kg": other_item["generated_summary"]
+            "summary_with_kg": other_item["generated_summary"]
         })
     return merged
 
@@ -31,7 +31,15 @@ def main(args):
     base_data = load_json(base_path)
     other_data = load_json(other_path)
 
-    merged_data = merge(base_data, other_data, args.label)
+    assert len(base_data) == len(other_data), "Mismatch before sampling"
+
+    # 🔹 Apply sampling if specified
+    if args.num_samples is not None:
+        n = min(args.num_samples, len(base_data))
+        base_data = base_data[:n]
+        other_data = other_data[:n]
+
+    merged_data = merge(base_data, other_data)
 
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(merged_data, f, indent=2)
@@ -42,33 +50,17 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Merge two summarization JSON files")
 
-    parser.add_argument(
-        "--base",
-        type=str,
-        required=True,
-        help="Path to base model JSON (no KG)"
-    )
+    parser.add_argument("--base", type=str, required=True)
+    parser.add_argument("--other", type=str, required=True)
 
     parser.add_argument(
-        "--other",
-        type=str,
-        required=True,
-        help="Path to second model JSON (e.g., Phase 1)"
+        "--num_samples",
+        type=int,
+        default=None,
+        help="Limit number of samples to merge"
     )
 
-    parser.add_argument(
-        "--label",
-        type=str,
-        default="phase1",
-        help="Label suffix for merged summary field"
-    )
-
-    parser.add_argument(
-        "--output",
-        type=str,
-        default="merged.json",
-        help="Output file path"
-    )
+    parser.add_argument("--output", type=str, default="merged.json")
 
     args = parser.parse_args()
     main(args)
