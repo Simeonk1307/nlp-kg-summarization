@@ -51,19 +51,6 @@ echo ""
 echo "spaCy model ready."
 echo ""
 
-ZIP_FILE="$PROJECT_ROOT/pubmed_with_triples_v.zip"
-
-if [ ! -f "$ZIP_FILE" ]; then
-    echo "Could not find pubmed_with_triples_v.zip in the project root."
-    echo "Place the zip file at root here and re-run setup.sh."
-    exit 1
-fi
-
-echo "Found pubmed_with_triples_v.zip, extracting into src/dataset..."
-unzip -o "$ZIP_FILE" -d "$SRC_DIR/dataset"
-echo "Dataset extracted."
-echo ""
-
 RUN_ONCE="$SRC_DIR/load_model_tok_emb.py"
 
 if [ ! -f "$RUN_ONCE" ]; then
@@ -78,37 +65,10 @@ echo ""
 echo "load_model_tok_emb.py done."
 echo ""
 
-echo "Setup done. Activate your environment any time with:"
+
+echo "Setup almost done. Activate your environment any time with:"
 echo ""
 echo "  source .venv/bin/activate"
 echo ""
 
 
-echo "Final check: evaluation environment configuration..."
-echo ""
-
-EVAL_DIR="$PROJECT_ROOT/evaluation"
-ENV_FILE="$EVAL_DIR/.env"
-
-if [ ! -f "$ENV_FILE" ]; then
-    echo "WARNING: ./evaluation/.env file is missing."
-    echo ""
-    echo "Refer to ./evaluation/.env.example for the required format."
-    echo ""
-    echo "Also ensure you add your GEMINI_API_KEY."
-    echo ""
-else
-    if ! grep -q "^GEMINI_API_KEY=" "$ENV_FILE"; then
-        echo "WARNING: GEMINI_API_KEY is not set in ./evaluation/.env"
-        echo ""
-        echo "Please open the .env file and add:"
-        echo "  GEMINI_API_KEY=your_api_key_here"
-        echo ""
-        echo "Refer to .env.example for guidance."
-        echo ""
-    else
-        echo "Evaluation environment looks correctly configured."
-    fi
-fi
-
-echo ""

@@ -64,19 +64,33 @@ Custom KATSum is a knowledge-graph-augmented summarization model built on top of
 git clone git@github.com:Simeonk1307/nlp-kg-summarization.git
 cd nlp-kg-summarization
 ```
-```
-NOTE: add pubmed_with_triples_v.zip (236 MB cannot be pushed to github directly) file in the root before setup.sh
-```
 
 ```bash
 bash setup.sh
 ```
 
-For evaluation pipelines, create a `.env` file in the `evaluation/` directory:
+For evaluation pipelines, create a `.env` file in the `evaluation/` directory (refer `.env.example`):
 
 ```env
 GEMINI_API_KEY=your_api_key_here
 ```
+
+For running summary generators, main.ipynb or train.py `src/dataset/pubmed_with_triples_v` must exist  
+So you must unzip `pubmed_with_triples_v.zip` to this specific directory from root  
+Take `pubmed_with_triples_v.zip` from the drive  
+
+```bash
+unzip pubmed_with_triples_v.zip -d ./src/dataset/
+```
+
+For running custom summary generator `src/checkpoints/phase1_best.pt` or equivalent must be there  
+Take `phase1_best.pt` and put it in `src/checkpoints`
+
+```bash
+mv phase1_best.pt ./src/checkpoints/
+```
+
+
 
 ---
 
@@ -116,12 +130,6 @@ Checkpoints are saved to `src/checkpoints/`. The best validation checkpoint is s
 ---
 
 ## Inference
-
-**If `src/results` does not exist**
-```bash
-cd src
-mkdir results
-```
 
 **Baseline (vanilla LongT5):**
 
