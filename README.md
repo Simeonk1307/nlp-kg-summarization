@@ -95,7 +95,7 @@ GEMINI_API_KEY=your_api_key_here
 NOTE: As running `rebel_triple_extraction.py` is lengthy process you may do this
 
 ```bash
-Take `pubmed_with_triples_v.zip` from the drive and put in project root
+Take `pubmed_with_triples_v.zip` from the shared drive and put in project root
 unzip pubmed_with_triples_v.zip -d ./src/dataset/
 ```
 
@@ -103,7 +103,7 @@ unzip pubmed_with_triples_v.zip -d ./src/dataset/
 NOTE: As runnning `train.py` is lengthy process you may do this
 
 ```bash
-Take `phase1_best.pt` from the drive and put in project root
+Take `phase1_best.pt` from the shared drive and put in project root
 cp phase1_best.pt ./src/checkpoints/
 ```
 
@@ -133,7 +133,7 @@ NOTE: It is loaded using `datasets library` in this file (so if you want to use 
 
 ## Training (To skip look at `Installation & Setup`)
 
-** NOTE: This is also quite slow so advised would be to use the checkpoint from drive **
+** NOTE: This is also quite slow so advised would be to use the checkpoint from the shared drive **
 
 ```bash
 python train.py --phase1_epochs 3
