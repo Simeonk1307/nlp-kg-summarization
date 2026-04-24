@@ -136,7 +136,6 @@ NOTE: It is loaded using `datasets library` in this file (so if you want to use 
 ** NOTE: This is also quite slow so advised would be to use the checkpoint from drive **
 
 ```bash
-cd src
 python train.py --phase1_epochs 3
 ```
 
@@ -159,7 +158,6 @@ Checkpoints are saved to `src/checkpoints/`. The best validation checkpoint is s
 **Baseline (vanilla LongT5):**
 
 ```bash
-cd src
 python base_summary_generator.py \
     --num_samples 20 \
     --result_dir ./results/
@@ -168,7 +166,6 @@ python base_summary_generator.py \
 **KATSum (with KG augmentation):**
 
 ```bash
-cd src
 python custom_phase_1_summary_generator.py \
     --num_samples 20 \
     --checkpoint_path ./checkpoints/phase1_best.pt \
@@ -182,7 +179,7 @@ python custom_phase_1_summary_generator.py \
 **Step 1 — Merge outputs:** (FAST)
 
 ```bash
-cd evaluation
+cd ../evaluation
 python merge.py \
   --base ../src/results/base_model_test_results_20.json \
   --other ../src/results/katsum_phase_1_model_test_results_20.json \
@@ -197,7 +194,6 @@ This reads from `src/results/` and writes `summaries_20.json`.
 if you do then ensure to cap the amount O/w Try to be within the token and requests limit or change models**
 
 ```bash
-cd evaluation
 
 # A/B preference judging
 python gemini/pipeline_ab.py \

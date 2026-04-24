@@ -129,7 +129,7 @@ def main():
 
     results = []
 
-    for i in tqdm(range(args.num_samples), desc="Generating summaries"):
+    for i in tqdm(range(len(test_dataset)), desc="Generating summaries"):
         article_text = test_dataset[i]["article"]
         triples = test_dataset[i].get("rebel_triples", "")
         reference_summary = test_dataset[i].get("abstract", "")
